@@ -237,7 +237,6 @@ export const cloudDevopsDomain: DomainConfig = {
         github: 'https://github.com/rohandeshmukh-ops',
         linkedin: 'https://linkedin.com/in/rohandeshmukh',
         portfolio: 'https://rohan.cloud',
-        email: 'rohan@p2pdevs.ai',
       },
     },
     {
@@ -253,7 +252,6 @@ export const cloudDevopsDomain: DomainConfig = {
         github: 'https://github.com/ananyasen-sre',
         linkedin: 'https://linkedin.com/in/ananyasen',
         portfolio: 'https://ananya.systems',
-        email: 'ananya@p2pdevs.ai',
       },
     },
   ],

@@ -31,7 +31,6 @@ export const eventHostsData: EventHost[] = [
       github: 'https://github.com/amsabharisainath-lab',
       linkedin: 'https://www.linkedin.com/in/sabhari-sainath-am-935a4a267?utm_source=share_via&utm_content=profile&utm_medium=member_android',
       instagram: 'https://www.instagram.com/sab_sai_95?stkn=N3Y1b21pYjR6eDlx',
-      email: 'sabharisainath@p2pdevs.ai',
     },
   },
   {
@@ -46,7 +45,6 @@ export const eventHostsData: EventHost[] = [
     socials: {
       github: 'https://github.com/padmasree',
       linkedin: 'https://linkedin.com/in/padmasree',
-      email: 'padmasree@p2pdevs.ai',
     },
   },
 ];

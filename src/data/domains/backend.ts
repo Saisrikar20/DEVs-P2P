@@ -238,7 +238,6 @@ export const backendDomain: DomainConfig = {
         github: 'https://github.com/vikramroy-be',
         linkedin: 'https://linkedin.com/in/vikramroy',
         portfolio: 'https://vikramroy.io',
-        email: 'vikram@p2pdevs.ai',
       },
     },
     {
@@ -254,7 +253,6 @@ export const backendDomain: DomainConfig = {
         github: 'https://github.com/sneharao-db',
         linkedin: 'https://linkedin.com/in/sneharao-data',
         portfolio: 'https://sneharao.dev',
-        email: 'sneha@p2pdevs.ai',
       },
     },
     {
@@ -270,7 +268,6 @@ export const backendDomain: DomainConfig = {
         github: 'https://github.com/anirudhkumar-be',
         linkedin: 'https://linkedin.com/in/anirudhkumar',
         portfolio: 'https://anirudh.dev',
-        email: 'anirudh@p2pdevs.ai',
       },
     },
   ],

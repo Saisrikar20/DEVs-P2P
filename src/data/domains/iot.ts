@@ -236,7 +236,6 @@ export const iotDomain: DomainConfig = {
         github: 'https://github.com/adithyaram-iot',
         linkedin: 'https://linkedin.com/in/adithyaram',
         portfolio: 'https://adithya.firmware',
-        email: 'adithya@p2pdevs.ai',
       },
     },
   ],

@@ -236,7 +236,6 @@ export const videoEditingDomain: DomainConfig = {
         github: 'https://github.com/nikhitamenon-edit',
         linkedin: 'https://linkedin.com/in/nikhitamenon',
         portfolio: 'https://nikhita.film',
-        email: 'nikhita@p2pdevs.ai',
       },
     },
   ],
