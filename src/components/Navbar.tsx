@@ -3,7 +3,6 @@ import {
   Menu,
   X,
   Search,
-  ArrowRight,
   ChevronDown,
   Check,
   Cpu,
@@ -13,7 +12,6 @@ import {
   Film,
   Layers,
 } from 'lucide-react';
-import { communityInfo } from '../data/socialsData';
 import type { DomainConfig } from '../types';
 
 interface NavbarProps {
@@ -202,17 +200,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>{progressPercent}%</span>
               </div>
             )}
-
-            {/* GitHub Repo Pill Button */}
-            <a
-              href={communityInfo.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white hover:bg-zinc-200 text-black text-xs font-semibold transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95"
-            >
-              <span>GitHub</span>
-              <ArrowRight className="w-3 h-3 text-black" />
-            </a>
           </div>
 
           {/* Mobile hamburger */}

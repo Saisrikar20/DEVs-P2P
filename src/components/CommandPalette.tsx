@@ -9,7 +9,6 @@ import {
   ArrowRight,
   Layers,
 } from 'lucide-react';
-import { communityInfo } from '../data/socialsData';
 import type { DomainConfig } from '../types';
 
 interface CommandPaletteProps {
@@ -97,12 +96,22 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       },
     },
     {
-      id: 'action-github',
-      title: 'Star GitHub Repository',
-      category: 'External',
+      id: 'action-linkedin',
+      title: 'Follow DEVs on LinkedIn (@devsrec)',
+      category: 'Community',
       icon: <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />,
       action: () => {
-        window.open(communityInfo.repoUrl, '_blank');
+        window.open('https://www.linkedin.com/company/devsrec/posts/?feedView=all', '_blank');
+        onClose();
+      },
+    },
+    {
+      id: 'action-instagram',
+      title: 'Follow DEVs on Instagram (@devsrec)',
+      category: 'Community',
+      icon: <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />,
+      action: () => {
+        window.open('https://www.instagram.com/devsrec/', '_blank');
         onClose();
       },
     },

@@ -27,7 +27,7 @@ Navigate directly to any domain via URL path or the in-app track switcher:
 
 | Route | Domain Track | Lead Mentors | Focus Area |
 | :--- | :--- | :--- | :--- |
-| **[`/aiml`](http://localhost:5173/aiml)** | **AI & Machine Learning** *(Core Flagship)* | **Sai Srikar B**, Sabhari Sainath, Padma Sree | Neural Architectures, PyTorch, Local RAG, Model Serving |
+| **[`/aiml`](http://localhost:5173/aiml)** | **AI & Machine Learning** *(Core Flagship)* | **Sai Srikar B**, **Sabhari Sainath AM**, Padma Sree | Neural Architectures, PyTorch, Local RAG, Model Serving |
 | **[`/frontend`](http://localhost:5173/frontend)** | **Frontend Engineering** | **ASVAND K**, **Chandhru L** | UI Architecture, JavaScript, React, Performance, Accessibility |
 | **[`/backend`](http://localhost:5173/backend)** | **Backend Systems** | Vikram Roy, Sneha Rao, Anirudh Kumar | Go, PostgreSQL Internals, Redis, Kafka, Raft Consensus |
 | **[`/cloud`](http://localhost:5173/cloud)** | **Cloud & DevOps** | Rohan Deshmukh, Ananya Sen | Linux, Docker, Terraform, Kubernetes GitOps, Prometheus |
@@ -43,8 +43,9 @@ The foundational AI/ML track created by **Sai Srikar B** and team remains the fl
 ### Track Mentors & Organizers
 - **Sai Srikar B** (`Lead Organizer & AI Systems Architect`)
   - Portfolio: [saisrikar20.github.io](https://saisrikar20.github.io) • GitHub: [@Saisrikar20](https://github.com/Saisrikar20) • LinkedIn: [saisrikarb](https://www.linkedin.com/in/saisrikarb/) • Instagram: [@\_\_saisrikar\_\_](https://www.instagram.com/__saisrikar__/)
-- **Sabhari Sainath** (`Co-Organizer & MLOps Lead`):
+- **Sabhari Sainath AM** (`Co-Organizer & MLOps Lead`):
   - FastAPI Model Serving, Docker Containerization & Production ML
+  - GitHub: [@amsabharisainath-lab](https://github.com/amsabharisainath-lab) • LinkedIn: [sabhari-sainath-am](https://www.linkedin.com/in/sabhari-sainath-am-935a4a267) • Instagram: [@sab_sai_95](https://www.instagram.com/sab_sai_95)
 - **Padma Sree** (`Co-Organizer & GenAI Architect`):
   - LLM Systems, Multi-Agent Workflows, Vector Databases & RAG
 

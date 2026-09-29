@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
-import { GithubIcon, DiscordIcon, LinkedinIcon } from './Icons';
-import { communityInfo } from '../data/socialsData';
+import { LinkedinIcon, InstagramIcon } from './Icons';
 import { AnimateIn } from './AnimateIn';
 import type { DomainConfig } from '../types';
 
@@ -26,9 +25,8 @@ export const Footer: React.FC<FooterProps> = ({
   ];
 
   const socials = [
-    { Icon: GithubIcon, href: communityInfo.repoUrl, label: 'GitHub' },
-    { Icon: DiscordIcon, href: 'https://discord.gg/invite/devs-p2p', label: 'Discord' },
-    { Icon: LinkedinIcon, href: 'https://linkedin.com/company/devs-p2p-ai', label: 'LinkedIn' },
+    { Icon: LinkedinIcon, href: 'https://www.linkedin.com/company/devsrec/posts/?feedView=all', label: 'LinkedIn' },
+    { Icon: InstagramIcon, href: 'https://www.instagram.com/devsrec/', label: 'Instagram' },
   ];
 
   return (
@@ -49,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] flex items-center justify-center text-zinc-400 hover:text-white transition-all"
+                    className="w-8 h-8 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] flex items-center justify-center text-zinc-400 hover:text-white transition-all cursor-pointer"
                     title={label}
                   >
                     <Icon className="w-3.5 h-3.5" />
@@ -109,35 +107,37 @@ export const Footer: React.FC<FooterProps> = ({
               </ul>
             </div>
 
-            {/* Open Source */}
+            {/* Community Links */}
             <div className="md:col-span-3">
               <h4 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4 font-mono">
-                Open Source
+                Community
               </h4>
               <ul className="space-y-2.5 text-xs">
                 <li>
                   <a
-                    href={communityInfo.repoUrl}
+                    href="https://www.linkedin.com/company/devsrec/posts/?feedView=all"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-400 hover:text-white transition-colors"
+                    className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
                   >
-                    GitHub Organization
+                    <span>LinkedIn</span>
+                    <span className="text-[11px] font-mono text-zinc-500">@devsrec</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href={`${communityInfo.repoUrl}/issues`}
+                    href="https://www.instagram.com/devsrec/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-400 hover:text-white transition-colors"
+                    className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
                   >
-                    Suggest a Track / Topic
+                    <span>Instagram</span>
+                    <span className="text-[11px] font-mono text-zinc-500">@devsrec</span>
                   </a>
                 </li>
                 <li>
                   <span className="text-zinc-500 font-mono text-[11px] block mt-2">
-                    Template architecture for 6+ engineering tracks.
+                    Peer-to-peer technical engineering community.
                   </span>
                 </li>
               </ul>
@@ -146,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({
         </AnimateIn>
 
         <div className="mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <span>DEVs P2P · MIT Open Curriculum · {new Date().getFullYear()}</span>
+          <span>DEVs P2P · Peer-to-Peer Engineering · {new Date().getFullYear()}</span>
           <button
             onClick={scrollToTop}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] text-zinc-400 hover:text-white transition-all cursor-pointer font-mono"

@@ -5,7 +5,7 @@ export const communityInfo = {
   tagline: 'Peer-to-Peer Learning, Building & Mastering AI/ML Together',
   description:
     'A collaborative, open community of developers, students, and researchers breaking into AI, Machine Learning, and Generative AI. We build projects together, share peer code reviews, and provide real roadmaps.',
-  repoUrl: 'https://github.com/Saisrikar20/DEVs-P2P-AI-ML',
+  repoUrl: 'https://github.com/Saisrikar20/DEVs-P2P',
   contactEmail: 'saisrikarB@outlook.com',
 };
 
@@ -13,8 +13,8 @@ export const socialsData: SocialLink[] = [
   {
     name: 'GitHub Repository',
     platform: 'github',
-    url: 'https://github.com/Saisrikar20/DEVs-P2P-AI-ML',
-    handle: 'Saisrikar20/DEVs-P2P-AI-ML',
+    url: 'https://github.com/Saisrikar20/DEVs-P2P',
+    handle: 'Saisrikar20/DEVs-P2P',
     description: 'Star the repo, explore code roadmaps, create issues, and submit PRs to contribute.',
     primaryColor: '#8b5cf6',
     badge: 'Main Hub',
@@ -31,11 +31,20 @@ export const socialsData: SocialLink[] = [
   {
     name: 'LinkedIn Network',
     platform: 'linkedin',
-    url: 'https://linkedin.com/company/devs-p2p-ai',
-    handle: 'DEVs P2P AI-ML Network',
-    description: 'Connect with peers, share project milestones, find study partners, and showcase certifications.',
+    url: 'https://www.linkedin.com/company/devsrec/posts/?feedView=all',
+    handle: 'DEVs REC',
+    description: 'Connect with peers, share project milestones, find study partners, and explore technical opportunities.',
     primaryColor: '#0A66C2',
     badge: 'Careers & Networking',
+  },
+  {
+    name: 'Instagram',
+    platform: 'instagram',
+    url: 'https://www.instagram.com/devsrec/',
+    handle: '@devsrec',
+    description: 'Community updates, engineering showcases, hackathon highlights, and campus spotlights.',
+    primaryColor: '#E4405F',
+    badge: 'Community',
   },
   {
     name: 'YouTube Channel',

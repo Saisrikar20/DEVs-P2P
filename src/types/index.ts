@@ -60,7 +60,7 @@ export interface ProjectIdea {
 
 export interface SocialLink {
   name: string;
-  platform: 'github' | 'discord' | 'linkedin' | 'x' | 'youtube' | 'telegram' | 'email';
+  platform: 'github' | 'discord' | 'linkedin' | 'instagram' | 'x' | 'youtube' | 'telegram' | 'email';
   url: string;
   handle: string;
   description: string;
