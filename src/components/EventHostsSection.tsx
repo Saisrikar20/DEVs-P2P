@@ -10,7 +10,7 @@ import {
   Copy,
   RotateCw,
 } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, InstagramIcon } from './Icons';
+import { GithubIcon, LinkedinIcon } from './Icons';
 import { AnimateIn } from './AnimateIn';
 
 interface EventHostsSectionProps {
@@ -285,25 +285,6 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                             <span>LinkedIn Network</span>
                           </div>
                           <ExternalLink className="w-3.5 h-3.5 text-zinc-500 group-hover:text-white transition-colors" />
-                        </a>
-                      )}
-
-                      {host.socials.instagram && (
-                        <a
-                          href={host.socials.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
-                        >
-                          <div className="flex items-center gap-2.5">
-                            <InstagramIcon className="w-4 h-4 text-zinc-300 group-hover:text-white" />
-                            <span>Instagram</span>
-                          </div>
-                          <div className="flex items-center gap-1.5 text-zinc-500 group-hover:text-zinc-300 transition-colors">
-                            <span className="font-mono text-[10px] sm:text-[11px]">@{host.socials.instagram.replace(/\/$/, '').split('/').pop()}</span>
-                            <ExternalLink className="w-3 h-3" />
-                          </div>
                         </a>
                       )}
 
