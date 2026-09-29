@@ -27,7 +27,7 @@ Navigate directly to any domain via URL path or the in-app track switcher:
 
 | Route | Domain Track | Lead Mentors | Focus Area |
 | :--- | :--- | :--- | :--- |
-| **[`/aiml`](http://localhost:5173/aiml)** | **AI & Machine Learning** *(Core Flagship)* | **Sai Srikar B**, **Sabhari Sainath AM**, Padma Sree | Neural Architectures, PyTorch, Local RAG, Model Serving |
+| **[`/aiml`](http://localhost:5173/aiml)** | **AI & Machine Learning** *(Core Flagship)* | **Sai Srikar B**, **Sabhari Sainath AM**, **Padma Sree M** | Neural Architectures, PyTorch, Local RAG, Model Serving |
 | **[`/frontend`](http://localhost:5173/frontend)** | **Frontend Engineering** | **ASVAND K**, **Chandhru L** | UI Architecture, JavaScript, React, Performance, Accessibility |
 | **[`/backend`](http://localhost:5173/backend)** | **Backend Systems** | Vikram Roy, Sneha Rao, Anirudh Kumar | Go, PostgreSQL Internals, Redis, Kafka, Raft Consensus |
 | **[`/cloud`](http://localhost:5173/cloud)** | **Cloud & DevOps** | Rohan Deshmukh, Ananya Sen | Linux, Docker, Terraform, Kubernetes GitOps, Prometheus |
@@ -46,8 +46,9 @@ The foundational AI/ML track created by **Sai Srikar B** and team remains the fl
 - **Sabhari Sainath AM** (`Co-Organizer & MLOps Lead`):
   - FastAPI Model Serving, Docker Containerization & Production ML
   - GitHub: [@amsabharisainath-lab](https://github.com/amsabharisainath-lab) • LinkedIn: [sabhari-sainath-am](https://www.linkedin.com/in/sabhari-sainath-am-935a4a267) • Instagram: [@sab_sai_95](https://www.instagram.com/sab_sai_95)
-- **Padma Sree** (`Co-Organizer & GenAI Architect`):
+- **Padma Sree M** (`Co-Organizer & GenAI Architect`):
   - LLM Systems, Multi-Agent Workflows, Vector Databases & RAG
+  - GitHub: [@padmasreemcse-glitch](https://github.com/padmasreemcse-glitch) • LinkedIn: [padma-sree-m](https://www.linkedin.com/in/padma-sree-m-63393a3aa/) • Instagram: [@pdsree_26](https://www.instagram.com/pdsree_26)
 
 ### 5-Phase AI/ML Curriculum
 1. **Phase 1: Mathematical Foundations & Python for AI** (Vector spaces, linear transformations, multivariable autograd, clean Python)

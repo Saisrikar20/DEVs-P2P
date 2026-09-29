@@ -35,16 +35,17 @@ export const eventHostsData: EventHost[] = [
   },
   {
     id: 'host-3',
-    name: 'Padma Sree',
+    name: 'Padma Sree M',
     role: 'Co-Organizer & GenAI Architect',
     headline: 'LLM Systems, Multi-Agent Workflows & NLP',
     topicOrFocus: 'Retrieval-Augmented Generation (RAG), Fine-Tuning & Autonomous Agents',
     bio: 'Mentoring on modern transformer dynamics, contextual intelligence with vector search, and agentic reasoning graphs.',
     avatarUrl: '/padma-anime-pfp.jpg',
-    initials: 'PS',
+    initials: 'PM',
     socials: {
-      github: 'https://github.com/padmasree',
-      linkedin: 'https://linkedin.com/in/padmasree',
+      github: 'https://github.com/padmasreemcse-glitch',
+      linkedin: 'https://www.linkedin.com/in/padma-sree-m-63393a3aa/',
+      instagram: 'https://www.instagram.com/pdsree_26?stkn=bWI1d24yc3FkMzM1',
     },
   },
 ];
