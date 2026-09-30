@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { PrerequisitesSection } from './components/PrerequisitesSection';
 import { RoadmapView } from './components/RoadmapView';
 import { EventHostsSection } from './components/EventHostsSection';
 import { ResourcesDirectory } from './components/ResourcesDirectory';
@@ -152,6 +153,15 @@ export const App: React.FC = () => {
           currentDomain={currentDomain}
           onExploreRoadmap={scrollToRoadmap}
         />
+
+        {/* 1.5 Domain Prerequisites — Foundational knowledge before starting */}
+        {currentDomain.prerequisites && (
+          <PrerequisitesSection
+            key={`prereq-${currentSlug}`}
+            domainName={currentDomain.name}
+            prerequisites={currentDomain.prerequisites}
+          />
+        )}
 
         {/* 2. Dynamic Roadmap — The core curriculum */}
         <RoadmapView

@@ -29,9 +29,9 @@ Navigate directly to any domain via URL path or the in-app track switcher:
 | :--- | :--- | :--- | :--- |
 | **[`/aiml`](http://localhost:5173/aiml)** | **AI & Machine Learning** *(Core Flagship)* | **Sai Srikar B**, **Sabhari Sainath AM**, **Padma Sree M** | Neural Architectures, PyTorch, Local RAG, Model Serving |
 | **[`/frontend`](http://localhost:5173/frontend)** | **Frontend Engineering** | **ASVAND K**, **Chandhru L** | UI Architecture, JavaScript, React, Performance, Accessibility |
-| **[`/backend`](http://localhost:5173/backend)** | **Backend Systems** | Vikram Roy, Sneha Rao, Anirudh Kumar | Go, PostgreSQL Internals, Redis, Kafka, Raft Consensus |
+| **[`/backend`](http://localhost:5173/backend)** | **Backend Engineering & Distributed Systems** | **Sai Kishore S**, **Kamlesh A** | FastAPI, Django, PostgreSQL, Redis Caching, Celery, Distributed Systems |
 | **[`/cloud`](http://localhost:5173/cloud)** | **Cloud & DevOps** | Rohan Deshmukh, Ananya Sen | Linux, Docker, Terraform, Kubernetes GitOps, Prometheus |
-| **[`/iot`](http://localhost:5173/iot)** | **IoT & Embedded Systems** | Adithya Ram | Bare-Metal C, FreeRTOS, MQTT, TinyML, Hardware Security |
+| **[`/iot`](http://localhost:5173/iot)** | **Internet of Things & Embedded Systems** | **Vijay Ganesh**, **Chithralekha** | ESP32, STM32, Sensors, MQTT, LoRa, BLE, FreeRTOS, TinyML, Hardware PCBs |
 | **[`/video-editing`](http://localhost:5173/video-editing)** | **Video Editing & Post-Production** | Nikhita Menon | Montage Pacing, Sound Foley, DaVinci Resolve Color, Speed Ramps |
 
 ---

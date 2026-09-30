@@ -296,4 +296,31 @@ export const cloudDevopsDomain: DomainConfig = {
       ],
     },
   ],
+  prerequisites: {
+    overview:
+      'Essential systems literacy required before managing container orchestration, infrastructure as code, and automated deployment pipelines.',
+    items: [
+      {
+        title: 'Linux & Terminal Competency',
+        description:
+          'Comfortable navigating directories, understanding file permissions (chmod/chown), SSH key management, and executing bash commands.',
+        level: 'Essential',
+        skills: ['Bash Commands', 'File Permissions', 'SSH Keys', 'Systemd Services'],
+      },
+      {
+        title: 'Core Networking Fundamentals',
+        description:
+          'Understanding IPv4 addresses, CIDR subnets, DNS resolution, TCP/UDP ports, firewalls, and reverse proxy routing.',
+        level: 'Essential',
+        skills: ['IPv4 / Subnets', 'DNS & Routing', 'TCP/IP Handshake', 'HTTP & Reverse Proxies'],
+      },
+      {
+        title: 'Git & Application Lifecycle',
+        description:
+          'Familiarity with Git branching, pull requests, environment variables (.env), and how web applications are built and run.',
+        level: 'Recommended',
+        skills: ['Git Branching', 'Environment Variables', 'Package Managers', 'YAML / JSON'],
+      },
+    ],
+  },
 };

@@ -306,4 +306,31 @@ export const videoEditingDomain: DomainConfig = {
       ],
     },
   ],
+  prerequisites: {
+    overview:
+      'Foundational media storage hygiene and visual literacy required before mastering non-linear editing, narrative pacing, and color science.',
+    items: [
+      {
+        title: 'Computer Hardware & Storage Hygiene',
+        description:
+          'A reliable workstation (CPU/GPU acceleration, minimum 16GB RAM), an external SSD, and organized project directory folder structures.',
+        level: 'Essential',
+        skills: ['File Directory Hygiene', 'SSD Read/Write', 'GPU Acceleration', 'Video Formats (.mp4/.mov)'],
+      },
+      {
+        title: 'Core Video & Audio Principles',
+        description:
+          'Understanding frame rates (24fps vs 30fps vs 60fps), resolutions (1080p, 4K), aspect ratios (16:9, 9:16), and audio decibel levels (dBFS).',
+        level: 'Essential',
+        skills: ['Frame Rates (FPS)', 'Aspect Ratios', 'Resolution Standards', 'Audio Levels (dB)'],
+      },
+      {
+        title: 'NLE Software Installed',
+        description:
+          'DaVinci Resolve (free edition), Premiere Pro, or Final Cut installed and tested on your machine with basic keyboard navigation.',
+        level: 'Recommended',
+        skills: ['DaVinci Resolve / NLE', 'Timeline Navigation', 'Keyboard Shortcuts', 'Audio Sync Basics'],
+      },
+    ],
+  },
 };

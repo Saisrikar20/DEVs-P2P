@@ -89,6 +89,18 @@ export interface EventHost {
   socials: HostSocials;
 }
 
+export interface PrerequisiteItem {
+  title: string;
+  description: string;
+  level: 'Essential' | 'Recommended' | 'Helpful';
+  skills?: string[];
+}
+
+export interface DomainPrerequisites {
+  overview: string;
+  items: PrerequisiteItem[];
+}
+
 export interface DomainConfig {
   id: string;
   slug: string;
@@ -103,4 +115,5 @@ export interface DomainConfig {
   hostsData: EventHost[];
   resourcesData: Resource[];
   projectsData: ProjectIdea[];
+  prerequisites?: DomainPrerequisites;
 }

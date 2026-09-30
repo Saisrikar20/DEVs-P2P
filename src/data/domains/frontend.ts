@@ -490,4 +490,31 @@ export const frontendDomain: DomainConfig = {
       ],
     },
   ],
+  prerequisites: {
+    overview:
+      'Recommended baseline before building production-ready component architectures, reactive state engines, and accessible web experiences.',
+    items: [
+      {
+        title: 'Basic HTML & CSS Understanding',
+        description:
+          'Familiarity with HTML semantic tags, basic CSS properties, the box model (margin, border, padding, content), and basic layout concepts.',
+        level: 'Essential',
+        skills: ['HTML5 Tags', 'CSS Box Model', 'Flexbox Basics', 'Browser DevTools'],
+      },
+      {
+        title: 'Programming Logic Basics',
+        description:
+          'Understanding variables, conditional branching (if/else), functions, arrays, objects, and basic problem solving in any language or JavaScript.',
+        level: 'Essential',
+        skills: ['Variables & Types', 'Conditionals & Loops', 'Functions & Scope', 'Arrays & Objects'],
+      },
+      {
+        title: 'Developer Tooling Setup',
+        description:
+          'A modern web browser (Chrome / Edge / Firefox), a code editor (VS Code), and comfort running basic terminal commands.',
+        level: 'Recommended',
+        skills: ['VS Code / Editor', 'Browser Inspector', 'Node.js & npm', 'Basic Git'],
+      },
+    ],
+  },
 };

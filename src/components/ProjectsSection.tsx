@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { ProjectIdea, Level } from '../types';
-import { ExternalLink, Database, Check } from 'lucide-react';
+import { ExternalLink, Database, Check, ChevronDown } from 'lucide-react';
 import { AnimateIn } from './AnimateIn';
 
 interface ProjectsSectionProps {
@@ -9,6 +9,19 @@ interface ProjectsSectionProps {
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   const [difficultyFilter, setDifficultyFilter] = useState<'All' | Level>('All');
+  const [expandedProjectIds, setExpandedProjectIds] = useState<Set<string>>(new Set());
+
+  const toggleExpandProject = (id: string) => {
+    setExpandedProjectIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
 
   const filteredProjects = projects.filter((proj) => {
     if (difficultyFilter === 'All') return true;
@@ -54,50 +67,76 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredProjects.map((project, idx) => (
-            <AnimateIn key={project.id} delay={idx * 60}>
-              <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] p-5 lift">
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[11px] font-mono text-zinc-400">
-                      {project.phase.split(':')[0]}
-                    </span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-400 border border-white/[0.06]">
-                      {project.difficulty}
-                    </span>
-                  </div>
+          {filteredProjects.map((project, idx) => {
+            const isExpanded = expandedProjectIds.has(project.id);
+            const isLong = project.description.length > 90;
+            const displayedOutcomes = isExpanded
+              ? project.learningOutcomes
+              : project.learningOutcomes.slice(0, 2);
 
-                  <h3 className="text-sm font-semibold text-white mb-1.5">{project.title}</h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2">{project.description}</p>
+            return (
+              <AnimateIn key={project.id} delay={idx * 60}>
+                <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] p-5 lift transition-all">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="text-[11px] font-mono text-zinc-400">
+                        {project.phase.split(':')[0]}
+                      </span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-400 border border-white/[0.06]">
+                        {project.difficulty}
+                      </span>
+                    </div>
 
-                  {project.datasetName && (
-                    <div className="mt-3 p-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs text-zinc-400 flex items-center justify-between font-mono">
-                      <div className="flex items-center gap-1.5 truncate">
-                        <Database className="w-3 h-3 text-zinc-500 shrink-0" />
-                        <span className="truncate">{project.datasetName}</span>
+                    <h3 className="text-sm font-semibold text-white mb-1.5">{project.title}</h3>
+                    <p className={`text-xs text-zinc-400 leading-relaxed transition-all ${isExpanded ? '' : 'line-clamp-2'}`}>
+                      {project.description}
+                    </p>
+                    {isLong && (
+                      <button
+                        onClick={() => toggleExpandProject(project.id)}
+                        className="inline-flex items-center gap-1 text-[11px] font-mono text-zinc-500 hover:text-zinc-200 mt-1.5 transition-colors cursor-pointer"
+                      >
+                        <span>{isExpanded ? 'Collapse' : 'Expand'}</span>
+                        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+                      </button>
+                    )}
+
+                    {project.datasetName && (
+                      <div className="mt-3 p-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs text-zinc-400 flex items-center justify-between font-mono">
+                        <div className="flex items-center gap-1.5 truncate">
+                          <Database className="w-3 h-3 text-zinc-500 shrink-0" />
+                          <span className="truncate">{project.datasetName}</span>
+                        </div>
+                        {project.datasetUrl && (
+                          <a
+                            href={project.datasetUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-zinc-400 hover:text-white ml-2 transition-colors"
+                          >
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
                       </div>
-                      {project.datasetUrl && (
-                        <a
-                          href={project.datasetUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-zinc-400 hover:text-white ml-2 transition-colors"
+                    )}
+
+                    <div className="mt-3 space-y-2">
+                      {displayedOutcomes.map((outcome, oIdx) => (
+                        <div key={oIdx} className="flex items-start gap-2 text-xs text-zinc-400">
+                          <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                          <span className="leading-snug">{outcome}</span>
+                        </div>
+                      ))}
+                      {!isExpanded && project.learningOutcomes.length > 2 && (
+                        <button
+                          onClick={() => toggleExpandProject(project.id)}
+                          className="text-[10px] font-mono text-zinc-500 hover:text-zinc-300 pl-5.5 transition-colors cursor-pointer block"
                         >
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
+                          +{project.learningOutcomes.length - 2} more outcome{project.learningOutcomes.length - 2 > 1 ? 's' : ''} (expand)
+                        </button>
                       )}
                     </div>
-                  )}
-
-                  <div className="mt-3 space-y-1.5">
-                    {project.learningOutcomes.slice(0, 2).map((outcome, oIdx) => (
-                      <div key={oIdx} className="flex items-start gap-2 text-xs text-zinc-400">
-                        <Check className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5" />
-                        <span className="line-clamp-1">{outcome}</span>
-                      </div>
-                    ))}
                   </div>
-                </div>
 
                 <div className="mt-4 pt-3 border-t border-white/[0.04] flex flex-wrap gap-1.5">
                   {project.techStack.map((tech, tIdx) => (
@@ -111,7 +150,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                 </div>
               </div>
             </AnimateIn>
-          ))}
+          );
+        })}
         </div>
       </div>
 

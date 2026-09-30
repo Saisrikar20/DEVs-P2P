@@ -3,221 +3,318 @@ import type { DomainConfig } from '../../types';
 export const iotDomain: DomainConfig = {
   id: 'iot',
   slug: 'iot',
-  name: 'IoT & Embedded Systems',
+  name: 'Internet of Things & Embedded Systems',
   shortName: 'IoT',
   badge: 'Active Track',
   iconName: 'Cpu',
-  heroHeadline: 'Bridging the physical and digital world through silicon, sensors & firmware',
-  heroTagline: 'microcontroller architecture · RTOS scheduling, edge telemetry, and low-power IoT networks',
+  heroHeadline: 'Connected devices, embedded intelligence, wireless networks & real-world automation',
+  heroTagline:
+    'ESP32, STM32 & Arduino · sensors, MQTT, LoRa, BLE, edge computing, cloud platforms and IoT system architecture. Build devices that sense, communicate, decide and act.',
   heroCtaText: 'Explore IoT Roadmap',
   roadmapData: [
     {
       id: 'iot-phase-1',
       phaseNumber: 1,
-      title: 'Low-Level C, Memory Architecture & Hardware Fundamentals',
-      tagline: 'Pointers, Bitwise Math, Registers, Memory-Mapped I/O & Microcontroller Arch',
+      title: 'Embedded Foundations: Microcontrollers & Electronics',
+      tagline: 'Learn how physical sensors and electronic components become programmable systems.',
       duration: '4 Weeks',
       difficulty: 'Beginner',
       color: '#ffffff',
       badgeColor: 'bg-zinc-800 text-zinc-200',
       iconName: 'Cpu',
       overview:
-        'Understand computing at the silicon level: master low-level C memory pointers, bitwise register manipulation, volatile variables, hardware interrupts, and circuit basics with oscilloscopes.',
+        'Build the hardware and firmware bedrock: master Arduino, ESP32, and STM32 fundamentals, GPIO multiplexing, analog-to-digital converters, timers, interrupts, and serial bus protocols.',
       topics: [
         {
           id: 'iot-p1-t1',
-          name: 'Embedded C & Register Manipulation',
-          summary: 'Direct register writes, bit masks, pointer arithmetic, and struct packing for memory efficiency.',
-          keySkills: ['Embedded C', 'Bitwise Operators', 'Volatile Keyword', 'Memory-Mapped I/O'],
+          name: 'Microcontrollers & GPIO',
+          summary:
+            'Learn Arduino, ESP32 and STM32 fundamentals, GPIO, ADC, PWM, timers and interrupts.',
+          keySkills: ['Arduino & ESP32 Basics', 'GPIO & Digital I/O', 'ADC & PWM Signals', 'Hardware Interrupts & Timers'],
           recommendedResources: [
-            { title: 'Making Embedded Systems by Elecia White', url: 'https://www.oreilly.com/library/view/making-embedded-systems/9781449308292/', type: 'Book' },
+            { title: 'ESP32 Official Documentation', url: 'https://docs.espressif.com/projects/esp-idf/en/latest/esp32/', type: 'Documentation' },
           ],
         },
         {
           id: 'iot-p1-t2',
-          name: 'Hardware Peripherals & Bus Protocols',
-          summary: 'GPIO timing, hardware interrupts (ISR), I2C, SPI, and UART serial communication.',
-          keySkills: ['I2C Protocol', 'SPI Bus', 'UART Serial', 'Interrupt Service Routines (ISRs)'],
+          name: 'Sensors & Actuators',
+          summary:
+            'Interface temperature, pressure, IMU, ultrasonic and environmental sensors with motors, LEDs, relays and servos.',
+          keySkills: ['Analog & Digital Sensors', 'Sensor Calibration', 'Relay Switching', 'PWM Motor & Servo Control'],
           recommendedResources: [
-            { title: 'SparkFun Embedded Hardware & Protocol Tutorials', url: 'https://learn.sparkfun.com', type: 'Documentation' },
+            { title: 'Arduino Hardware Documentation', url: 'https://docs.arduino.cc/', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p1-t3',
+          name: 'Communication Protocols',
+          summary:
+            'Understand UART, I2C and SPI interfaces and learn when to use each bus protocol.',
+          keySkills: ['UART Serial Debugging', 'I2C Addressing & Bus Pull-ups', 'SPI High-Speed Data Transfers', 'Packet Framing'],
+          recommendedResources: [
+            { title: 'Adafruit Learning System: Bus Protocols', url: 'https://learn.adafruit.com/', type: 'Documentation' },
           ],
         },
       ],
       milestoneProject: {
-        title: 'Multi-Sensor Hardware Telemetry Station (ESP32 / STM32)',
-        description: 'Build an environmental sensor node sampling temperature, humidity, and barometric pressure via I2C with hardware timer interrupts.',
+        title: 'Smart Environmental Monitoring Node',
+        description:
+          'Build an ESP32-based environmental telemetry node acquiring live temperature, humidity, and barometric pressure data with USB/serial streaming.',
         deliverables: [
-          'Bare-metal C peripheral drivers for I2C and SPI sensors',
-          'Interrupt-driven push button with debouncing state machine',
-          'Low-power deep-sleep cycle consuming under 15 microamps',
+          'ESP32-based sensor acquisition system using I2C/SPI interfaces',
+          'Temperature, humidity and barometric pressure data sampling',
+          'Serial / USB dashboard displaying live formatted telemetry',
         ],
       },
     },
     {
       id: 'iot-phase-2',
       phaseNumber: 2,
-      title: 'Real-Time Operating Systems (FreeRTOS)',
-      tagline: 'Preemptive Scheduling, Mutexes, Semaphores, Queues & Determinism',
-      duration: '5 Weeks',
-      difficulty: 'Intermediate',
-      color: '#ffffff',
-      badgeColor: 'bg-zinc-800 text-zinc-200',
-      iconName: 'Activity',
-      overview:
-        'Design deterministic embedded applications: multitask concurrent sensor readings and wireless transmissions using FreeRTOS tasks, priority queues, and deadlock prevention.',
-      topics: [
-        {
-          id: 'iot-p2-t1',
-          name: 'FreeRTOS Task Scheduling & Prioritization',
-          summary: 'Task control blocks, context switching mechanics, preemptive round-robin scheduling, and idle hooks.',
-          keySkills: ['FreeRTOS Tasks', 'Task Priorities', 'Context Switching', 'Stack Overflow Hooks'],
-          recommendedResources: [
-            { title: 'FreeRTOS Official Reference Manual', url: 'https://www.freertos.org/Documentation/RTOS_book.html', type: 'Documentation' },
-          ],
-        },
-        {
-          id: 'iot-p2-t2',
-          name: 'Inter-Task Communication & Synchronization',
-          summary: 'Message queues, binary & counting semaphores, mutexes with priority inheritance, and event groups.',
-          keySkills: ['FreeRTOS Queues', 'Mutexes & Semaphores', 'Priority Inversion Prevention', 'Event Groups'],
-          recommendedResources: [
-            { title: 'Mastering the FreeRTOS Real Time Kernel', url: 'https://www.freertos.org', type: 'Book' },
-          ],
-        },
-      ],
-      milestoneProject: {
-        title: 'Deterministic Real-Time Quadcopter Flight Controller Kernel',
-        description: 'Implement a FreeRTOS flight stabilization loop reading 1kHz IMU gyro data, executing PID stabilization, and driving motor PWM outputs without jitter.',
-        deliverables: [
-          'Deterministic 1000Hz sensor sampling task with zero deadline misses',
-          'Queue-based telemetry dispatch task to wireless transceiver',
-          'CPU usage and stack watermark monitor task',
-        ],
-      },
-    },
-    {
-      id: 'iot-phase-3',
-      phaseNumber: 3,
-      title: 'IoT Connectivity & Wireless Protocols',
-      tagline: 'MQTT with TLS, CoAP, Bluetooth Low Energy (BLE), LoRaWAN & Wi-Fi',
+      title: 'Wireless IoT: Connectivity & Device Communication',
+      tagline: 'Make embedded devices communicate reliably across short and long distances.',
       duration: '4 Weeks',
       difficulty: 'Intermediate',
       color: '#ffffff',
       badgeColor: 'bg-zinc-800 text-zinc-200',
       iconName: 'Radio',
       overview:
-        'Connect edge devices to the cloud: publish telemetry over lightweight MQTT with TLS 1.3 encryption, broadcast BLE advertising packets, and transmit long-range LoRaWAN packets.',
+        'Connect physical hardware to the digital world: implement Wi-Fi client and AP modes, publish telemetry over lightweight MQTT, transmit long-range LoRa packets, and configure BLE GATT servers.',
       topics: [
         {
-          id: 'iot-p3-t1',
-          name: 'MQTT Protocol, QoS & TLS Edge Security',
-          summary: 'Publish/subscribe patterns, QoS levels (0, 1, 2), retain flags, and mTLS device certificates.',
-          keySkills: ['MQTT & Mosquitto', 'QoS Delivery Guarantees', 'mTLS Device Identity', 'JSON / CBOR Payloads'],
+          id: 'iot-p2-t1',
+          name: 'Wi-Fi & HTTP Client/Server',
+          summary:
+            'Connect ESP32 devices to networks, create REST APIs, and exchange sensor data with remote servers.',
+          keySkills: ['ESP32 Wi-Fi Station & AP', 'HTTP GET & POST Requests', 'JSON Serialization', 'Embedded Web Servers'],
           recommendedResources: [
-            { title: 'HiveMQ MQTT Essentials Guide', url: 'https://www.hivemq.com/mqtt-essentials/', type: 'Documentation' },
+            { title: 'ESP-IDF HTTP Server Documentation', url: 'https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html', type: 'Documentation' },
           ],
         },
         {
-          id: 'iot-p3-t2',
-          name: 'Low-Power Wireless: BLE & LoRaWAN',
-          summary: 'GATT profiles, BLE advertising beacons, and chirp spread spectrum modulation in LoRaWAN networks.',
-          keySkills: ['BLE GATT Services', 'Advertising Packets', 'LoRaWAN OTAA Activation', 'Power Budgets'],
+          id: 'iot-p2-t2',
+          name: 'MQTT Protocol & Pub/Sub',
+          summary:
+            'Learn brokers, publishers, subscribers, topics, QoS delivery levels, and device-to-cloud messaging.',
+          keySkills: ['Publish/Subscribe Pattern', 'QoS 0/1/2 Guarantees', 'Topic Hierarchies', 'Broker Setup (Mosquitto)'],
           recommendedResources: [
-            { title: 'The Things Network LoRaWAN Academy', url: 'https://www.thethingsnetwork.org', type: 'Documentation' },
+            { title: 'MQTT.org Protocol Specification', url: 'https://mqtt.org/', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p2-t3',
+          name: 'LoRa & Long-Range Communication',
+          summary:
+            'Understand low-power wide-area communication and build point-to-point telemetry systems.',
+          keySkills: ['Chirp Spread Spectrum', 'Point-to-Point LoRa', 'Spreading Factors & Link Budgets', 'Antenna Tuning'],
+          recommendedResources: [
+            { title: 'The Things Network Documentation', url: 'https://www.thethingsnetwork.org/', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p2-t4',
+          name: 'Bluetooth Low Energy (BLE)',
+          summary:
+            'Build low-power Bluetooth communication between embedded devices and smartphones.',
+          keySkills: ['BLE GATT Architecture', 'Custom Services & Characteristics', 'Advertising Beacons', 'Smartphone Pairing'],
+          recommendedResources: [
+            { title: 'Bluetooth Developer Resources', url: 'https://www.bluetooth.com/develop-with-bluetooth/', type: 'Documentation' },
           ],
         },
       ],
       milestoneProject: {
-        title: 'Long-Range Agricultural Monitoring Fleet with LoRa & MQTT',
-        description: 'Deploy battery-operated LoRa sensor nodes transmitting soil telemetry over 3km to an edge gateway bridging data to cloud MQTT dashboards.',
+        title: 'Long-Range IoT Telemetry System',
+        description:
+          'Construct an end-to-end long-range telemetry pipeline utilizing ESP32 microcontrollers, LoRa radio transmission, and a real-time receiver dashboard.',
         deliverables: [
-          'LoRaWAN sensor payload compression using Protocol Buffers / CBOR',
-          'Edge gateway forwarding packets to Mosquitto MQTT broker',
-          'Low-power energy profile extending coin cell lifespan past 12 months',
+          'Battery-powered sensor node using ESP32 and calibrated environmental sensors',
+          'Point-to-point LoRa-based wireless communication over multi-kilometer range',
+          'Receiver node with serial/OLED display presenting live telemetry metrics',
+        ],
+      },
+    },
+    {
+      id: 'iot-phase-3',
+      phaseNumber: 3,
+      title: 'Cloud IoT, Telemetry Pipelines & Dashboards',
+      tagline: 'Stream sensor data to cloud platforms, time-series storage, and live visualization hubs.',
+      duration: '4 Weeks',
+      difficulty: 'Intermediate',
+      color: '#ffffff',
+      badgeColor: 'bg-zinc-800 text-zinc-200',
+      iconName: 'Activity',
+      overview:
+        'Bridge the gap from edge to cloud: ingest real-time MQTT data into time-series databases like InfluxDB, build bidirectional Node-RED pipelines, and construct interactive Grafana telemetry dashboards.',
+      topics: [
+        {
+          id: 'iot-p3-t1',
+          name: 'Cloud IoT Ingestion & Brokers',
+          summary:
+            'Device provisioning, cloud MQTT brokers, AWS IoT Core, and TLS security certificates.',
+          keySkills: ['Cloud Broker Provisioning', 'X.509 Device Certificates', 'Rule Engines & Webhooks', 'JSON Payload Validation'],
+          recommendedResources: [
+            { title: 'AWS IoT Architecture Center', url: 'https://aws.amazon.com/iot/', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p3-t2',
+          name: 'Time-Series Data & Storage',
+          summary:
+            'Store continuous sensor streams efficiently using InfluxDB and TimescaleDB with retention policies.',
+          keySkills: ['InfluxDB / TimescaleDB', 'Sensor Data Downsampling', 'Query Optimization', 'Retention Policies'],
+          recommendedResources: [
+            { title: 'InfluxDB Documentation', url: 'https://docs.influxdata.com/', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p3-t3',
+          name: 'Node-RED & Live Dashboards',
+          summary:
+            'Build automated event workflows and visual telemetry dashboards with Node-RED and Grafana.',
+          keySkills: ['Node-RED Visual Flow Programming', 'Grafana Dashboard Design', 'Threshold Alerting', 'Bidirectional Control'],
+          recommendedResources: [
+            { title: 'Node-RED Official Guide', url: 'https://nodered.org/docs/', type: 'Documentation' },
+          ],
+        },
+      ],
+      milestoneProject: {
+        title: 'Centralized Cloud Telemetry Hub',
+        description:
+          'Deploy a multi-sensor cloud telemetry hub with MQTT data ingestion, InfluxDB time-series storage, automated alert notifications, and a Grafana dashboard.',
+        deliverables: [
+          'Secure device-to-cloud MQTT streaming with authentication',
+          'InfluxDB database schema optimized for high-frequency sensor readings',
+          'Real-time Grafana dashboard with anomaly thresholds and SMS/email alerts',
         ],
       },
     },
     {
       id: 'iot-phase-4',
       phaseNumber: 4,
-      title: 'Edge AI (TinyML) & Sensor Fusion',
-      tagline: 'TensorFlow Lite for Microcontrollers (TFLite Micro), Kalman Filters & On-Device Inference',
+      title: 'Advanced Embedded IoT: RTOS, Security & Reliable Systems',
+      tagline: 'Move from hobby-grade prototypes toward reliable, commercial embedded products.',
       duration: '5 Weeks',
       difficulty: 'Advanced',
       color: '#ffffff',
       badgeColor: 'bg-zinc-800 text-zinc-200',
-      iconName: 'Cpu',
+      iconName: 'Shield',
       overview:
-        'Run machine learning directly on battery-powered microcontrollers: quantize neural networks to INT8, deploy TFLite Micro on ARM Cortex-M, and fuse sensor data with Extended Kalman Filters.',
+        'Engineer mission-critical reliability: coordinate concurrent sensor tasks with FreeRTOS, secure communications with hardware-accelerated TLS, deliver Over-The-Air (OTA) firmware updates, and optimize deep-sleep power states.',
       topics: [
         {
           id: 'iot-p4-t1',
-          name: 'TinyML Model Quantization & TFLite Micro Runtime',
-          summary: 'Post-training INT8 quantization, arena memory allocation, and executing inference in under 100KB of RAM.',
-          keySkills: ['TFLite Micro', 'INT8 Quantization', 'Memory Arenas', 'CMSIS-NN Acceleration'],
+          name: 'FreeRTOS Task Orchestration',
+          summary:
+            'Tasks, queues, semaphores, mutexes, priority scheduling, and deterministic real-time design.',
+          keySkills: ['FreeRTOS Task Scheduling', 'Queue-Based Inter-Task Communication', 'Mutexes & Semaphores', 'Deadlock & Jitter Prevention'],
           recommendedResources: [
-            { title: 'TinyML by Pete Warden & Daniel Situnayake', url: 'https://tinymlbook.com', type: 'Book' },
+            { title: 'FreeRTOS Official Documentation', url: 'https://www.freertos.org/', type: 'Documentation' },
           ],
         },
         {
           id: 'iot-p4-t2',
-          name: 'Sensor Fusion & Kalman Filtering',
-          summary: 'Combining noisy accelerometer and gyroscope data to accurately determine spatial orientation.',
-          keySkills: ['Kalman Filter', 'Quaternion Math', 'IMU Calibration', 'Drift Elimination'],
+          name: 'IoT Security & Hardware Cryptography',
+          summary:
+            'Device authentication, TLS encryption, secure credentials storage, and hardware root of trust.',
+          keySkills: ['mTLS Communication', 'Secure Boot & Flash Encryption', 'Hardware Key Storage (eFuse)', 'OWASP IoT Top 10 Mitigation'],
           recommendedResources: [
-            { title: 'Understanding Kalman Filters (MathWorks)', url: 'https://www.mathworks.com/videos/series/understanding-kalman-filters.html', type: 'Video' },
+            { title: 'OWASP IoT Security Guidance', url: 'https://owasp.org/www-project-internet-of-things/', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p4-t3',
+          name: 'OTA Firmware Updates',
+          summary:
+            'Update deployed fleet devices remotely without physically accessing installed hardware.',
+          keySkills: ['Dual-Partition Bootloader', 'Signed Firmware Binaries', 'Rollback Protection', 'Automated Fleet Updates'],
+          recommendedResources: [
+            { title: 'ESP-IDF OTA Documentation', url: 'https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/ota.html', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p4-t4',
+          name: 'Ultra-Low Power Management',
+          summary:
+            'Deep sleep, duty cycling, battery fuel gauges, and multi-year battery wireless design.',
+          keySkills: ['Deep Sleep & Light Sleep Modes', 'ULP Coprocessor Programming', 'Power Budget Calculations', 'Capacitive / Timer Wakeups'],
+          recommendedResources: [
+            { title: 'ESP32 Low-Power Mode Documentation', url: 'https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/sleep_modes.html', type: 'Documentation' },
           ],
         },
       ],
       milestoneProject: {
-        title: 'On-Device Predictive Industrial Vibration Anomaly Detector',
-        description: 'Deploy an INT8 autoencoder on an ESP32/Cortex-M4 sampling high-frequency accelerometer vibrations to predict mechanical motor failures locally.',
+        title: 'Secure Battery-Powered IoT Node',
+        description:
+          'Design an ultra-low power ESP32/STM32 device featuring cryptographic hardware authentication, deep-sleep battery cycling, and secure OTA firmware update rollouts.',
         deliverables: [
-          'TFLite Micro anomaly detection model running in 48KB RAM',
-          'Inference latency under 12ms per sample batch',
-          'Audible alert and wireless MQTT incident broadcast on anomaly detection',
+          'ESP32/STM32-based ultra-low power device achieving microamp idle consumption',
+          'Cryptographically authenticated wireless communication over TLS',
+          'Automated over-the-air (OTA) firmware upgrade and rollback mechanism',
         ],
       },
     },
     {
       id: 'iot-phase-5',
       phaseNumber: 5,
-      title: 'Embedded Security, Secure Boot & Firmware Over-the-Air (FOTA)',
-      tagline: 'Cryptographic Bootloaders, Hardware Root of Trust, Secure Storage & FOTA',
-      duration: '4 Weeks',
+      title: 'System Architecture & Product Development: Production-Grade IoT Systems',
+      tagline: 'Design complete IoT systems connecting hardware, software, networks and intelligence.',
+      duration: '6 Weeks',
       difficulty: 'Advanced',
       color: '#ffffff',
       badgeColor: 'bg-zinc-800 text-zinc-200',
-      iconName: 'Shield',
+      iconName: 'Layers',
       overview:
-        'Harden connected devices against physical and remote threats: implement secure boot chains with RSA/ECDSA signature verification, flash encryption, and dual-bank failsafe FOTA updates.',
+        'Graduate from breadboards to commercial products: design multi-tier device-to-cloud architectures, execute on-device TinyML machine learning inference, deploy edge gateways, and lay out production custom PCBs in KiCad.',
       topics: [
         {
           id: 'iot-p5-t1',
-          name: 'Hardware Root of Trust & Secure Boot Chains',
-          summary: 'eFuses, one-time programmable (OTP) keys, flash encryption, and verifying cryptographically signed firmware images.',
-          keySkills: ['Secure Boot v2', 'Flash Encryption', 'eFuses', 'ECDSA Image Signing'],
+          name: 'IoT System Architecture',
+          summary:
+            'Design complete device → gateway → network → cloud → application end-to-end architectures.',
+          keySkills: ['Multi-Tier System Design', 'Gateway Protocol Translation', 'Scalability & Fault Tolerance', 'Data Lifecycle Planning'],
           recommendedResources: [
-            { title: 'Espressif ESP32 Security Architecture Guide', url: 'https://docs.espressif.com/projects/esp-idf/en/latest/esp32/security/index.html', type: 'Documentation' },
+            { title: 'AWS IoT Architecture Center', url: 'https://aws.amazon.com/iot/', type: 'Documentation' },
           ],
         },
         {
           id: 'iot-p5-t2',
-          name: 'Failsafe Firmware Over-The-Air (FOTA) Updates',
-          summary: 'A/B dual-partition flash layouts, automatic rollback on boot failure, and differential delta updates.',
-          keySkills: ['A/B Partitioning', 'FOTA Rollback', 'Delta Compression', 'OTA Protocol Verification'],
+          name: 'Embedded AI / TinyML',
+          summary:
+            'Run lightweight machine-learning models directly on microcontrollers and constrained edge hardware.',
+          keySkills: ['TensorFlow Lite for Microcontrollers', 'Model INT8 Quantization', 'Vibration Anomaly Detection', 'Audio / Keyword Spotting'],
           recommendedResources: [
-            { title: 'Memfault: Embedded Firmware Updates Guide', url: 'https://memfault.com', type: 'Documentation' },
+            { title: 'TensorFlow Lite for Microcontrollers', url: 'https://www.tensorflow.org/lite/microcontrollers', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p5-t3',
+          name: 'Gateway & Edge Networks',
+          summary:
+            'Build edge topologies where multiple distributed sensor nodes communicate through a central gateway.',
+          keySkills: ['Edge Computing Concepts', 'Local Data Aggregation & Filtering', 'Node-RED Edge Processing', 'Offline Buffering'],
+          recommendedResources: [
+            { title: 'Node-RED Edge Computing Guides', url: 'https://nodered.org/', type: 'Documentation' },
+          ],
+        },
+        {
+          id: 'iot-p5-t4',
+          name: 'Hardware Product Design & PCB',
+          summary:
+            'Move from breadboards to custom PCBs, enclosures, power circuits, compliance testing, and deployment.',
+          keySkills: ['Schematic Capture in KiCad', 'Multi-Layer PCB Layout', 'Power Supply & Protection Circuits', 'Enclosure Design (CAD/3D Printing)'],
+          recommendedResources: [
+            { title: 'KiCad Official Documentation', url: 'https://www.kicad.org/documentation/', type: 'Documentation' },
           ],
         },
       ],
       milestoneProject: {
-        title: 'Cryptographically Verified Dual-Bank FOTA Bootloader',
-        description: 'Develop a production-grade FOTA client for ESP32/STM32 that downloads encrypted firmware over HTTPS, validates SHA256 signatures, and safely boots.',
+        title: 'Autonomous Smart Infrastructure Network',
+        description:
+          'Architect and build an end-to-end distributed infrastructure network with multi-node wireless telemetry, an edge gateway, cloud analytics, and hardware enclosure design.',
         deliverables: [
-          'Automatic rollback to Partition A if Partition B fails watchdog validation',
-          'Cryptographic signature check rejecting modified or corrupted binaries',
-          'Remote telemetry dashboard reporting firmware fleet versions',
+          'Multiple distributed wireless IoT sensor nodes with local sensor fusion',
+          'Edge gateway handling centralized data aggregation, filtering, and cloud sync',
+          'Cloud management dashboard with real-time alerts and automated control triggers',
+          'Complete hardware design package including KiCad schematics and prototype documentation',
         ],
       },
     },
@@ -225,59 +322,174 @@ export const iotDomain: DomainConfig = {
   hostsData: [
     {
       id: 'iot-host-1',
-      name: 'Adithya Ram',
-      role: 'Lead Embedded & IoT Architect',
-      headline: 'RTOS Systems Engineer • FreeRTOS, ESP32 & Industrial Automation',
-      topicOrFocus: 'Firmware Architecture, Wireless Protocols & Low-Power Hardware',
-      bio: 'Designing industrial microcontroller firmware, real-time operating system kernels, and mentoring on bare-metal C programming and IoT hardware integration.',
-      avatarUrl: '/avatar-iot.jpg',
-      initials: 'AR',
+      name: 'Vijay Ganesh',
+      role: 'Lead IoT & Embedded Systems Mentor',
+      headline: 'Embedded Systems, ESP32/STM32 & Wireless Networks',
+      topicOrFocus: 'Microcontroller Architecture, Sensor Networks & IoT Communication',
+      bio: 'Embedded systems engineer focused on microcontrollers, sensor integration, and wireless communication protocols. Guides students through bare-metal programming, FreeRTOS, and building connected IoT hardware.',
+      avatarUrl: '/host-anime-4.jpg',
+      initials: 'VG',
       socials: {
-        github: 'https://github.com/adithyaram-iot',
-        linkedin: 'https://linkedin.com/in/adithyaram',
-        portfolio: 'https://adithya.firmware',
+        github: 'https://github.com',
+        linkedin: 'https://linkedin.com',
+      },
+    },
+    {
+      id: 'iot-host-2',
+      name: 'Chithralekha',
+      role: 'IoT Systems & Edge Computing Mentor',
+      headline: 'IoT Architecture, Cloud Telemetry & Smart Automation',
+      topicOrFocus: 'MQTT, Cloud Telemetry, Sensor Interfacing & Edge Gateways',
+      bio: 'Specializing in IoT device connectivity, cloud telemetry integration, and smart automation systems. Mentors students on designing reliable sensor nodes, data pipelines, and hardware-to-cloud workflows.',
+      avatarUrl: '/avatar-iot.jpg',
+      initials: 'CL',
+      socials: {
+        github: 'https://github.com',
+        linkedin: 'https://linkedin.com',
       },
     },
   ],
   resourcesData: [
     {
       id: 'iot-res-1',
-      title: 'Making Embedded Systems by Elecia White',
-      description: 'The industry-standard guide to patterns, architecture, and design for embedded software engineers.',
-      url: 'https://www.oreilly.com/library/view/making-embedded-systems/9781449308292/',
-      type: 'Book',
+      title: 'ESP32 Official Documentation',
+      description:
+        'A comprehensive reference for learning ESP32 from basic peripherals through networking, security, and advanced firmware development.',
+      url: 'https://docs.espressif.com/projects/esp-idf/en/latest/esp32/',
+      type: 'Documentation',
       level: 'Beginner',
-      cost: 'Paid',
-      authorOrProvider: 'Elecia White',
-      tags: ['Embedded C', 'Hardware', 'Architecture'],
+      cost: 'Free',
+      authorOrProvider: 'Espressif Systems',
+      tags: ['ESP32', 'Firmware', 'Hardware', 'Peripherals'],
       featured: true,
     },
     {
       id: 'iot-res-2',
-      title: 'FreeRTOS Official Reference Manual',
-      description: 'The authoritative reference manual for FreeRTOS task primitives, queues, and real-time scheduling.',
-      url: 'https://www.freertos.org/Documentation/RTOS_book.html',
+      title: 'The Internet of Things: DIY Projects',
+      description:
+        'Practical project-oriented exposure to sensors, controllers, and connected devices for Arduino, Raspberry Pi, and BeagleBone.',
+      url: 'https://www.mcgrawhill.com',
+      type: 'Book',
+      level: 'Beginner',
+      cost: 'Paid',
+      authorOrProvider: 'Donald Norris',
+      tags: ['Arduino', 'Raspberry Pi', 'Sensors', 'DIY'],
+    },
+    {
+      id: 'iot-res-3',
+      title: 'MQTT Protocol Specification & Essentials',
+      description:
+        'Essential for understanding lightweight publish/subscribe communication used extensively in IoT telemetry and device control.',
+      url: 'https://mqtt.org/',
       type: 'Documentation',
       level: 'Intermediate',
       cost: 'Free',
-      authorOrProvider: 'Amazon Web Services / FreeRTOS',
-      tags: ['FreeRTOS', 'RTOS', 'Concurrency'],
+      authorOrProvider: 'OASIS / MQTT.org',
+      tags: ['MQTT', 'Protocols', 'Telemetry', 'PubSub'],
+    },
+    {
+      id: 'iot-res-4',
+      title: 'FreeRTOS Official Reference Manual',
+      description:
+        'Introduces the real-time operating system concepts, scheduling algorithms, and inter-task communication needed for sophisticated embedded systems.',
+      url: 'https://www.freertos.org/',
+      type: 'Documentation',
+      level: 'Advanced',
+      cost: 'Free',
+      authorOrProvider: 'Amazon Web Services',
+      tags: ['FreeRTOS', 'RTOS', 'Concurrency', 'Kernel'],
+    },
+    {
+      id: 'iot-res-5',
+      title: 'TinyML: Machine Learning on Constrained Edge Devices',
+      description:
+        'Bridges embedded systems and machine learning by teaching how deep intelligence runs directly on ultra-low-power microcontrollers.',
+      url: 'https://www.oreilly.com/library/view/tinyml/9781492052036/',
+      type: 'Book',
+      level: 'Advanced',
+      cost: 'Paid',
+      authorOrProvider: 'Pete Warden & Daniel Situnayake (O’Reilly)',
+      tags: ['TinyML', 'Edge AI', 'TensorFlow Lite', 'Quantization'],
+    },
+    {
+      id: 'iot-res-6',
+      title: 'The Things Network (LoRaWAN Academy)',
+      description:
+        'Excellent hands-on resource for understanding LoRaWAN architectures, long-range wireless gateways, and large-scale low-power IoT networks.',
+      url: 'https://www.thethingsnetwork.org/',
+      type: 'Interactive',
+      level: 'Intermediate',
+      cost: 'Free',
+      authorOrProvider: 'The Things Industries',
+      tags: ['LoRa', 'LoRaWAN', 'Wireless', 'Long-Range'],
     },
   ],
   projectsData: [
     {
       id: 'iot-proj-1',
-      title: 'Autonomous Low-Power LoRa Mesh Sensor Fleet',
-      phase: 'Phase 3: IoT Connectivity & Wireless Protocols',
+      title: 'Industrial Predictive Maintenance System',
+      phase: 'Phase 4 - 5',
+      difficulty: 'Advanced',
+      description:
+        'Build an IoT system that monitors vibration, temperature, current and machine parameters to detect abnormal operating conditions and generate maintenance alerts.',
+      techStack: ['ESP32 / STM32', 'MPU6050 IMU', 'Current Sensors', 'MQTT', 'Python', 'InfluxDB', 'Grafana', 'Docker'],
+      learningOutcomes: [
+        'Industrial sensor acquisition, telemetry streaming, and time-series analytics',
+        'Edge/cloud architecture design and condition-based automated monitoring',
+      ],
+    },
+    {
+      id: 'iot-proj-2',
+      title: 'Smart Agriculture & Environmental Monitoring Network',
+      phase: 'Phase 2 - 3',
       difficulty: 'Intermediate',
       description:
-        'Build a peer-to-peer LoRa mesh network of ESP32 devices that relay packets across long distances without central cellular coverage.',
-      techStack: ['C++', 'ESP32', 'LoRa SX1276', 'FreeRTOS', 'MQTT'],
+        'Deploy multiple wireless sensor nodes that monitor soil and environmental conditions and automatically control irrigation based on real-time sensor data.',
+      techStack: ['ESP32', 'LoRa / LoRaWAN', 'Soil-Moisture Sensors', 'BME280', 'MQTT', 'Node-RED', 'Grafana'],
       learningOutcomes: [
-        'Implement packet routing algorithms across ad-hoc mesh topologies',
-        'Minimize radio sleep power draw below 20uA',
-        'Construct binary payload decoders for Web dashboard visualization',
+        'Low-power wireless sensor network deployment and packet optimization',
+        'Automated actuator control loops based on distributed environmental data',
+      ],
+    },
+    {
+      id: 'iot-proj-3',
+      title: 'Autonomous Emergency Response IoT Network',
+      phase: 'Phase 3 - 5',
+      difficulty: 'Advanced',
+      description:
+        'Build a distributed network of sensor nodes capable of detecting environmental hazards, transmitting telemetry, and providing situational intelligence to an edge station.',
+      techStack: ['ESP32 / STM32', 'LoRa', 'GNSS / GPS', 'IMU', 'LiDAR', 'MQTT', 'Raspberry Pi', 'Python'],
+      learningOutcomes: [
+        'Multi-node telemetry routing, sensor fusion, and local edge processing',
+        'Designing reliable, fault-tolerant IoT systems for environments with intermittent connectivity',
       ],
     },
   ],
+  prerequisites: {
+    overview:
+      'Essential building blocks in basic electronics and programming before interfacing with microcontrollers, wireless networks, and RTOS kernels.',
+    items: [
+      {
+        title: 'Basic C / C++ or Embedded Logic',
+        description:
+          'Understanding variables, loops, conditional branching, functions, arrays, memory addresses, and basic pointer concepts.',
+        level: 'Essential',
+        skills: ['C/C++ Syntax', 'Functions & Loops', 'Memory & Pointers', 'Data Types'],
+      },
+      {
+        title: 'Basic Electronics & Circuit Theory',
+        description:
+          'Understanding Ohm’s law (V=IR), voltage, current, resistance, circuit schematics, reading component datasheets, and breadboard prototyping.',
+        level: 'Essential',
+        skills: ['Ohm’s Law', 'Breadboarding', 'Resistors & LEDs', 'Grounding & Power'],
+      },
+      {
+        title: 'Hardware & Flashing Setup',
+        description:
+          'An ESP32 or Arduino-compatible dev board, USB data cable, basic jumper wires, and Arduino IDE or VS Code with PlatformIO.',
+        level: 'Recommended',
+        skills: ['Arduino IDE / PlatformIO', 'Serial COM Ports', 'Jumper Wiring', 'Flashing Firmware'],
+      },
+    ],
+  },
 };

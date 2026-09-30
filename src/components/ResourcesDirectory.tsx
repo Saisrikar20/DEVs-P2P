@@ -13,6 +13,7 @@ import {
   FileText,
   Video,
   Layers,
+  ChevronDown,
 } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import { AnimateIn } from './AnimateIn';
@@ -32,6 +33,19 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
   const [selectedType, setSelectedType] = useState<string>('All');
   const [visibleCount, setVisibleCount] = useState<number>(6);
   const [copiedCmd, setCopiedCmd] = useState(false);
+  const [expandedResIds, setExpandedResIds] = useState<Set<string>>(new Set());
+
+  const toggleExpandRes = (id: string) => {
+    setExpandedResIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
 
   // Dynamically find the active domain's featured resource
   const featuredResource = useMemo(() => {
@@ -231,9 +245,11 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredResources.slice(0, visibleCount).map((res, idx) => {
             const isSaved = bookmarkedIds.includes(res.id);
+            const isExpanded = expandedResIds.has(res.id);
+            const isLong = res.description.length > 90;
             return (
               <AnimateIn key={res.id} delay={idx * 60}>
-                <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] p-5 lift">
+                <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] p-5 lift transition-all">
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-1.5 text-xs text-zinc-400">
@@ -250,7 +266,18 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
                     </div>
 
                     <h4 className="text-sm font-semibold text-white mb-1">{res.title}</h4>
-                    <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">{res.description}</p>
+                    <p className={`text-xs text-zinc-400 leading-relaxed transition-all ${isExpanded ? '' : 'line-clamp-2'}`}>
+                      {res.description}
+                    </p>
+                    {isLong && (
+                      <button
+                        onClick={() => toggleExpandRes(res.id)}
+                        className="inline-flex items-center gap-1 text-[11px] font-mono text-zinc-500 hover:text-zinc-200 mt-1.5 transition-colors cursor-pointer"
+                      >
+                        <span>{isExpanded ? 'Collapse' : 'Expand'}</span>
+                        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+                      </button>
+                    )}
                   </div>
 
                   <div className="mt-4 pt-3 border-t border-white/[0.04] flex items-center justify-between">
