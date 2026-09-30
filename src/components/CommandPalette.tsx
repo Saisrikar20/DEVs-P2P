@@ -101,7 +101,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       category: 'Community',
       icon: <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />,
       action: () => {
-        window.open('https://www.linkedin.com/company/devsrec/posts/?feedView=all', '_blank');
+        window.open('https://www.linkedin.com/company/devsrec/posts/?feedView=all', '_blank', 'noopener,noreferrer');
         onClose();
       },
     },
@@ -111,7 +111,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       category: 'Community',
       icon: <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />,
       action: () => {
-        window.open('https://www.instagram.com/devsrec/', '_blank');
+        window.open('https://www.instagram.com/devsrec/', '_blank', 'noopener,noreferrer');
         onClose();
       },
     },

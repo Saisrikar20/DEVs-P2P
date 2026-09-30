@@ -60,10 +60,14 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
 
   const tutorCommand = 'npx skills add rohitg00/ai-engineering-from-scratch';
 
-  const handleCopyTutor = () => {
-    navigator.clipboard.writeText(tutorCommand);
-    setCopiedCmd(true);
-    setTimeout(() => setCopiedCmd(false), 2000);
+  const handleCopyTutor = async () => {
+    try {
+      await navigator.clipboard.writeText(tutorCommand);
+      setCopiedCmd(true);
+      setTimeout(() => setCopiedCmd(false), 2000);
+    } catch (err) {
+      console.warn('Clipboard copy failed:', err);
+    }
   };
 
   const categories: (ResourceType | 'All')[] = [

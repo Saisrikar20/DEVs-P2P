@@ -62,3 +62,17 @@ ehthumbs.db
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+# Cryptographic keys & certificates
+*.pem
+*.key
+*.crt
+*.cer
+*.pfx
+*.p12
+
+# Database dumps & backups
+*.sql
+*.sqlite
+*.dump
+*.bak

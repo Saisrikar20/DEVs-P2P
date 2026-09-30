@@ -93,10 +93,14 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
     };
   }, [isAutoRotating, rotateNext, numHosts]);
 
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedText(text);
-    setTimeout(() => setCopiedText(null), 1800);
+  const handleCopy = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedText(text);
+      setTimeout(() => setCopiedText(null), 1800);
+    } catch (err) {
+      console.warn('Clipboard copy failed:', err);
+    }
   };
 
   // Drag / swipe handlers for rotatory cylinder

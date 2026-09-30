@@ -241,7 +241,7 @@ export const resourcesData: Resource[] = [
     id: 'res-cs231n',
     title: 'Stanford CS231n: Deep Learning for Computer Vision',
     description: 'World-renowned Stanford course on convolutional architectures, object detection, segmentation, and generative models.',
-    url: 'http://cs231n.stanford.edu/',
+    url: 'https://cs231n.stanford.edu/',
     type: 'Course',
     level: 'Advanced',
     cost: 'Free',

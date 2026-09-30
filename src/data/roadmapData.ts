@@ -198,7 +198,7 @@ export const roadmapData: RoadmapPhase[] = [
         summary: 'Convolutions, pooling, ResNet residual connections, data augmentation, and Vision Transformers.',
         keySkills: ['CNNs & ResNet', 'Transfer Learning', 'Data Augmentation'],
         recommendedResources: [
-          { title: 'Stanford CS231n', url: 'http://cs231n.stanford.edu/', type: 'Course' },
+          { title: 'Stanford CS231n', url: 'https://cs231n.stanford.edu/', type: 'Course' },
         ],
       },
       {
