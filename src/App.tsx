@@ -11,6 +11,7 @@ import { Preloader } from './components/Preloader';
 import { ContributeModal } from './components/ContributeModal';
 import { CommandPalette } from './components/CommandPalette';
 import { useDomainRouter } from './hooks/useDomainRouter';
+import { Analytics } from '@vercel/analytics/react';
 
 export const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -217,6 +218,8 @@ export const App: React.FC = () => {
           document.getElementById('hosts')?.scrollIntoView({ behavior: 'smooth' });
         }}
       />
+
+      <Analytics />
     </div>
   );
 };
