@@ -41,7 +41,7 @@ The platform hosts six distinct technical disciplines accessible via direct URL 
 | **`/frontend`** | **Frontend Engineering** | ASVAND K, Chandhru L | Modern JavaScript/TypeScript, React 19, State Architecture, Web Performance & Accessibility |
 | **`/backend`** | **Backend & Distributed Systems** | Sai Kishore S, Kamlesh A | Python, FastAPI, Django, PostgreSQL, Redis Caching, Celery Tasks, Docker & System Design |
 | **`/cloud`** | **Cloud & DevOps** | Rohan Deshmukh, Ananya Sen | Linux, Docker, CI/CD, Terraform IaC, Kubernetes GitOps (ArgoCD) & Prometheus Observability |
-| **`/iot`** | **IoT & Embedded Systems** | Vijay Ganesh, Chithralekha | ESP32, STM32, Sensors, MQTT, LoRa, BLE, FreeRTOS, TinyML Edge Inference & Custom PCBs |
+| **`/iot`** | **IoT & Embedded Systems** | Vijay Ghanesh G J, Chithralekha B | ESP32, STM32, Sensors, MQTT, LoRa, BLE, FreeRTOS, TinyML Edge Inference & Custom PCBs |
 | **`/video-editing`** | **Video Editing & Post-Production** | Nikhita Menon | Storytelling Pacing, Foley Audio, DaVinci Resolve Color Grading, Motion Graphics & Master Delivery |
 
 ---
@@ -76,7 +76,7 @@ The platform hosts six distinct technical disciplines accessible via direct URL 
 - **Frontend Engineering**: ASVAND K, Chandhru L
 - **Backend Engineering**: Sai Kishore S, Kamlesh A
 - **Cloud & DevOps**: Rohan Deshmukh, Ananya Sen
-- **IoT & Embedded Systems**: Vijay Ganesh, Chithralekha
+- **IoT & Embedded Systems**: Vijay Ghanesh G J, Chithralekha B
 - **Video Editing**: Nikhita Menon
 
 ---
