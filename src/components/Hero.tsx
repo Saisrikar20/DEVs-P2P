@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Dynamic Domain Subtitle */}
         <AnimateIn delay={120}>
-          <p className="mt-4 sm:mt-5 text-xs sm:text-sm text-zinc-400 font-mono tracking-wide max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
+          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-zinc-300 tracking-normal max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
             {currentDomain.heroTagline}
           </p>
         </AnimateIn>

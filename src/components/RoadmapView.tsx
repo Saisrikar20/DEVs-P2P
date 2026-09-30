@@ -43,7 +43,7 @@ export const RoadmapView: React.FC<RoadmapViewProps> = ({
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
                 Learning Roadmap
               </h2>
-              <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-400 max-w-lg leading-relaxed">
+              <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-300 max-w-lg leading-relaxed">
                 Step-by-step milestones from fundamentals to production systems. Track your progress as you learn.
               </p>
 
@@ -51,17 +51,17 @@ export const RoadmapView: React.FC<RoadmapViewProps> = ({
               <div className="mt-4 sm:mt-5 flex items-center gap-3">
                 <div className="w-32 sm:w-40 h-1.5 rounded-full bg-zinc-800 overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-white/40 transition-all duration-500"
+                    className="h-full rounded-full bg-white/60 transition-all duration-500"
                     style={{ width: `${progressPercent}%` }}
                   />
                 </div>
-                <span className="text-xs font-mono text-zinc-400">
+                <span className="text-xs font-mono text-zinc-300">
                   {completedCount} / {totalTopics}
                 </span>
                 {completedCount > 0 && onResetProgress && (
                   <button
                     onClick={onResetProgress}
-                    className="text-[11px] text-zinc-500 hover:text-zinc-300 flex items-center gap-1 cursor-pointer transition-colors"
+                    className="text-xs text-zinc-400 hover:text-white flex items-center gap-1 cursor-pointer transition-colors"
                   >
                     <RotateCcw className="w-3 h-3" />
                     <span>Reset</span>
@@ -72,15 +72,15 @@ export const RoadmapView: React.FC<RoadmapViewProps> = ({
 
             {/* Controls */}
             <div className="flex flex-wrap items-center gap-2">
-              <div className="flex items-center p-0.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-xs overflow-x-auto max-w-full">
+              <div className="flex items-center p-0.5 rounded-lg bg-zinc-900/80 border border-white/[0.08] text-xs overflow-x-auto max-w-full">
                 {(['All', 'Beginner', 'Intermediate', 'Advanced'] as const).map((lvl) => (
                   <button
                     key={lvl}
                     onClick={() => setLevelFilter(lvl)}
                     className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-all cursor-pointer whitespace-nowrap text-xs ${
                       levelFilter === lvl
-                        ? 'bg-white/[0.1] text-white font-semibold'
-                        : 'text-zinc-400 hover:text-zinc-200'
+                        ? 'bg-white/[0.12] text-white font-semibold border border-white/20'
+                        : 'text-zinc-300 hover:text-white'
                     }`}
                   >
                     {lvl}

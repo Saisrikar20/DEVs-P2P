@@ -118,7 +118,7 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
               Curated Learning Library
             </h2>
-            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed px-2">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed px-2">
               Hand-picked textbooks, courses, and repositories supporting every roadmap phase.
             </p>
           </div>
@@ -127,20 +127,20 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
         {/* Dynamic Domain Featured Resource */}
         {featuredResource && (
           <AnimateIn delay={100}>
-            <div className="mb-8 sm:mb-10 rounded-2xl border border-white/[0.1] bg-white/[0.03] p-4 sm:p-7">
+            <div className="mb-8 sm:mb-10 rounded-2xl border border-white/[0.1] bg-zinc-950/90 p-4 sm:p-7 shadow-lg">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/[0.06] text-white border border-white/[0.08] text-xs font-medium">
-                    <Sparkles className="w-3 h-3 text-zinc-300" />
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/[0.08] text-white border border-white/[0.12] text-xs font-semibold">
+                    <Sparkles className="w-3 h-3 text-zinc-200" />
                     <span>Featured</span>
                   </span>
-                  <span className="text-xs text-zinc-400">by {featuredResource.authorOrProvider}</span>
+                  <span className="text-xs text-zinc-300">by {featuredResource.authorOrProvider}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-zinc-300 border border-white/[0.06]">
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.05] text-zinc-200 border border-white/[0.08]">
                     {featuredResource.type}
                   </span>
-                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-zinc-400 border border-white/[0.06]">
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.05] text-zinc-300 border border-white/[0.08]">
                     {featuredResource.cost}
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
               <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
                 {featuredResource.title}
               </h3>
-              <p className="text-xs sm:text-sm text-zinc-300 mt-2 max-w-3xl leading-relaxed">
+              <p className="text-xs sm:text-sm text-zinc-200 mt-2 max-w-3xl leading-relaxed">
                 {featuredResource.description}
               </p>
 
@@ -159,7 +159,7 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
                   {featuredResource.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-400 border border-white/[0.06]"
+                      className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.05] text-zinc-300 border border-white/[0.08]"
                     >
                       {tag}
                     </span>
@@ -213,13 +213,13 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
         <AnimateIn delay={150}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
             <div className="relative flex-1 max-w-sm">
-              <Search className="w-3.5 h-3.5 absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500" />
+              <Search className="w-3.5 h-3.5 absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search resources..."
-                className="w-full pl-10 pr-4 py-2 rounded-xl bg-white/[0.04] border border-white/[0.06] text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-white/20 focus:ring-1 focus:ring-white/10 transition-all"
+                className="w-full pl-10 pr-4 py-2 rounded-xl bg-zinc-900/80 border border-white/[0.08] text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-white/20 focus:ring-1 focus:ring-white/10 transition-all"
               />
             </div>
 
@@ -230,8 +230,8 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
                   onClick={() => setSelectedType(cat)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
                     selectedType === cat
-                      ? 'bg-white/[0.1] text-white font-semibold'
-                      : 'bg-white/[0.02] text-zinc-400 hover:text-zinc-200 border border-white/[0.06]'
+                      ? 'bg-white/[0.12] text-white font-semibold border border-white/20'
+                      : 'bg-white/[0.03] text-zinc-300 hover:text-white hover:bg-white/[0.06] border border-white/[0.08]'
                   }`}
                 >
                   {cat}
@@ -249,30 +249,30 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
             const isLong = res.description.length > 90;
             return (
               <AnimateIn key={res.id} delay={idx * 60}>
-                <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] p-5 lift transition-all">
+                <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.08] bg-zinc-950/80 hover:bg-zinc-900/80 hover:border-white/20 p-5 sm:p-6 lift transition-all">
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-1.5 text-xs text-zinc-400">
+                      <div className="flex items-center gap-1.5 text-xs text-zinc-300 font-medium">
                         {getTypeIcon(res.type)}
                         <span>{res.type}</span>
                       </div>
                       <button
                         onClick={() => onToggleBookmark(res.id)}
-                        className="text-zinc-500 hover:text-white transition-colors cursor-pointer"
+                        className="text-zinc-400 hover:text-white transition-colors cursor-pointer"
                         aria-label={isSaved ? 'Remove bookmark' : 'Bookmark resource'}
                       >
                         <Bookmark className={`w-4 h-4 ${isSaved ? 'fill-white text-white' : ''}`} />
                       </button>
                     </div>
 
-                    <h4 className="text-sm font-semibold text-white mb-1">{res.title}</h4>
-                    <p className={`text-xs text-zinc-400 leading-relaxed transition-all ${isExpanded ? '' : 'line-clamp-2'}`}>
+                    <h4 className="text-base font-semibold text-zinc-100 mb-1.5">{res.title}</h4>
+                    <p className={`text-[13px] text-zinc-300 leading-relaxed transition-all ${isExpanded ? '' : 'line-clamp-2'}`}>
                       {res.description}
                     </p>
                     {isLong && (
                       <button
                         onClick={() => toggleExpandRes(res.id)}
-                        className="inline-flex items-center gap-1 text-[11px] font-mono text-zinc-500 hover:text-zinc-200 mt-1.5 transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1 text-xs font-mono text-zinc-400 hover:text-zinc-100 mt-2 transition-colors cursor-pointer"
                       >
                         <span>{isExpanded ? 'Collapse' : 'Expand'}</span>
                         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
@@ -280,16 +280,16 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
                     )}
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-white/[0.04] flex items-center justify-between">
-                    <span className="text-[11px] text-zinc-500">{res.authorOrProvider}</span>
+                  <div className="mt-4 pt-3.5 border-t border-white/[0.06] flex items-center justify-between">
+                    <span className="text-xs text-zinc-400">{res.authorOrProvider}</span>
                     <a
                       href={res.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-xs text-zinc-300 hover:text-white font-medium transition-colors"
+                      className="flex items-center gap-1.5 text-xs text-zinc-200 hover:text-white font-medium transition-colors"
                     >
                       <span>Open</span>
-                      <ExternalLink className="w-3 h-3" />
+                      <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
                     </a>
                   </div>
                 </div>

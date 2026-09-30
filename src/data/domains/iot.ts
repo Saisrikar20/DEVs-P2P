@@ -426,6 +426,21 @@ export const iotDomain: DomainConfig = {
   ],
   projectsData: [
     {
+      id: 'iot-proj-0',
+      title: 'Smart Environmental & Indoor Air Quality Monitor',
+      phase: 'Phase 1 - 2',
+      difficulty: 'Beginner',
+      description:
+        'Build a desktop IoT monitoring station using an ESP32 microcontroller that acquires temperature, humidity, atmospheric pressure, and air quality metrics. Features an I2C OLED display, threshold alarm buzzer, and local Wi-Fi web dashboard.',
+      techStack: ['ESP32 / Arduino', 'BME280 / DHT22', 'MQ-135 Air Quality Sensor', 'SSD1306 OLED (I2C)', 'C/C++', 'Arduino IDE / PlatformIO', 'ESPAsyncWebServer'],
+      learningOutcomes: [
+        'Interfacing digital (I2C/SPI) and analog sensors with ESP32 GPIOs and ADC channels',
+        'Writing modular embedded firmware in C/C++ with non-blocking timing routines (millis)',
+        'Rendering formatted real-time telemetry and status warnings on an I2C OLED screen',
+        'Hosting an embedded Wi-Fi web server to display live sensor charts to local browser clients',
+      ],
+    },
+    {
       id: 'iot-proj-1',
       title: 'Industrial Predictive Maintenance System',
       phase: 'Phase 4 - 5',

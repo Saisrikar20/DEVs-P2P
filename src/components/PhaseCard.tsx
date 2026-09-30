@@ -39,8 +39,8 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({
       id={phase.id}
       className={`rounded-2xl border transition-all duration-200 lift ${
         isComplete
-          ? 'border-emerald-500/20 bg-emerald-500/[0.02]'
-          : 'border-white/[0.06] bg-white/[0.02]'
+          ? 'border-emerald-500/25 bg-emerald-500/[0.03]'
+          : 'border-white/[0.08] bg-zinc-950/80 hover:border-white/20'
       }`}
     >
       {/* Header */}
@@ -59,20 +59,20 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({
 
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-              <h3 className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug">
+              <h3 className="text-sm sm:text-base font-bold text-zinc-100 tracking-tight leading-snug">
                 {phase.title}
               </h3>
               <div className="flex items-center gap-1.5">
-                <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-zinc-400 bg-white/[0.04] px-1.5 sm:px-2 py-0.5 rounded-md border border-white/[0.06]">
-                  <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                <span className="inline-flex items-center gap-1 text-[11px] text-zinc-300 bg-white/[0.05] px-2 py-0.5 rounded-md border border-white/[0.08]">
+                  <Clock className="w-3 h-3 text-zinc-400" />
                   {phase.duration}
                 </span>
-                <span className="text-[10px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-400 border border-white/[0.06]">
+                <span className="text-[11px] px-2 py-0.5 rounded-md bg-white/[0.05] text-zinc-300 border border-white/[0.08]">
                   {phase.difficulty}
                 </span>
               </div>
             </div>
-            <p className="text-[11px] sm:text-xs text-zinc-400 mt-1 line-clamp-1 leading-relaxed">
+            <p className="text-xs sm:text-[13px] text-zinc-300 mt-1 leading-relaxed">
               {phase.tagline}
             </p>
 
@@ -115,10 +115,10 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({
               return (
                 <div
                   key={topic.id}
-                  className={`p-3 sm:p-3.5 rounded-xl border transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl border transition-all ${
                     isTopicDone
-                      ? 'bg-emerald-500/[0.02] border-emerald-500/15'
-                      : 'bg-white/[0.02] border-white/[0.06] hover:border-white/[0.1]'
+                      ? 'bg-emerald-500/[0.03] border-emerald-500/20'
+                      : 'bg-zinc-900/60 border-white/[0.08] hover:border-white/20'
                   }`}
                 >
                   <div className="flex items-start gap-2.5 sm:gap-3">
@@ -131,28 +131,28 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({
                       {isTopicDone ? (
                         <CheckCircle2 className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-emerald-400" />
                       ) : (
-                        <Circle className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-zinc-600 hover:text-zinc-400" />
+                        <Circle className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-zinc-500 hover:text-zinc-300" />
                       )}
                     </button>
 
                     <div className="flex-1 min-w-0">
                       <h4
-                        className={`text-xs sm:text-[13px] font-semibold leading-snug ${
-                          isTopicDone ? 'text-zinc-500 line-through' : 'text-zinc-200'
+                        className={`text-xs sm:text-sm font-semibold leading-snug ${
+                          isTopicDone ? 'text-zinc-500 line-through' : 'text-zinc-100'
                         }`}
                       >
                         {topic.name}
                       </h4>
-                      <p className="text-[10px] sm:text-[11px] text-zinc-400 mt-1 leading-relaxed line-clamp-2">
+                      <p className="text-[11px] sm:text-xs text-zinc-300 mt-1.5 leading-relaxed">
                         {topic.summary}
                       </p>
 
                       {/* Skills */}
-                      <div className="flex flex-wrap gap-1 mt-2">
+                      <div className="flex flex-wrap gap-1 mt-2.5">
                         {topic.keySkills.map((skill, sIdx) => (
                           <span
                             key={sIdx}
-                            className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/[0.04] text-zinc-400 border border-white/[0.06]"
+                            className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.05] text-zinc-300 border border-white/[0.08]"
                           >
                             {skill}
                           </span>
@@ -165,12 +165,12 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({
                           href={topic.recommendedResources[0].url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-2 inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-zinc-300 hover:text-white transition-colors"
+                          className="mt-2.5 inline-flex items-center gap-1.5 text-[11px] sm:text-xs text-zinc-300 hover:text-white transition-colors"
                         >
-                          <span className="truncate max-w-[180px] sm:max-w-[200px]">
+                          <span className="truncate max-w-[220px]">
                             {topic.recommendedResources[0].title}
                           </span>
-                          <ExternalLink className="w-2.5 h-2.5 text-zinc-400" />
+                          <ExternalLink className="w-3 h-3 text-zinc-400" />
                         </a>
                       )}
                     </div>
@@ -181,11 +181,11 @@ export const PhaseCard: React.FC<PhaseCardProps> = ({
           </div>
 
           {/* Milestone */}
-          <div className="p-3 sm:p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center gap-2.5 sm:gap-3 text-xs">
-            <Award className="w-4 h-4 text-zinc-400 shrink-0" />
+          <div className="p-3.5 sm:p-4 rounded-xl bg-zinc-900/60 border border-white/[0.08] flex items-center gap-2.5 sm:gap-3 text-xs sm:text-[13px]">
+            <Award className="w-4 h-4 text-zinc-300 shrink-0" />
             <div className="min-w-0">
-              <span className="text-zinc-500 text-[11px] sm:text-xs">Milestone: </span>
-              <span className="font-semibold text-zinc-200 text-[11px] sm:text-xs truncate">
+              <span className="text-zinc-400 text-xs">Milestone Project: </span>
+              <span className="font-semibold text-zinc-100 text-xs sm:text-[13px]">
                 {phase.milestoneProject.title}
               </span>
             </div>

@@ -39,7 +39,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
               Before You Start: {domainName}
             </h2>
-            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed font-mono px-2">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-2xl mx-auto px-2">
               {prerequisites.overview}
             </p>
           </div>
@@ -49,12 +49,12 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {prerequisites.items.map((item, idx) => (
             <AnimateIn key={idx} delay={idx * 80}>
-              <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] p-5 lift transition-all">
+              <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.08] bg-zinc-950/80 hover:bg-zinc-900/80 hover:border-white/20 p-5 sm:p-6 lift transition-all">
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[11px] font-mono text-zinc-500">Requirement 0{idx + 1}</span>
+                  <div className="flex items-center justify-between gap-2 mb-3.5">
+                    <span className="text-xs font-mono text-zinc-400">Requirement 0{idx + 1}</span>
                     <span
-                      className={`text-[10px] font-mono px-2 py-0.5 rounded-md border ${getLevelBadgeClass(
+                      className={`text-[11px] font-mono px-2.5 py-0.5 rounded-md border ${getLevelBadgeClass(
                         item.level
                       )}`}
                     >
@@ -62,16 +62,16 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-sm font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed">{item.description}</p>
+                  <h3 className="text-base font-semibold text-zinc-100 mb-2">{item.title}</h3>
+                  <p className="text-[13px] text-zinc-300 leading-relaxed">{item.description}</p>
                 </div>
 
                 {item.skills && item.skills.length > 0 && (
-                  <div className="mt-4 pt-3 border-t border-white/[0.04] flex flex-wrap gap-1.5">
+                  <div className="mt-4 pt-3.5 border-t border-white/[0.06] flex flex-wrap gap-1.5">
                     {item.skills.map((skill, sIdx) => (
                       <span
                         key={sIdx}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-400 border border-white/[0.06]"
+                        className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.05] text-zinc-300 border border-white/[0.08]"
                       >
                         {skill}
                       </span>
@@ -85,9 +85,9 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
 
         {/* Reassurance & Fast-Forward Bar */}
         <AnimateIn delay={250}>
-          <div className="mt-6 sm:mt-8 p-3.5 sm:p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-400">
+          <div className="mt-6 sm:mt-8 p-4 rounded-xl border border-white/[0.08] bg-zinc-950/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-[13px] text-zinc-300">
             <div className="flex items-center gap-2.5 text-center sm:text-left">
-              <Sparkles className="w-4 h-4 text-zinc-300 shrink-0 hidden sm:block" />
+              <Sparkles className="w-4 h-4 text-zinc-200 shrink-0 hidden sm:block" />
               <span>
                 Don't meet all of these yet? Phase 01 of the curriculum is designed to review the core foundations step-by-step.
               </span>

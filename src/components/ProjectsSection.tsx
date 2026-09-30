@@ -35,27 +35,27 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
         <AnimateIn>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8 sm:mb-10">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.06] text-zinc-400 text-xs font-medium mb-3 sm:mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.06] text-zinc-300 text-xs font-medium mb-3 sm:mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
                 <span>Portfolio</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
                 Capstone Projects
               </h2>
-              <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-400 max-w-lg leading-relaxed">
+              <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-300 max-w-lg leading-relaxed">
                 Build real projects at each milestone to solidify your skills and grow your portfolio.
               </p>
             </div>
 
-            <div className="flex items-center p-0.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-xs self-start sm:self-auto overflow-x-auto max-w-full">
+            <div className="flex items-center p-0.5 rounded-lg bg-zinc-900/80 border border-white/[0.08] text-xs self-start sm:self-auto overflow-x-auto max-w-full">
               {(['All', 'Beginner', 'Intermediate', 'Advanced'] as const).map((lvl) => (
                 <button
                   key={lvl}
                   onClick={() => setDifficultyFilter(lvl)}
                   className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-all cursor-pointer whitespace-nowrap text-xs ${
                     difficultyFilter === lvl
-                      ? 'bg-white/[0.1] text-white font-semibold'
-                      : 'text-zinc-400 hover:text-zinc-200'
+                      ? 'bg-white/[0.12] text-white font-semibold border border-white/20'
+                      : 'text-zinc-300 hover:text-white'
                   }`}
                 >
                   {lvl}
@@ -76,25 +76,25 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
             return (
               <AnimateIn key={project.id} delay={idx * 60}>
-                <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] p-5 lift transition-all">
+                <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.08] bg-zinc-950/80 hover:bg-zinc-900/80 hover:border-white/20 p-5 sm:p-6 lift transition-all">
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[11px] font-mono text-zinc-400">
+                    <div className="flex items-center justify-between gap-2 mb-3.5">
+                      <span className="text-xs font-mono text-zinc-400">
                         {project.phase.split(':')[0]}
                       </span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-400 border border-white/[0.06]">
+                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.05] text-zinc-200 border border-white/[0.08]">
                         {project.difficulty}
                       </span>
                     </div>
 
-                    <h3 className="text-sm font-semibold text-white mb-1.5">{project.title}</h3>
-                    <p className={`text-xs text-zinc-400 leading-relaxed transition-all ${isExpanded ? '' : 'line-clamp-2'}`}>
+                    <h3 className="text-base font-semibold text-zinc-100 mb-2">{project.title}</h3>
+                    <p className={`text-[13px] text-zinc-300 leading-relaxed transition-all ${isExpanded ? '' : 'line-clamp-2'}`}>
                       {project.description}
                     </p>
                     {isLong && (
                       <button
                         onClick={() => toggleExpandProject(project.id)}
-                        className="inline-flex items-center gap-1 text-[11px] font-mono text-zinc-500 hover:text-zinc-200 mt-1.5 transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1 text-xs font-mono text-zinc-400 hover:text-zinc-100 mt-2 transition-colors cursor-pointer"
                       >
                         <span>{isExpanded ? 'Collapse' : 'Expand'}</span>
                         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
@@ -102,9 +102,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     )}
 
                     {project.datasetName && (
-                      <div className="mt-3 p-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs text-zinc-400 flex items-center justify-between font-mono">
+                      <div className="mt-3.5 p-2.5 rounded-lg bg-zinc-900/70 border border-white/[0.08] text-xs text-zinc-300 flex items-center justify-between font-mono">
                         <div className="flex items-center gap-1.5 truncate">
-                          <Database className="w-3 h-3 text-zinc-500 shrink-0" />
+                          <Database className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
                           <span className="truncate">{project.datasetName}</span>
                         </div>
                         {project.datasetUrl && (
@@ -114,23 +114,23 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                             rel="noopener noreferrer"
                             className="text-zinc-400 hover:text-white ml-2 transition-colors"
                           >
-                            <ExternalLink className="w-3 h-3" />
+                            <ExternalLink className="w-3.5 h-3.5" />
                           </a>
                         )}
                       </div>
                     )}
 
-                    <div className="mt-3 space-y-2">
+                    <div className="mt-3.5 space-y-2">
                       {displayedOutcomes.map((outcome, oIdx) => (
-                        <div key={oIdx} className="flex items-start gap-2 text-xs text-zinc-400">
-                          <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
-                          <span className="leading-snug">{outcome}</span>
+                        <div key={oIdx} className="flex items-start gap-2.5 text-[13px] text-zinc-300">
+                          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{outcome}</span>
                         </div>
                       ))}
                       {!isExpanded && project.learningOutcomes.length > 2 && (
                         <button
                           onClick={() => toggleExpandProject(project.id)}
-                          className="text-[10px] font-mono text-zinc-500 hover:text-zinc-300 pl-5.5 transition-colors cursor-pointer block"
+                          className="text-xs font-mono text-zinc-400 hover:text-zinc-100 pl-6 transition-colors cursor-pointer block mt-1"
                         >
                           +{project.learningOutcomes.length - 2} more outcome{project.learningOutcomes.length - 2 > 1 ? 's' : ''} (expand)
                         </button>
@@ -138,20 +138,20 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     </div>
                   </div>
 
-                <div className="mt-4 pt-3 border-t border-white/[0.04] flex flex-wrap gap-1.5">
-                  {project.techStack.map((tech, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-400 border border-white/[0.06] font-mono"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  <div className="mt-4 pt-3.5 border-t border-white/[0.06] flex flex-wrap gap-1.5">
+                    {project.techStack.map((tech, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="text-[11px] px-2.5 py-0.5 rounded-md bg-white/[0.05] text-zinc-300 border border-white/[0.08] font-mono"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </AnimateIn>
-          );
-        })}
+              </AnimateIn>
+            );
+          })}
         </div>
       </div>
 
