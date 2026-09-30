@@ -6,7 +6,6 @@ export const communityInfo = {
   description:
     'A collaborative, open community of developers, students, and researchers breaking into AI, Machine Learning, and Generative AI. We build projects together, share peer code reviews, and provide real roadmaps.',
   repoUrl: 'https://github.com/Saisrikar20/DEVs-P2P',
-  contactEmail: 'saisrikarB@outlook.com',
 };
 
 export const socialsData: SocialLink[] = [
