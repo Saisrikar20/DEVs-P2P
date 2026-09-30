@@ -238,6 +238,20 @@ export const videoEditingDomain: DomainConfig = {
         email: 'kevininfant12@gmail.com',
       },
     },
+    {
+      id: 've-host-2',
+      name: 'VS Thamizhselvan',
+      role: 'Video Editor & Visual Creator',
+      headline: 'Frame. Cut. Signature.',
+      topicOrFocus: 'Cinematography, Creative Direction & Visual Effects',
+      bio: 'Computer Science student & visual creator specializing in Cinematography, Video Editing & VFX. Blending storytelling, creative direction & visual effects into cinematic experiences. Creating every frame with a signature style of my own.',
+      avatarUrl: '/avatar-media.jpg',
+      initials: 'VT',
+      socials: {
+        linkedin: 'https://www.linkedin.com/in/vs-thamizh',
+        instagram: 'https://www.instagram.com/v.s.thamizh',
+      },
+    },
   ],
   resourcesData: [
     {

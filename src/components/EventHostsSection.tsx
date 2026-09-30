@@ -199,7 +199,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
           }}
         >
           {/* 3D Rotating Ring */}
-          <div className="relative h-[510px] sm:h-[580px] w-full flex items-center justify-center">
+          <div className="relative h-[530px] sm:h-[610px] w-full flex items-center justify-center">
             {hosts.map((host, idx) => {
               // Calculate angular position on cylinder
               let offset = (idx - activeIndex) % numHosts;
@@ -330,11 +330,12 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                             e.stopPropagation();
                             handleCopy(host.socials.email!);
                           }}
-                          className="flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all cursor-pointer group"
+                          className="flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all cursor-pointer group min-w-0"
+                          title={`Click to copy: ${host.socials.email}`}
                         >
-                          <div className="flex items-center gap-2.5 truncate">
+                          <div className="flex items-center gap-2.5 min-w-0 flex-1 mr-2">
                             <Mail className="w-4 h-4 text-zinc-300 group-hover:text-white shrink-0" />
-                            <span className="truncate">{host.socials.email}</span>
+                            <span className="truncate text-left font-mono text-[11px] sm:text-xs">{host.socials.email}</span>
                           </div>
                           {copiedText === host.socials.email ? (
                             <span className="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-mono shrink-0">
