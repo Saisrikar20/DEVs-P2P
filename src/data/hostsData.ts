@@ -35,10 +35,10 @@ export const eventHostsData: EventHost[] = [
   {
     id: 'host-3',
     name: 'Padma Sree M',
-    role: 'Data Analyst',
-    headline: 'Data Analytics, LLM Systems & Multi-Agent Workflows',
-    topicOrFocus: 'Exploratory Data Analysis, RAG Systems & Autonomous Agents',
-    bio: 'Mentoring on data analytics pipelines, exploratory modeling, contextual intelligence with vector search, and agentic reasoning graphs.',
+    role: 'Co-Organizer, GenAI Architect & Data Analyst',
+    headline: 'LLM Systems, Multi-Agent Workflows, NLP & Data Analytics',
+    topicOrFocus: 'Retrieval-Augmented Generation (RAG), Fine-Tuning, Data Analysis & Autonomous Agents',
+    bio: 'Mentoring on modern transformer dynamics, contextual intelligence with vector search, data analysis, and agentic reasoning graphs.',
     avatarUrl: '/padma-anime-pfp.jpg',
     initials: 'PM',
     socials: {
