@@ -191,7 +191,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
           }}
         >
           {/* Carousel Stage Container */}
-          <div className="relative h-[540px] sm:h-[620px] w-full flex items-center justify-center">
+          <div className="relative min-h-[580px] sm:min-h-[660px] h-[600px] sm:h-[680px] w-full flex items-center justify-center">
             {hosts.map((host, idx) => {
               // Calculate cyclic offset relative to activeIndex
               let offset = (idx - activeIndex) % numHosts;
@@ -295,7 +295,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                         {host.role}
                       </div>
 
-                      <p className="text-xs text-zinc-200 mt-2 font-medium line-clamp-1">{host.headline}</p>
+                      <p className="text-xs text-zinc-200 mt-2 font-medium leading-relaxed">{host.headline}</p>
                     </div>
 
                     {/* Linktree Stacked Action Buttons */}
@@ -392,7 +392,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
 
                     {/* Bio / Focus Footnote */}
                     <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-white/[0.06] text-center">
-                      <p className="text-[11px] text-zinc-200 leading-relaxed italic line-clamp-2">
+                      <p className="text-[11px] sm:text-xs text-zinc-200 leading-relaxed italic">
                         "{host.bio}"
                       </p>
                     </div>
