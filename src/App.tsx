@@ -10,6 +10,7 @@ import { Footer } from './components/Footer';
 import { Preloader } from './components/Preloader';
 import { ContributeModal } from './components/ContributeModal';
 import { CommandPalette } from './components/CommandPalette';
+import { LandingPage } from './components/LandingPage';
 import { useDomainRouter } from './hooks/useDomainRouter';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -19,7 +20,7 @@ export const App: React.FC = () => {
   const [isContributeOpen, setIsContributeOpen] = useState(false);
 
   // Dynamic Domain Routing & State Engine
-  const { currentDomain, currentSlug, setDomain, domains } = useDomainRouter();
+  const { currentDomain, currentSlug, isLandingPage, setDomain, domains } = useDomainRouter();
 
   const [selectedHostId, setSelectedHostId] = useState<string>(
     currentDomain.hostsData[0]?.id || ''
@@ -123,16 +124,11 @@ export const App: React.FC = () => {
     document.getElementById('roadmap')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Synchronize browser tab title dynamically with active domain
-  useEffect(() => {
-    document.title = `DEVs P2P · ${currentDomain.name} | Complete Roadmap & Mentorship`;
-  }, [currentDomain]);
-
   return (
     <div className="min-h-screen bg-[#000000] text-zinc-100 flex flex-col font-sans selection:bg-white/10 selection:text-white">
       {loading && (
         <Preloader
-          domainName={currentDomain.name}
+          domainName={isLandingPage ? 'All Engineering Tracks' : currentDomain.name}
           onComplete={() => setLoading(false)}
         />
       )}
@@ -146,54 +142,65 @@ export const App: React.FC = () => {
         onSelectDomain={setDomain}
         onOpenContribute={() => setIsContributeOpen(true)}
         onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
+        isLandingPage={isLandingPage}
       />
 
       <main className="flex-1">
-        {/* 1. Hero — Value prop & Domain Quick Switcher */}
-        <Hero
-          currentDomain={currentDomain}
-          onExploreRoadmap={scrollToRoadmap}
-        />
-
-        {/* 1.5 Domain Prerequisites — Foundational knowledge before starting */}
-        {currentDomain.prerequisites && (
-          <PrerequisitesSection
-            key={`prereq-${currentSlug}`}
-            domainName={currentDomain.name}
-            prerequisites={currentDomain.prerequisites}
+        {isLandingPage ? (
+          <LandingPage
+            domains={domains}
+            onSelectDomain={setDomain}
+            onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
           />
+        ) : (
+          <>
+            {/* 1. Hero — Value prop & Domain Quick Switcher */}
+            <Hero
+              currentDomain={currentDomain}
+              onExploreRoadmap={scrollToRoadmap}
+            />
+
+            {/* 1.5 Domain Prerequisites — Foundational knowledge before starting */}
+            {currentDomain.prerequisites && (
+              <PrerequisitesSection
+                key={`prereq-${currentSlug}`}
+                domainName={currentDomain.name}
+                prerequisites={currentDomain.prerequisites}
+              />
+            )}
+
+            {/* 2. Dynamic Roadmap — The core curriculum */}
+            <RoadmapView
+              key={`roadmap-${currentSlug}`}
+              phases={currentDomain.roadmapData}
+              completedTopics={completedTopics}
+              onToggleTopic={handleToggleTopic}
+              onResetProgress={handleResetProgress}
+            />
+
+            {/* 3. Curated Resources Directory */}
+            <ResourcesDirectory
+              key={`resources-${currentSlug}`}
+              resources={currentDomain.resourcesData}
+              bookmarkedIds={bookmarkedIds}
+              onToggleBookmark={handleToggleBookmark}
+            />
+
+            {/* 4. Proof-of-Work Projects */}
+            <ProjectsSection
+              key={`projects-${currentSlug}`}
+              projects={currentDomain.projectsData}
+            />
+
+            {/* 5. Dynamic 3D Rotatory Linktree Hosts — Domain Mentors */}
+            <EventHostsSection
+              key={`hosts-${currentSlug}`}
+              hosts={currentDomain.hostsData}
+              selectedHostId={selectedHostId}
+              onSelectHost={(id) => setSelectedHostId(id)}
+            />
+          </>
         )}
-
-        {/* 2. Dynamic Roadmap — The core curriculum */}
-        <RoadmapView
-          key={`roadmap-${currentSlug}`}
-          phases={currentDomain.roadmapData}
-          completedTopics={completedTopics}
-          onToggleTopic={handleToggleTopic}
-          onResetProgress={handleResetProgress}
-        />
-
-        {/* 3. Curated Resources Directory */}
-        <ResourcesDirectory
-          key={`resources-${currentSlug}`}
-          resources={currentDomain.resourcesData}
-          bookmarkedIds={bookmarkedIds}
-          onToggleBookmark={handleToggleBookmark}
-        />
-
-        {/* 4. Proof-of-Work Projects */}
-        <ProjectsSection
-          key={`projects-${currentSlug}`}
-          projects={currentDomain.projectsData}
-        />
-
-        {/* 5. Dynamic 3D Rotatory Linktree Hosts — Domain Mentors */}
-        <EventHostsSection
-          key={`hosts-${currentSlug}`}
-          hosts={currentDomain.hostsData}
-          selectedHostId={selectedHostId}
-          onSelectHost={(id) => setSelectedHostId(id)}
-        />
       </main>
 
       <Footer
