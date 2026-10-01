@@ -430,17 +430,17 @@ export const iotDomain: DomainConfig = {
   projectsData: [
     {
       id: 'iot-proj-0',
-      title: 'Smart Environmental & Indoor Air Quality Monitor',
+      title: 'Smart Environmental Weather & Telemetry Station',
       phase: 'Phase 1 - 2',
       difficulty: 'Beginner',
       description:
-        'Build a desktop IoT monitoring station using an ESP32 microcontroller that acquires temperature, humidity, atmospheric pressure, and air quality metrics. Features an I2C OLED display, threshold alarm buzzer, and local Wi-Fi web dashboard.',
-      techStack: ['ESP32 / Arduino', 'BME280 / DHT22', 'MQ-135 Air Quality Sensor', 'SSD1306 OLED (I2C)', 'C/C++', 'Arduino IDE / PlatformIO', 'ESPAsyncWebServer'],
+        'Build a desktop IoT monitoring station using an ESP32 or Arduino Uno that measures temperature, humidity, and environment metrics (DHT11/BME280). Start by logging readings over Serial Monitor, then graduate to rendering live formatted telemetry on an I2C OLED display with LED threshold alerts.',
+      techStack: ['ESP32 / Arduino Uno', 'DHT11 / BME280', 'SSD1306 OLED (I2C)', 'LEDs & Buzzer', 'C/C++', 'Arduino IDE'],
       learningOutcomes: [
-        'Interfacing digital (I2C/SPI) and analog sensors with ESP32 GPIOs and ADC channels',
-        'Writing modular embedded firmware in C/C++ with non-blocking timing routines (millis)',
-        'Rendering formatted real-time telemetry and status warnings on an I2C OLED screen',
-        'Hosting an embedded Wi-Fi web server to display live sensor charts to local browser clients',
+        'Interfacing digital (I2C) and analog sensors with microcontroller GPIO pins and ADC channels',
+        'Writing clean embedded C/C++ firmware using non-blocking timing routines (millis instead of delay)',
+        'Formatting and rendering live sensor telemetry graphics and alert icons on an I2C OLED screen',
+        'Debugging hardware wiring issues using the Arduino IDE Serial Monitor and Serial Plotter',
       ],
     },
     {

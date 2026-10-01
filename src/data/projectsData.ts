@@ -5,7 +5,7 @@ export const projectsData: ProjectIdea[] = [
     id: 'proj-micrograd-autograd',
     title: 'Autograd & Micro-Neural Net Engine',
     phase: 'Phase 1: Foundations',
-    difficulty: 'Beginner',
+    difficulty: 'Intermediate',
     description:
       'Build a reverse-mode automatic differentiation engine from scratch in pure Python with support for scalar operations, backprop graphs, and train a 2-layer MLP on synthetic classification data.',
     techStack: ['Python', 'Graphviz', 'PyTest', 'Math'],
@@ -18,17 +18,17 @@ export const projectsData: ProjectIdea[] = [
   },
   {
     id: 'proj-eda-dashboard',
-    title: 'Financial Market & Crypto Volatility EDA Dashboard',
+    title: 'Interactive Exploratory Data Analysis & Trends Dashboard',
     phase: 'Phase 2: Data Science',
     difficulty: 'Beginner',
     description:
-      'Ingest 5 years of historical stock and cryptocurrency tick data, clean outliers, calculate rolling Sharpe ratios and drawdowns, and build an interactive Plotly/Streamlit dashboard.',
-    techStack: ['Python', 'Pandas', 'Polars', 'Plotly', 'Streamlit', 'DuckDB'],
-    datasetName: 'Yahoo Finance & Binance Public API',
+      'Perform end-to-end exploratory data analysis on a real-world dataset (e.g. Netflix media trends, Spotify music features, or Global Happiness). Handle missing values, compute summary statistics, generate correlation heatmaps, and build a clean interactive Streamlit web dashboard.',
+    techStack: ['Python', 'Pandas', 'NumPy', 'Matplotlib / Seaborn', 'Plotly', 'Streamlit'],
+    datasetName: 'Kaggle Media & Entertainment Trends Dataset',
     learningOutcomes: [
-      'Master vectorized time-series window aggregations and resamplings',
-      'Optimize memory usage by transitioning from Pandas to Polars and DuckDB',
-      'Design clean, intuitive interactive dashboards with dynamic date filters',
+      'Load, inspect, and clean tabular CSV data with Pandas handling missing values and duplicates',
+      'Identify distributions, outliers, and feature correlations using Seaborn and Plotly',
+      'Deploy an interactive web dashboard with dynamic filters and charts using Streamlit',
     ],
   },
   {

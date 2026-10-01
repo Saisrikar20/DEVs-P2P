@@ -306,6 +306,21 @@ export const videoEditingDomain: DomainConfig = {
   ],
   projectsData: [
     {
+      id: 've-proj-0',
+      title: 'Short-Form Kinetic Narrative Reel (30–60s) — Cut, Pacing & Audio Sync',
+      phase: 'Phase 1 - 2: Foundations & Narrative Pacing',
+      difficulty: 'Beginner',
+      description:
+        'Import talking-head footage and B-roll, organize project bins, cut out filler pauses, assemble a rough cut using J-cuts and L-cuts, sync background music with audio ducking, and export a vertical 9:16 / horizontal 16:9 reel with clean animated captions.',
+      techStack: ['DaVinci Resolve (Free) / Premiere Pro', 'J/L Cuts', 'Audio Ducking', 'Subtitles / Captions'],
+      learningOutcomes: [
+        'Organize media folders and bins with strict file naming conventions',
+        'Master three-point editing, ripple trims, and seamless J-cut and L-cut transitions',
+        'Balance vocal clarity over background music using basic volume automation and ducking',
+        'Export master MP4/H.264 files optimized for Instagram Reels, YouTube Shorts, and TikTok',
+      ],
+    },
+    {
       id: 've-proj-1',
       title: 'Action Scene Multi-Layer Sound Redesign',
       phase: 'Phase 3: Sound Design, Foley & Audio Mixing',

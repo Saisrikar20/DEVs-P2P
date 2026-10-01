@@ -374,8 +374,8 @@ export const cloudDevopsDomain: DomainConfig = {
       phase: 'Phase 1 - 2: Cloud Fundamentals & Core Services',
       difficulty: 'Beginner',
       description:
-        'Host a production portfolio or docs site on AWS S3 and CloudFront with HTTPS via ACM, Route 53 DNS routing, security response headers, and a GitHub Actions workflow that deploys on git push with cache invalidation and zero hardcoded credentials.',
-      techStack: ['AWS S3', 'CloudFront CDN', 'Route 53', 'ACM (SSL/TLS)', 'GitHub Actions', 'AWS OIDC', 'AWS Budgets'],
+        'Host a static website or portfolio on AWS S3 and CloudFront CDN. Start with basic S3 bucket hosting, then graduate to secure edge delivery with CloudFront, free HTTPS (ACM), security headers, and automated GitHub Actions deployment on git push with zero hardcoded credentials.',
+      techStack: ['AWS S3', 'Amazon CloudFront', 'ACM (SSL/TLS)', 'Route 53', 'GitHub Actions', 'AWS Budgets'],
       learningOutcomes: [
         'Enforce Origin Access Control (OAC) ensuring S3 buckets remain completely private',
         'Deploy automated CDN cache invalidation on code push via keyless GitHub Actions OIDC',
@@ -419,32 +419,25 @@ export const cloudDevopsDomain: DomainConfig = {
       'Essential systems literacy, cloud billing guardrails, and networking foundations required before deploying production cloud architectures and automation pipelines.',
     items: [
       {
-        title: 'Hardware & Cloud Account Billing Guardrails',
+        title: 'Hardware & Account Billing Guardrails',
         description:
-          '8 GB RAM (16 GB for local Kubernetes/minikube), 20–30 GB disk space, virtualization enabled in BIOS (WSL2/Docker). Stable internet connection. For AWS, establish billing alarms and budget alerts on day one following the July 2025 Free Tier onboarding model.',
+          '8 GB RAM (16 GB for local containers), 20–30 GB disk space, virtualization enabled in BIOS (WSL2/Docker). Stable internet connection. For AWS, establish billing alarms and budget alerts on day one to safeguard free credits.',
         level: 'Essential',
         skills: ['Virtualization (BIOS/WSL2)', 'AWS Free Tier & Billing Alarms', 'GCP / Oracle Always Free', 'Stable SSH Sessions'],
       },
       {
-        title: 'Networking & Protocol Literacy',
+        title: 'Terminal, Linux & Tooling Foundations',
         description:
-          'The true foundation of cloud engineering: IPv4 addressing, CIDR notation (/16 vs /24), public/private subnets, route tables, NAT, DNS resolution order, TCP/UDP ports, and TLS handshake mechanics.',
+          'Command-line confidence (bash/zsh, ssh, scp, vim), Git version control, VS Code Remote-SSH, Docker Desktop basics, and fundamental CLI tools (curl, jq, and package managers).',
         level: 'Essential',
-        skills: ['CIDR Subnetting', 'Route Tables & NAT', 'DNS Resolution Order', 'TCP/UDP & Ports', 'TLS Certificates'],
+        skills: ['Bash & Shell Navigation', 'SSH Key Authentication', 'Git & GitHub', 'Docker Container Basics'],
       },
       {
-        title: 'Terminal & Essential Tooling Setup',
+        title: 'Networking & Cloud Architecture Basics',
         description:
-          'Terminal proficiency (bash/zsh, ssh, scp, vim), Docker Desktop / Colima, VS Code Remote-SSH, AWS CLI v2 / gcloud / az, Terraform / OpenTofu, kubectl, Helm, Git, and curl / jq.',
+          'Core networking mechanics (IPv4, CIDR subnets, DNS, TCP/UDP ports, TLS certificates) combined with cloud fundamentals: AWS Shared Responsibility Model, regions vs availability zones, and IaaS vs PaaS concepts.',
         level: 'Essential',
-        skills: ['Bash Scripting & Vim', 'SSH Key Authentication', 'Docker Desktop & CLI', 'AWS CLI / Terraform / kubectl'],
-      },
-      {
-        title: 'Core Architectural Mental Models',
-        description:
-          'Understanding the AWS Shared Responsibility Model (security OF vs IN the cloud), service models (IaaS vs PaaS vs CaaS vs FaaS), stateless vs stateful architectures, horizontal scaling, availability zones vs regions, and RTO/RPO disaster recovery metrics.',
-        level: 'Recommended',
-        skills: ['Shared Responsibility Model', 'IaaS / PaaS / FaaS', 'Horizontal vs Vertical Scaling', 'RTO / RPO Metrics', 'CAP Theorem Basics'],
+        skills: ['CIDR Subnetting & DNS', 'TCP/UDP & Ports', 'Shared Responsibility Model', 'Regions & Availability Zones'],
       },
     ],
   },

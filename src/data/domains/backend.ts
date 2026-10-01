@@ -407,11 +407,12 @@ export const backendDomain: DomainConfig = {
       phase: 'Phase 1 - 2',
       difficulty: 'Beginner',
       description:
-        'Build a REST API where users can create, update, organize, and track their tasks. Focus on clean API design and connecting the application to a relational database.',
-      techStack: ['Python', 'FastAPI', 'PostgreSQL', 'Pydantic', 'Swagger UI'],
+        'Build a clean REST API where users can create, update, organize, and track their tasks. Start with zero-configuration SQLite for rapid local development before graduating to PostgreSQL, focusing on clean CRUD endpoints, Pydantic request validation, and auto-generated Swagger documentation.',
+      techStack: ['Python', 'FastAPI', 'SQLite / PostgreSQL', 'SQLAlchemy / Pydantic', 'Swagger UI'],
       learningOutcomes: [
-        'Building REST APIs with CRUD operations and request validation',
-        'Designing relational database schemas and integrating PostgreSQL with a backend application',
+        'Building REST APIs with CRUD operations, status codes, and Pydantic request validation',
+        'Designing relational database models and querying data using an ORM (SQLAlchemy or SQLModel)',
+        'Testing endpoints interactively using auto-generated FastAPI Swagger UI docs',
       ],
     },
     {
