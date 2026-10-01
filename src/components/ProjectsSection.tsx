@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { ProjectIdea, Level } from '../types';
-import { ExternalLink, Database, Check, ChevronDown } from 'lucide-react';
+import { ExternalLink, Database, Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { YoutubeIcon } from './Icons';
 import { AnimateIn } from './AnimateIn';
 
@@ -11,6 +11,7 @@ interface ProjectsSectionProps {
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   const [difficultyFilter, setDifficultyFilter] = useState<'All' | Level>('All');
   const [expandedProjectIds, setExpandedProjectIds] = useState<Set<string>>(new Set());
+  const [showAll, setShowAll] = useState(false);
 
   const toggleExpandProject = (id: string) => {
     setExpandedProjectIds((prev) => {
@@ -24,10 +25,17 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
     });
   };
 
+  const handleFilterChange = (lvl: 'All' | Level) => {
+    setDifficultyFilter(lvl);
+    setShowAll(false);
+  };
+
   const filteredProjects = projects.filter((proj) => {
     if (difficultyFilter === 'All') return true;
     return proj.difficulty === difficultyFilter;
   });
+
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   return (
     <section id="projects" className="relative py-14 sm:py-20 md:py-28 overflow-hidden">
@@ -52,7 +60,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               {(['All', 'Beginner', 'Intermediate', 'Advanced'] as const).map((lvl) => (
                 <button
                   key={lvl}
-                  onClick={() => setDifficultyFilter(lvl)}
+                  onClick={() => handleFilterChange(lvl)}
                   className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md transition-all cursor-pointer whitespace-nowrap text-xs ${
                     difficultyFilter === lvl
                       ? 'bg-white/[0.12] text-white font-semibold border border-white/20'
@@ -68,7 +76,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredProjects.map((project, idx) => {
+          {visibleProjects.map((project, idx) => {
             const isExpanded = expandedProjectIds.has(project.id);
             const isLong = project.description.length > 90;
             const displayedOutcomes = isExpanded
@@ -175,6 +183,29 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             );
           })}
         </div>
+        
+        {/* Show More / Show Less Toggle Button */}
+        {filteredProjects.length > 3 && (
+          <div className="mt-8 sm:mt-10 text-center">
+            <button
+              type="button"
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-white/20 text-xs font-mono text-zinc-300 hover:text-white transition-all cursor-pointer shadow-lg active:scale-95"
+            >
+              {showAll ? (
+                <>
+                  <span>Show Less Projects</span>
+                  <ChevronUp className="w-3.5 h-3.5" />
+                </>
+              ) : (
+                <>
+                  <span>Show All Projects ({filteredProjects.length - 3} more)</span>
+                  <ChevronDown className="w-3.5 h-3.5" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Divider */}

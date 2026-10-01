@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { DomainPrerequisites } from '../types';
-import { ListChecks, ArrowDown, Sparkles } from 'lucide-react';
+import { ListChecks, ArrowDown, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import { AnimateIn } from './AnimateIn';
 
 interface PrerequisitesSectionProps {
@@ -12,6 +12,8 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
   domainName,
   prerequisites,
 }) => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleItems = showAll ? prerequisites.items : prerequisites.items.slice(0, 3);
   const getLevelBadgeClass = (level: string) => {
     switch (level) {
       case 'Essential':
@@ -47,7 +49,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
 
         {/* Prerequisites Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {prerequisites.items.map((item, idx) => (
+          {visibleItems.map((item, idx) => (
             <AnimateIn key={idx} delay={idx * 80}>
               <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.08] bg-zinc-950/80 hover:bg-zinc-900/80 hover:border-white/20 p-5 sm:p-6 lift transition-all">
                 <div>
@@ -82,6 +84,29 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
             </AnimateIn>
           ))}
         </div>
+
+        {/* Show More / Show Less Toggle Button */}
+        {prerequisites.items.length > 3 && (
+          <div className="mt-6 text-center">
+            <button
+              type="button"
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-white/20 text-xs font-mono text-zinc-300 hover:text-white transition-all cursor-pointer shadow-lg active:scale-95"
+            >
+              {showAll ? (
+                <>
+                  <span>Show Less Requirements</span>
+                  <ChevronUp className="w-3.5 h-3.5" />
+                </>
+              ) : (
+                <>
+                  <span>Show All Requirements (+{prerequisites.items.length - 3} more)</span>
+                  <ChevronDown className="w-3.5 h-3.5" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
 
         {/* Reassurance & Fast-Forward Bar */}
         <AnimateIn delay={250}>
