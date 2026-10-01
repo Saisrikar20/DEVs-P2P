@@ -173,15 +173,7 @@ export const App: React.FC = () => {
           onResetProgress={handleResetProgress}
         />
 
-        {/* 3. Dynamic 3D Rotatory Linktree Hosts — Domain Mentors */}
-        <EventHostsSection
-          key={`hosts-${currentSlug}`}
-          hosts={currentDomain.hostsData}
-          selectedHostId={selectedHostId}
-          onSelectHost={(id) => setSelectedHostId(id)}
-        />
-
-        {/* 4. Curated Resources Directory */}
+        {/* 3. Curated Resources Directory */}
         <ResourcesDirectory
           key={`resources-${currentSlug}`}
           resources={currentDomain.resourcesData}
@@ -189,10 +181,18 @@ export const App: React.FC = () => {
           onToggleBookmark={handleToggleBookmark}
         />
 
-        {/* 5. Proof-of-Work Projects */}
+        {/* 4. Proof-of-Work Projects */}
         <ProjectsSection
           key={`projects-${currentSlug}`}
           projects={currentDomain.projectsData}
+        />
+
+        {/* 5. Dynamic 3D Rotatory Linktree Hosts — Domain Mentors */}
+        <EventHostsSection
+          key={`hosts-${currentSlug}`}
+          hosts={currentDomain.hostsData}
+          selectedHostId={selectedHostId}
+          onSelectHost={(id) => setSelectedHostId(id)}
         />
       </main>
 

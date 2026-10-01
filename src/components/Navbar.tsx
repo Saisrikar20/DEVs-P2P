@@ -60,9 +60,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const links = [
     { href: '#roadmap', label: 'Roadmap' },
-    { href: '#hosts', label: 'Hosts' },
     { href: '#resources', label: 'Resources' },
     { href: '#projects', label: 'Projects' },
+    { href: '#hosts', label: 'Mentors' },
   ];
 
   // Close dropdown on outside click
