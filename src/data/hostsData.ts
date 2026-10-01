@@ -8,7 +8,7 @@ export const eventHostsData: EventHost[] = [
     headline: 'AI Systems Architect & Open-Source Engineer',
     topicOrFocus: 'Neural Network Architectures, Local RAG Systems & Model Serving',
     bio: 'Architecting high-throughput local inference engines, production ML pipelines, and autonomous agent systems. Dedicated to hands-on peer-to-peer engineering and building open-source developer tooling.',
-    avatarUrl: '/sai-anime-pfp.jpg',
+    avatarUrl: '/sai-srikar.jpg',
     initials: 'SB',
     socials: {
       github: 'https://github.com/Saisrikar20',
