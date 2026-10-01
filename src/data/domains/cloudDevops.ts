@@ -376,6 +376,8 @@ export const cloudDevopsDomain: DomainConfig = {
       description:
         'The essential Day 1 cloud milestone: launch an Amazon Linux EC2 micro instance on the AWS Free Tier, configure a Security Group (SSH port 22 and HTTP port 80), connect securely via terminal SSH, install NGINX, and serve your own custom HTML webpage reachable live over the public internet.',
       techStack: ['AWS EC2 (t2/t3.micro)', 'Linux (Amazon Linux 2023)', 'SSH & Key Pairs', 'NGINX', 'Security Groups'],
+      videoUrl: 'https://www.youtube.com/watch?v=b4O_R1n7z1Y',
+      videoTitle: 'TechWorld with Nana — AWS EC2 & Web Server Tutorial',
       learningOutcomes: [
         'Navigating the AWS Management Console and launching compute within Free Tier limits',
         'Configuring Security Group inbound firewall rules to allow public web (HTTP) and SSH traffic',
@@ -391,6 +393,8 @@ export const cloudDevopsDomain: DomainConfig = {
       description:
         'Host a static website or portfolio on AWS S3 and CloudFront CDN. Start with basic S3 bucket hosting, then graduate to secure edge delivery with CloudFront, free HTTPS (ACM), security headers, and automated GitHub Actions deployment on git push with zero hardcoded credentials.',
       techStack: ['AWS S3', 'Amazon CloudFront', 'ACM (SSL/TLS)', 'Route 53', 'GitHub Actions', 'AWS Budgets'],
+      videoUrl: 'https://www.youtube.com/watch?v=mls8tiiI3kc',
+      videoTitle: 'Be A Better Dev — Host Static Website on AWS S3 & CloudFront',
       learningOutcomes: [
         'Enforce Origin Access Control (OAC) ensuring S3 buckets remain completely private',
         'Deploy automated CDN cache invalidation on code push via keyless GitHub Actions OIDC',
@@ -406,6 +410,8 @@ export const cloudDevopsDomain: DomainConfig = {
       description:
         'Containerize a multi-tier application (React frontend, Node/Go API, PostgreSQL database), deploy to an EKS/GKE cluster with Gateway API ingress, automated TLS certificates, Secrets Manager injection, and horizontal auto-scaling (HPA) under load — with 100% of the infrastructure defined as modular Terraform code.',
       techStack: ['Kubernetes (EKS/GKE)', 'Terraform', 'Docker', 'Gateway API / Ingress', 'Cert-Manager', 'HPA', 'AWS Secrets Manager', 'GitHub Actions'],
+      videoUrl: 'https://www.youtube.com/watch?v=X48VuDVv0do',
+      videoTitle: 'TechWorld with Nana — Kubernetes Tutorial for Beginners',
       learningOutcomes: [
         'Provision multi-environment Kubernetes clusters using modular Terraform with remote state locking',
         'Execute zero-downtime rolling deployments and demonstrate self-healing under pod eviction chaos',
@@ -421,6 +427,8 @@ export const cloudDevopsDomain: DomainConfig = {
       description:
         'Architect an event-driven serverless data streaming pipeline (API Gateway → SQS/EventBridge → Lambda → S3 data lake) with dead-letter queues, idempotent processing, distributed OpenTelemetry tracing, and Grafana dashboard alerts. Includes a formal Well-Architected 6-pillar audit and chaos disaster recovery drill.',
       techStack: ['AWS Lambda', 'Amazon EventBridge', 'Amazon SQS', 'OpenTelemetry', 'Prometheus', 'Grafana', 'AWS KMS', 'Terraform'],
+      videoUrl: 'https://www.youtube.com/watch?v=f5U6_U4w1nQ',
+      videoTitle: 'AWS Events — Event-Driven Serverless Architecture',
       learningOutcomes: [
         'Implement resilient asynchronous message pipelines with dead-letter queues and retry idempotency',
         'Trace requests across distributed microservices using OpenTelemetry context propagation and Grafana',

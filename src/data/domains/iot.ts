@@ -436,6 +436,8 @@ export const iotDomain: DomainConfig = {
       description:
         'The ideal hands-on hardware starter: wire an HC-SR04 ultrasonic distance sensor with an RGB LED and buzzer on a breadboard (or simulate it 100% free in-browser with Wokwi!). Measure physical distance in centimeters, trigger proximity light colors, and print live telemetry to the Serial Monitor.',
       techStack: ['Arduino Uno / ESP32', 'HC-SR04 Ultrasonic Sensor', 'RGB LED & Resistors', 'Wokwi Simulator / Breadboard', 'C/C++ (Arduino IDE)'],
+      videoUrl: 'https://www.youtube.com/watch?v=ZejQOX69K5M',
+      videoTitle: 'Paul McWhorter — Ultrasonic Distance Sensor Tutorial',
       learningOutcomes: [
         'Calculating distance mathematically from sound wave travel time using pulseIn()',
         'Writing fundamental GPIO control commands (pinMode, digitalRead, digitalWrite, analogWrite PWM)',
@@ -451,6 +453,8 @@ export const iotDomain: DomainConfig = {
       description:
         'Build a desktop IoT monitoring station using an ESP32 or Arduino Uno that measures temperature, humidity, and environment metrics (DHT11/BME280). Start by logging readings over Serial Monitor, then graduate to rendering live formatted telemetry on an I2C OLED display with LED threshold alerts.',
       techStack: ['ESP32 / Arduino Uno', 'DHT11 / BME280', 'SSD1306 OLED (I2C)', 'LEDs & Buzzer', 'C/C++', 'Arduino IDE'],
+      videoUrl: 'https://www.youtube.com/watch?v=68fE3E_3s8c',
+      videoTitle: 'How To Mechatronics — ESP32 Weather Station & OLED',
       learningOutcomes: [
         'Interfacing digital (I2C) and analog sensors with microcontroller GPIO pins and ADC channels',
         'Writing clean embedded C/C++ firmware using non-blocking timing routines (millis instead of delay)',
@@ -466,6 +470,8 @@ export const iotDomain: DomainConfig = {
       description:
         'Build an IoT system that monitors vibration, temperature, current and machine parameters to detect abnormal operating conditions and generate maintenance alerts.',
       techStack: ['ESP32 / STM32', 'MPU6050 IMU', 'Current Sensors', 'MQTT', 'Python', 'InfluxDB', 'Grafana', 'Docker'],
+      videoUrl: 'https://www.youtube.com/watch?v=Zf1u1o3hH6g',
+      videoTitle: 'Andreas Spiess — Sensor Monitoring with ESP32 & MQTT',
       learningOutcomes: [
         'Industrial sensor acquisition, telemetry streaming, and time-series analytics',
         'Edge/cloud architecture design and condition-based automated monitoring',
@@ -479,6 +485,8 @@ export const iotDomain: DomainConfig = {
       description:
         'Deploy multiple wireless sensor nodes that monitor soil and environmental conditions and automatically control irrigation based on real-time sensor data.',
       techStack: ['ESP32', 'LoRa / LoRaWAN', 'Soil-Moisture Sensors', 'BME280', 'MQTT', 'Node-RED', 'Grafana'],
+      videoUrl: 'https://www.youtube.com/watch?v=mE98h7k8k6U',
+      videoTitle: 'DroneBot Workshop — LoRa Wireless Networks with ESP32',
       learningOutcomes: [
         'Low-power wireless sensor network deployment and packet optimization',
         'Automated actuator control loops based on distributed environmental data',
@@ -492,6 +500,8 @@ export const iotDomain: DomainConfig = {
       description:
         'Build a distributed network of sensor nodes capable of detecting environmental hazards, transmitting telemetry, and providing situational intelligence to an edge station.',
       techStack: ['ESP32 / STM32', 'LoRa', 'GNSS / GPS', 'IMU', 'LiDAR', 'MQTT', 'Raspberry Pi', 'Python'],
+      videoUrl: 'https://www.youtube.com/watch?v=wXWpB8u5P1E',
+      videoTitle: 'Andreas Spiess — Long-Range Mesh & Emergency Networks',
       learningOutcomes: [
         'Multi-node telemetry routing, sensor fusion, and local edge processing',
         'Designing reliable, fault-tolerant IoT systems for environments with intermittent connectivity',

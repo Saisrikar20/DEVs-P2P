@@ -455,6 +455,8 @@ export const frontendDomain: DomainConfig = {
       description:
         'Build a sleek, mobile-first personal link hub (like Linktree) using semantic HTML and modern CSS. Feature your avatar, bio, social links with smooth hover animations, and a 10-line JavaScript dark/light mode toggle with localStorage persistence.',
       techStack: ['HTML5', 'CSS3 (Flexbox)', 'JavaScript (DOM & localStorage)', 'GitHub Pages'],
+      videoUrl: 'https://www.youtube.com/watch?v=b_np3eFpGVE',
+      videoTitle: 'freeCodeCamp — Build a Responsive Linktree Clone',
       learningOutcomes: [
         'Writing clean, semantic HTML document structure with accessible links and image alt tags',
         'Styling mobile-first responsive cards with CSS Flexbox, custom shadows, and smooth hover transforms',
@@ -470,6 +472,8 @@ export const frontendDomain: DomainConfig = {
       description:
         'Build and deploy a professional personal portfolio that communicates your identity, skills, projects and learning journey through a polished responsive interface.',
       techStack: ['HTML', 'CSS', 'JavaScript'],
+      videoUrl: 'https://www.youtube.com/watch?v=r_hYR53r61M',
+      videoTitle: 'freeCodeCamp — Responsive Portfolio Website from Scratch',
       learningOutcomes: [
         'Responsive UI development and design-to-code implementation',
         'Cross-device fluid layouts with zero overflow',
@@ -484,6 +488,8 @@ export const frontendDomain: DomainConfig = {
       description:
         'Build an interactive dashboard that consumes real API data and provides search, filtering, loading states and meaningful data presentation.',
       techStack: ['React', 'JavaScript/TypeScript', 'REST API', 'CSS'],
+      videoUrl: 'https://www.youtube.com/watch?v=wPQ1-33teR4',
+      videoTitle: 'Dave Gray — React Full Course: Build Interactive API Apps',
       learningOutcomes: [
         'Component architecture and external REST API integration',
         'State management and real-world loading, empty, and error UI states',
@@ -498,6 +504,8 @@ export const frontendDomain: DomainConfig = {
       description:
         'Design, build and deploy a complete web product around a real-world problem. The project should demonstrate thoughtful UI, frontend architecture, accessibility, performance and production deployment.',
       techStack: ['React', 'TypeScript', 'REST API / Backend', 'Git / GitHub', 'Vercel / Netlify'],
+      videoUrl: 'https://www.youtube.com/watch?v=dCLhU3qg-HQ',
+      videoTitle: 'Josh Tried Coding — Full Stack Production Web App',
       learningOutcomes: [
         'Real-world frontend architecture, performance profiling, and accessibility',
         'End-to-end product development, automated CI/CD deployment, and case study authoring',

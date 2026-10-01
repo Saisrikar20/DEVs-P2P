@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { ProjectIdea, Level } from '../types';
 import { ExternalLink, Database, Check, ChevronDown } from 'lucide-react';
+import { YoutubeIcon } from './Icons';
 import { AnimateIn } from './AnimateIn';
 
 interface ProjectsSectionProps {
@@ -101,21 +102,42 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                       </button>
                     )}
 
-                    {project.datasetName && (
-                      <div className="mt-3.5 p-2.5 rounded-lg bg-zinc-900/70 border border-white/[0.08] text-xs text-zinc-300 flex items-center justify-between font-mono">
-                        <div className="flex items-center gap-1.5 truncate">
-                          <Database className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-                          <span className="truncate">{project.datasetName}</span>
-                        </div>
-                        {project.datasetUrl && (
-                          <a
-                            href={project.datasetUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-zinc-400 hover:text-white ml-2 transition-colors"
-                          >
-                            <ExternalLink className="w-3.5 h-3.5" />
-                          </a>
+                    {(project.datasetName || project.videoUrl) && (
+                      <div className="mt-3.5 space-y-1.5">
+                        {project.videoUrl && (
+                          <div className="p-2.5 rounded-lg bg-zinc-900/70 border border-white/[0.08] text-xs text-zinc-300 flex items-center justify-between font-mono">
+                            <div className="flex items-center gap-1.5 truncate">
+                              <YoutubeIcon className="w-3.5 h-3.5 text-red-400 shrink-0" />
+                              <span className="truncate">{project.videoTitle || 'Guided Video Tutorial'}</span>
+                            </div>
+                            <a
+                              href={project.videoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-[11px] text-zinc-400 hover:text-white ml-2 transition-colors shrink-0"
+                            >
+                              <span>Watch</span>
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          </div>
+                        )}
+                        {project.datasetName && (
+                          <div className="p-2.5 rounded-lg bg-zinc-900/70 border border-white/[0.08] text-xs text-zinc-300 flex items-center justify-between font-mono">
+                            <div className="flex items-center gap-1.5 truncate">
+                              <Database className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                              <span className="truncate">{project.datasetName}</span>
+                            </div>
+                            {project.datasetUrl && (
+                              <a
+                                href={project.datasetUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-zinc-400 hover:text-white ml-2 transition-colors shrink-0"
+                              >
+                                <ExternalLink className="w-3.5 h-3.5" />
+                              </a>
+                            )}
+                          </div>
                         )}
                       </div>
                     )}

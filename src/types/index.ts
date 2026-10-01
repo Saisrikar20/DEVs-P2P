@@ -55,6 +55,8 @@ export interface ProjectIdea {
   techStack: string[];
   datasetUrl?: string;
   datasetName?: string;
+  videoUrl?: string;
+  videoTitle?: string;
   learningOutcomes: string[];
 }
 

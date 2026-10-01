@@ -10,6 +10,8 @@ export const projectsData: ProjectIdea[] = [
       'The definitive "Hello World" of Machine Learning: write fewer than 30 lines of Python in a free Google Colab notebook to load the Iris flower dataset, plot a pairplot with Seaborn, train a k-Nearest Neighbors or Logistic Regression classifier, and predict flower species from custom petal inputs.',
     techStack: ['Python', 'Google Colab', 'Scikit-Learn', 'Pandas', 'Seaborn'],
     datasetName: 'Scikit-Learn Built-in Iris Dataset',
+    videoUrl: 'https://www.youtube.com/watch?v=HD7_wR7u3hM',
+    videoTitle: 'Iris Classification with Scikit-Learn Tutorial',
     learningOutcomes: [
       'Run Python code interactively in Google Colab with zero local installation or environment setup',
       'Load structured datasets and visualize feature distributions using a Seaborn pairplot',
@@ -26,6 +28,8 @@ export const projectsData: ProjectIdea[] = [
       'Build a reverse-mode automatic differentiation engine from scratch in pure Python with support for scalar operations, backprop graphs, and train a 2-layer MLP on synthetic classification data.',
     techStack: ['Python', 'Graphviz', 'PyTest', 'Math'],
     datasetName: 'Synthetic Moons / Circles dataset',
+    videoUrl: 'https://www.youtube.com/watch?v=VMj-3S1tku0',
+    videoTitle: 'Andrej Karpathy — Building Micrograd & Backprop',
     learningOutcomes: [
       'Understand the mathematical mechanics of the Chain Rule in computation graphs',
       'Implement topological sorting for DAG gradient propagation',
@@ -41,6 +45,8 @@ export const projectsData: ProjectIdea[] = [
       'Perform end-to-end exploratory data analysis on a real-world dataset (e.g. Netflix media trends, Spotify music features, or Global Happiness). Handle missing values, compute summary statistics, generate correlation heatmaps, and build a clean interactive Streamlit web dashboard.',
     techStack: ['Python', 'Pandas', 'NumPy', 'Matplotlib / Seaborn', 'Plotly', 'Streamlit'],
     datasetName: 'Kaggle Media & Entertainment Trends Dataset',
+    videoUrl: 'https://www.youtube.com/watch?v=JwSS70SZdyM',
+    videoTitle: 'Keith Galli — Python Data Analysis & EDA Masterclass',
     learningOutcomes: [
       'Load, inspect, and clean tabular CSV data with Pandas handling missing values and duplicates',
       'Identify distributions, outliers, and feature correlations using Seaborn and Plotly',
@@ -57,6 +63,8 @@ export const projectsData: ProjectIdea[] = [
     techStack: ['Scikit-Learn', 'XGBoost', 'Optuna', 'SHAP', 'FastAPI'],
     datasetUrl: 'https://www.kaggle.com/datasets/blastchar/telco-customer-churn',
     datasetName: 'Telco Customer Churn Dataset',
+    videoUrl: 'https://www.youtube.com/watch?v=q6E2XgSdfw8',
+    videoTitle: 'Customer Churn Prediction with Scikit-Learn & XGBoost',
     learningOutcomes: [
       'Construct leak-free preprocessing pipelines combining numerical scaling and one-hot encoding',
       'Automate Bayesian hyperparameter optimization with Optuna',
@@ -71,8 +79,10 @@ export const projectsData: ProjectIdea[] = [
     description:
       'Build and evaluate a complete supervised binary classification system using Python and Scikit-Learn (e.g. Diabetes or Heart Disease Prediction). Implement data cleaning, exploratory analysis, standard feature scaling, model training, performance evaluation, and deploy an interactive Streamlit diagnostic tool.',
     techStack: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Matplotlib / Seaborn', 'Streamlit'],
-    datasetUrl: 'https://www.youtube.com/playlist?list=PLfFghEzKVmjvuSA67LszN1dZ-Dd_pkus6',
-    datasetName: 'Siddhardhan ML Projects Playlist & Kaggle Health Datasets',
+    datasetUrl: 'https://www.kaggle.com/datasets/kandij/diabetes-dataset',
+    datasetName: 'Kaggle Diabetes / Health Dataset',
+    videoUrl: 'https://www.youtube.com/playlist?list=PLfFghEzKVmjvuSA67LszN1dZ-Dd_pkus6',
+    videoTitle: 'Siddhardhan — ML Projects from Scratch Playlist',
     learningOutcomes: [
       'Load, inspect, and preprocess structured tabular datasets with StandardScaler and train-test splits',
       'Train, tune, and compare Support Vector Machine (SVM) and Logistic Regression classifiers',
@@ -90,6 +100,8 @@ export const projectsData: ProjectIdea[] = [
     techStack: ['PyTorch', 'Torchvision', 'Albumentations', 'Grad-CAM', 'Gradio'],
     datasetUrl: 'https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia',
     datasetName: 'Chest X-Ray Images (Pneumonia)',
+    videoUrl: 'https://www.youtube.com/watch?v=tHL5STNJKag',
+    videoTitle: 'PyTorch for Deep Learning Bootcamp (freeCodeCamp)',
     learningOutcomes: [
       'Implement fine-tuning and differential learning rates across backbone layers',
       'Generate Grad-CAM heatmaps showing which regions of the image influenced the neural network prediction',
@@ -105,6 +117,8 @@ export const projectsData: ProjectIdea[] = [
       'Build a production RAG system that ingests PDF research papers, indexes them into ChromaDB with semantic chunking, performs BM25 + dense hybrid retrieval with Cohere reranking, and features a LangGraph agent with tool execution.',
     techStack: ['LangChain', 'LangGraph', 'ChromaDB', 'FastAPI', 'Ollama / OpenAI API', 'Streamlit'],
     datasetName: 'ArXiv Machine Learning Papers Collection',
+    videoUrl: 'https://www.youtube.com/watch?v=sVcwVQRHIc8',
+    videoTitle: 'freeCodeCamp — Build a Full RAG Pipeline from Scratch',
     learningOutcomes: [
       'Compare naive chunking against semantic and hierarchical markdown chunking',
       'Implement reciprocal rank fusion (RRF) combining keyword search with dense vector embeddings',
@@ -120,6 +134,8 @@ export const projectsData: ProjectIdea[] = [
       'Dockerize an ML prediction service with FastAPI, orchestrate asynchronous batching, log experiments and versions to MLflow, track data distribution drift with Evidently AI, and deploy with GitHub Actions CI/CD.',
     techStack: ['Docker', 'FastAPI', 'MLflow', 'Evidently AI', 'GitHub Actions', 'Prometheus'],
     datasetName: 'Kaggle Credit Card Fraud Detection',
+    videoUrl: 'https://www.youtube.com/watch?v=0kOGd5z6q70',
+    videoTitle: 'Krish Naik — Complete Production MLOps with Docker & CI/CD',
     learningOutcomes: [
       'Architect resilient Docker containers with multi-stage builds and security best practices',
       'Implement automated model regression tests in GitHub Actions CI pipelines',

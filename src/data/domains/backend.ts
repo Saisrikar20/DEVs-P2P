@@ -409,6 +409,8 @@ export const backendDomain: DomainConfig = {
       description:
         'Build your very first backend API in fewer than 40 lines of Python code using FastAPI! Store quotes or flashcards in simple Python lists and dictionaries with zero database setup. Implement GET all quotes, GET random quote, and POST new quote endpoints with automatic Swagger UI documentation.',
       techStack: ['Python', 'FastAPI', 'Uvicorn', 'Swagger UI', 'curl / Postman'],
+      videoUrl: 'https://www.youtube.com/watch?v=-ykeT6kk4bk',
+      videoTitle: 'freeCodeCamp — FastAPI Course for Beginners',
       learningOutcomes: [
         'Setting up a virtual environment and running a live FastAPI dev server with Uvicorn',
         'Creating HTTP GET and POST route handlers (@app.get, @app.post)',
@@ -424,6 +426,8 @@ export const backendDomain: DomainConfig = {
       description:
         'Build a clean REST API where users can create, update, organize, and track their tasks. Start with zero-configuration SQLite for rapid local development before graduating to PostgreSQL, focusing on clean CRUD endpoints, Pydantic request validation, and auto-generated Swagger documentation.',
       techStack: ['Python', 'FastAPI', 'SQLite / PostgreSQL', 'SQLAlchemy / Pydantic', 'Swagger UI'],
+      videoUrl: 'https://www.youtube.com/watch?v=7t2alSnE2-I',
+      videoTitle: 'Sanjeev Thiyagarajan — FastAPI & PostgreSQL Masterclass',
       learningOutcomes: [
         'Building REST APIs with CRUD operations, status codes, and Pydantic request validation',
         'Designing relational database models and querying data using an ORM (SQLAlchemy or SQLModel)',
@@ -438,6 +442,8 @@ export const backendDomain: DomainConfig = {
       description:
         'Build a complete event management backend where users can create events, register for events, manage capacity, and receive notifications.',
       techStack: ['Python', 'Django', 'PostgreSQL', 'Redis', 'Docker'],
+      videoUrl: 'https://www.youtube.com/watch?v=PtQiiknWUcI',
+      videoTitle: 'Dennis Ivy / freeCodeCamp — Python Django Full Course',
       learningOutcomes: [
         'Designing relational databases and production-ready REST APIs',
         'Implementing authentication, caching, background processing, and deployment',
@@ -451,6 +457,8 @@ export const backendDomain: DomainConfig = {
       description:
         'Build an event-driven backend that processes notifications asynchronously across multiple services while handling retries, failures, and high traffic.',
       techStack: ['Python', 'Django', 'PostgreSQL', 'Redis', 'Kafka', 'Docker'],
+      videoUrl: 'https://www.youtube.com/watch?v=R873BlNVUB4',
+      videoTitle: 'ArjanCodes — Event-Driven Architecture with Message Queues',
       learningOutcomes: [
         'Designing event-driven and distributed backend architectures',
         'Implementing message queues, asynchronous processing, caching, fault tolerance, and scaling',

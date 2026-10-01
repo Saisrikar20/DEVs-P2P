@@ -13,7 +13,6 @@ export const eventHostsData: EventHost[] = [
     socials: {
       github: 'https://github.com/Saisrikar20',
       linkedin: 'https://www.linkedin.com/in/saisrikarb/',
-      instagram: 'https://www.instagram.com/__saisrikar__/',
       portfolio: 'https://saisrikar20.github.io',
     },
   },

@@ -313,6 +313,8 @@ export const videoEditingDomain: DomainConfig = {
       description:
         'The quickest way to feel the magic of video editing: download 5–6 free HD stock clips (Pexels/Pixabay), drop in an upbeat music track, place markers on the audio drum beats, cut each clip precisely to the rhythm, and export a crisp 15-second teaser in under an hour.',
       techStack: ['DaVinci Resolve / Premiere Pro / CapCut', 'Beat Matching', 'Timeline Markers', 'Blade Tool'],
+      videoUrl: 'https://www.youtube.com/watch?v=ZfXjG9y4pT8',
+      videoTitle: 'Cinecom.net — Edit on the Beat & Rhythm Tutorial',
       learningOutcomes: [
         'Navigating the media pool and setting up a vertical 1080x1920 or 16:9 timeline',
         'Reading audio waveforms and snapping cut points to rhythmic drum and snare beats',
@@ -328,6 +330,8 @@ export const videoEditingDomain: DomainConfig = {
       description:
         'Import talking-head footage and B-roll, organize project bins, cut out filler pauses, assemble a rough cut using J-cuts and L-cuts, sync background music with audio ducking, and export a vertical 9:16 / horizontal 16:9 reel with clean animated captions.',
       techStack: ['DaVinci Resolve (Free) / Premiere Pro', 'J/L Cuts', 'Audio Ducking', 'Subtitles / Captions'],
+      videoUrl: 'https://www.youtube.com/watch?v=kYdM9wE-g2E',
+      videoTitle: 'Hillier Smith — High Retention Short-Form Video Editing',
       learningOutcomes: [
         'Organize media folders and bins with strict file naming conventions',
         'Master three-point editing, ripple trims, and seamless J-cut and L-cut transitions',
@@ -343,6 +347,8 @@ export const videoEditingDomain: DomainConfig = {
       description:
         'Strip the audio from a Hollywood trailer and rebuild the entire sound mix from scratch with foley footsteps, whoosh impacts, dialogue cleanup, and -14 LUFS mastering.',
       techStack: ['DaVinci Resolve Fairlight', 'iZotope RX', 'Foley Stems', 'Limiter'],
+      videoUrl: 'https://www.youtube.com/watch?v=qT5xVw9gXp0',
+      videoTitle: 'Film Riot — Sound Design & Foley Mixing in DaVinci Fairlight',
       learningOutcomes: [
         'Organize 20+ audio tracks into Dialogue, Foley, Effects, and Music sub-busses',
         'Clean clipped dialogue using spectral de-noise and dynamic EQ',
@@ -357,6 +363,8 @@ export const videoEditingDomain: DomainConfig = {
       description:
         'Normalize raw Log footage shot on Sony, Canon, and RED cameras into DaVinci Wide Gamut, match exposure and white balance across camera bodies, and apply custom Kodak 2383 print curve.',
       techStack: ['DaVinci Resolve Studio', 'Scopes', 'Color Management', 'LUTs'],
+      videoUrl: 'https://www.youtube.com/watch?v=kGgLq-GqYf0',
+      videoTitle: 'Waqas Qazi — Multi-Camera Color Matching & Film LUTs',
       learningOutcomes: [
         'Set up automated ACES / DaVinci YRGB Color Managed timelines',
         'Match complex skin tones using vectorscope angle markers and secondary qualifiers',
