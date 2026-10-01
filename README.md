@@ -40,7 +40,7 @@ The platform hosts six distinct technical disciplines accessible via direct URL 
 | **`/aiml`** | **AI & Machine Learning** | Sai Srikar B, Sabhari Sainath AM, Padma Sree M | PyTorch, Neural Architectures, Vector DBs, Local RAG, LangGraph Agents & Model Serving |
 | **`/frontend`** | **Frontend Engineering** | ASVAND K, Chandhru L | Modern JavaScript/TypeScript, React 19, State Architecture, Web Performance & Accessibility |
 | **`/backend`** | **Backend & Distributed Systems** | Sai Kishore S, Kamlesh A | Python, FastAPI, Django, PostgreSQL, Redis Caching, Celery Tasks, Docker & System Design |
-| **`/cloud`** | **Cloud & DevOps** | Rohan Deshmukh, Ananya Sen | Linux, Docker, CI/CD, Terraform IaC, Kubernetes GitOps (ArgoCD) & Prometheus Observability |
+| **`/cloud`** | **Cloud & DevOps** | Sakthivel R | Linux, Docker, CI/CD, Terraform IaC, Kubernetes GitOps (ArgoCD) & Prometheus Observability |
 | **`/iot`** | **IoT & Embedded Systems** | Vijay Ghanesh G J, Chithralekha B | ESP32, STM32, Sensors, MQTT, LoRa, BLE, FreeRTOS, TinyML Edge Inference & Custom PCBs |
 | **`/video-editing`** | **Video Editing & Post-Production** | Kevin Infant, VS Thamizhselvan | Storytelling Pacing, Foley Audio, DaVinci Resolve Color Grading, Motion Graphics & Master Delivery |
 
@@ -75,7 +75,7 @@ The platform hosts six distinct technical disciplines accessible via direct URL 
 - **AI & Machine Learning**: Sai Srikar B, Sabhari Sainath AM, Padma Sree M
 - **Frontend Engineering**: ASVAND K, Chandhru L
 - **Backend Engineering**: Sai Kishore S, Kamlesh A
-- **Cloud & DevOps**: Rohan Deshmukh, Ananya Sen
+- **Cloud & DevOps**: Sakthivel R
 - **IoT & Embedded Systems**: Vijay Ghanesh G J, Chithralekha B
 - **Video Editing**: Kevin Infant, VS Thamizhselvan
 
