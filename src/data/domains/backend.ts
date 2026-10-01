@@ -402,6 +402,21 @@ export const backendDomain: DomainConfig = {
   ],
   projectsData: [
     {
+      id: 'be-proj-0',
+      title: 'QuoteVault — In-Memory Inspiration REST API',
+      phase: 'Phase 1: Backend Fundamentals & APIs',
+      difficulty: 'Beginner',
+      description:
+        'Build your very first backend API in fewer than 40 lines of Python code using FastAPI! Store quotes or flashcards in simple Python lists and dictionaries with zero database setup. Implement GET all quotes, GET random quote, and POST new quote endpoints with automatic Swagger UI documentation.',
+      techStack: ['Python', 'FastAPI', 'Uvicorn', 'Swagger UI', 'curl / Postman'],
+      learningOutcomes: [
+        'Setting up a virtual environment and running a live FastAPI dev server with Uvicorn',
+        'Creating HTTP GET and POST route handlers (@app.get, @app.post)',
+        'Understanding JSON request bodies and responses with basic Pydantic schemas',
+        'Testing endpoints interactively via the built-in Swagger UI at /docs',
+      ],
+    },
+    {
       id: 'be-proj-1',
       title: 'TaskFlow — Task Management API',
       phase: 'Phase 1 - 2',

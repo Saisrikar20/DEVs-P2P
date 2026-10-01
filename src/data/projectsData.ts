@@ -2,6 +2,22 @@ import type { ProjectIdea } from '../types';
 
 export const projectsData: ProjectIdea[] = [
   {
+    id: 'proj-colab-iris-quickstart',
+    title: 'Iris Flower Classifier in Google Colab (30 Lines of Code)',
+    phase: 'Phase 1: Foundations',
+    difficulty: 'Beginner',
+    description:
+      'The definitive "Hello World" of Machine Learning: write fewer than 30 lines of Python in a free Google Colab notebook to load the Iris flower dataset, plot a pairplot with Seaborn, train a k-Nearest Neighbors or Logistic Regression classifier, and predict flower species from custom petal inputs.',
+    techStack: ['Python', 'Google Colab', 'Scikit-Learn', 'Pandas', 'Seaborn'],
+    datasetName: 'Scikit-Learn Built-in Iris Dataset',
+    learningOutcomes: [
+      'Run Python code interactively in Google Colab with zero local installation or environment setup',
+      'Load structured datasets and visualize feature distributions using a Seaborn pairplot',
+      'Train a classifier using model.fit() and evaluate test accuracy with model.score()',
+      'Pass custom inputs to model.predict() and inspect the resulting predictions',
+    ],
+  },
+  {
     id: 'proj-micrograd-autograd',
     title: 'Autograd & Micro-Neural Net Engine',
     phase: 'Phase 1: Foundations',

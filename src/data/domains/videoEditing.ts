@@ -306,6 +306,21 @@ export const videoEditingDomain: DomainConfig = {
   ],
   projectsData: [
     {
+      id: 've-proj-intro',
+      title: 'First Cinematic Montage: 15-Second Cut-to-the-Beat Reel',
+      phase: 'Phase 1: Foundations & Timeline Setup',
+      difficulty: 'Beginner',
+      description:
+        'The quickest way to feel the magic of video editing: download 5–6 free HD stock clips (Pexels/Pixabay), drop in an upbeat music track, place markers on the audio drum beats, cut each clip precisely to the rhythm, and export a crisp 15-second teaser in under an hour.',
+      techStack: ['DaVinci Resolve / Premiere Pro / CapCut', 'Beat Matching', 'Timeline Markers', 'Blade Tool'],
+      learningOutcomes: [
+        'Navigating the media pool and setting up a vertical 1080x1920 or 16:9 timeline',
+        'Reading audio waveforms and snapping cut points to rhythmic drum and snare beats',
+        'Using the razor blade tool and ripple delete to eliminate dead frames instantly',
+        'Exporting a crisp H.264 MP4 render ready for mobile sharing',
+      ],
+    },
+    {
       id: 've-proj-0',
       title: 'Short-Form Kinetic Narrative Reel (30–60s) — Cut, Pacing & Audio Sync',
       phase: 'Phase 1 - 2: Foundations & Narrative Pacing',

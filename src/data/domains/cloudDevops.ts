@@ -369,6 +369,21 @@ export const cloudDevopsDomain: DomainConfig = {
   ],
   projectsData: [
     {
+      id: 'cd-proj-0',
+      title: 'First Cloud Server & NGINX Web Host on AWS EC2 Free Tier',
+      phase: 'Phase 1: Cloud Fundamentals & Compute',
+      difficulty: 'Beginner',
+      description:
+        'The essential Day 1 cloud milestone: launch an Amazon Linux EC2 micro instance on the AWS Free Tier, configure a Security Group (SSH port 22 and HTTP port 80), connect securely via terminal SSH, install NGINX, and serve your own custom HTML webpage reachable live over the public internet.',
+      techStack: ['AWS EC2 (t2/t3.micro)', 'Linux (Amazon Linux 2023)', 'SSH & Key Pairs', 'NGINX', 'Security Groups'],
+      learningOutcomes: [
+        'Navigating the AWS Management Console and launching compute within Free Tier limits',
+        'Configuring Security Group inbound firewall rules to allow public web (HTTP) and SSH traffic',
+        'Connecting to a remote Linux cloud server using SSH key pairs from your local terminal',
+        'Installing packages with dnf, managing system services with systemctl, and serving web files',
+      ],
+    },
+    {
       id: 'cd-proj-1',
       title: 'Static Site Done Properly with CloudFront, S3 & OIDC CI/CD',
       phase: 'Phase 1 - 2: Cloud Fundamentals & Core Services',

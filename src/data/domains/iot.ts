@@ -429,6 +429,21 @@ export const iotDomain: DomainConfig = {
   ],
   projectsData: [
     {
+      id: 'iot-proj-easy',
+      title: 'Ultrasonic Distance Radar & Proximity LED (Physical or Wokwi Simulator)',
+      phase: 'Phase 1: Embedded Foundations',
+      difficulty: 'Beginner',
+      description:
+        'The ideal hands-on hardware starter: wire an HC-SR04 ultrasonic distance sensor with an RGB LED and buzzer on a breadboard (or simulate it 100% free in-browser with Wokwi!). Measure physical distance in centimeters, trigger proximity light colors, and print live telemetry to the Serial Monitor.',
+      techStack: ['Arduino Uno / ESP32', 'HC-SR04 Ultrasonic Sensor', 'RGB LED & Resistors', 'Wokwi Simulator / Breadboard', 'C/C++ (Arduino IDE)'],
+      learningOutcomes: [
+        'Calculating distance mathematically from sound wave travel time using pulseIn()',
+        'Writing fundamental GPIO control commands (pinMode, digitalRead, digitalWrite, analogWrite PWM)',
+        'Building and testing circuits in the free in-browser Wokwi simulator with zero physical hardware needed',
+        'Inspecting live signal logs using the Arduino Serial Monitor and Serial Plotter',
+      ],
+    },
+    {
       id: 'iot-proj-0',
       title: 'Smart Environmental Weather & Telemetry Station',
       phase: 'Phase 1 - 2',

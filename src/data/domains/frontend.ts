@@ -448,6 +448,21 @@ export const frontendDomain: DomainConfig = {
   ],
   projectsData: [
     {
+      id: 'fe-proj-0',
+      title: 'Minimalist "Link-in-Bio" Hub & Theme Switcher',
+      phase: 'Phase 1: Web & UI Foundations',
+      difficulty: 'Beginner',
+      description:
+        'Build a sleek, mobile-first personal link hub (like Linktree) using semantic HTML and modern CSS. Feature your avatar, bio, social links with smooth hover animations, and a 10-line JavaScript dark/light mode toggle with localStorage persistence.',
+      techStack: ['HTML5', 'CSS3 (Flexbox)', 'JavaScript (DOM & localStorage)', 'GitHub Pages'],
+      learningOutcomes: [
+        'Writing clean, semantic HTML document structure with accessible links and image alt tags',
+        'Styling mobile-first responsive cards with CSS Flexbox, custom shadows, and smooth hover transforms',
+        'Adding an interactive theme toggle using document.body.classList and localStorage',
+        'Publishing the website live for free using GitHub Pages or Vercel',
+      ],
+    },
+    {
       id: 'fe-proj-1',
       title: 'Responsive Personal Portfolio',
       phase: 'Phase 1: Web & UI Foundations',
