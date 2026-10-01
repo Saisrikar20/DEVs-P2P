@@ -38,7 +38,7 @@ The platform hosts five distinct technical disciplines accessible via direct URL
 | Track Route | Domain | Lead Mentors | Core Curriculum Focus |
 | :--- | :--- | :--- | :--- |
 | **`/aiml`** | **AI & Machine Learning** | Sai Srikar B, Sabhari Sainath AM, Padma Sree M | PyTorch, Neural Architectures, Vector DBs, Local RAG, LangGraph Agents & Model Serving |
-| **`/frontend`** | **Frontend Engineering** | ASVAND K, Chandhru L | Modern JavaScript/TypeScript, React 19, State Architecture, Web Performance & Accessibility |
+| **`/frontend`** | **Frontend Engineering** | Chandhru L, ASVAND K | Modern JavaScript/TypeScript, React 19, State Architecture, Web Performance & Accessibility |
 | **`/backend`** | **Backend & Distributed Systems** | Sai Kishore S, Kamlesh A, Sarvin S | Python, FastAPI, Django, PostgreSQL, Redis Caching, Celery Tasks, Docker & System Design |
 | **`/cloud`** | **Cloud & DevOps** | Sakthivel R | Linux, Docker, CI/CD, Terraform IaC, Kubernetes GitOps (ArgoCD) & Prometheus Observability |
 | **`/iot`** | **IoT & Embedded Systems** | Vijay Ghanesh G J, Chithralekha B | ESP32, STM32, Sensors, MQTT, LoRa, BLE, FreeRTOS, TinyML Edge Inference & Custom PCBs |
@@ -72,7 +72,7 @@ The platform hosts five distinct technical disciplines accessible via direct URL
 ## 👥 Track Organizers & Mentors
 
 - **AI & Machine Learning**: Sai Srikar B, Sabhari Sainath AM, Padma Sree M
-- **Frontend Engineering**: ASVAND K, Chandhru L
+- **Frontend Engineering**: Chandhru L, ASVAND K
 - **Backend Engineering**: Sai Kishore S, Kamlesh A, Sarvin S
 - **Cloud & DevOps**: Sakthivel R
 - **IoT & Embedded Systems**: Vijay Ghanesh G J, Chithralekha B
