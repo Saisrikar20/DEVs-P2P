@@ -252,6 +252,20 @@ export const videoEditingDomain: DomainConfig = {
         instagram: 'https://www.instagram.com/v.s.thamizh',
       },
     },
+    {
+      id: 've-host-3',
+      name: 'Arunpranesh ES',
+      role: 'Video Editor & Visual Storyteller',
+      headline: 'In the flow',
+      topicOrFocus: 'Visual Storytelling, Narrative Rhythm & Creative Direction',
+      bio: 'CSE Student, Video Editor & Visual Storyteller. Creating. Learning. Growing. Dedicated to rhythm, narrative flow, and cinematic visual editing.',
+      avatarUrl: '/host-anime-5.jpg',
+      initials: 'AE',
+      socials: {
+        linkedin: 'https://www.linkedin.com/in/arunpranesh-es-550397322',
+        instagram: 'https://www.instagram.com/__.arun.7',
+      },
+    },
   ],
   resourcesData: [
     {
