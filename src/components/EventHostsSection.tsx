@@ -27,9 +27,10 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [copiedText, setCopiedText] = useState<string | null>(null);
   const [isAutoRotating, setIsAutoRotating] = useState(false);
-  const [dragStartX, setDragStartX] = useState<number | null>(null);
-  const [dragOffset, setDragOffset] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  
+  const dragStartXRef = useRef<number | null>(null);
+  const dragDistanceRef = useRef<number>(0);
   const autoRotateTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const numHosts = hosts.length;
@@ -103,61 +104,52 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
     }
   };
 
-  // Drag / swipe handlers for rotatory cylinder
+  // Drag / swipe handlers without triggering unnecessary re-renders on move
   const handleTouchStart = (e: React.TouchEvent) => {
     if (numHosts <= 1) return;
-    setDragStartX(e.touches[0].clientX);
+    dragStartXRef.current = e.touches[0].clientX;
+    dragDistanceRef.current = 0;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (dragStartX === null || numHosts <= 1) return;
-    const diff = e.touches[0].clientX - dragStartX;
-    setDragOffset(diff);
+    if (dragStartXRef.current === null || numHosts <= 1) return;
+    dragDistanceRef.current = e.touches[0].clientX - dragStartXRef.current;
   };
 
   const handleTouchEnd = () => {
     if (numHosts > 1) {
-      if (dragOffset > 40) {
+      if (dragDistanceRef.current > 40) {
         rotatePrev();
-      } else if (dragOffset < -40) {
+      } else if (dragDistanceRef.current < -40) {
         rotateNext();
       }
     }
-    setDragStartX(null);
-    setDragOffset(0);
+    dragStartXRef.current = null;
+    dragDistanceRef.current = 0;
   };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (numHosts <= 1) return;
-    setDragStartX(e.clientX);
+    dragStartXRef.current = e.clientX;
+    dragDistanceRef.current = 0;
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (dragStartX === null || numHosts <= 1) return;
-    const diff = e.clientX - dragStartX;
-    setDragOffset(diff);
+    if (dragStartXRef.current === null || numHosts <= 1) return;
+    dragDistanceRef.current = e.clientX - dragStartXRef.current;
   };
 
   const handleMouseUp = () => {
     if (numHosts > 1) {
-      if (dragOffset > 40) {
+      if (dragDistanceRef.current > 40) {
         rotatePrev();
-      } else if (dragOffset < -40) {
+      } else if (dragDistanceRef.current < -40) {
         rotateNext();
       }
     }
-    setDragStartX(null);
-    setDragOffset(0);
+    dragStartXRef.current = null;
+    dragDistanceRef.current = 0;
   };
-
-  // Responsive cylinder radius for 3D rotation
-  const cylinderRadius = isMobile
-    ? numHosts <= 2
-      ? 110
-      : 160
-    : numHosts <= 2
-    ? 240
-    : 380;
 
   return (
     <section id="hosts" className="relative py-14 sm:py-20 md:py-28 overflow-hidden bg-[#000000] border-t border-white/[0.06]">
@@ -183,10 +175,10 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
           </div>
         </AnimateIn>
 
-        {/* Rotatory Linktree 3D Carousel Stage */}
+        {/* Rotatory Linktree Carousel Stage */}
         <div
           className="relative w-full py-4 sm:py-8 select-none"
-          style={{ perspective: isMobile ? '850px' : '1200px' }}
+          style={{ perspective: isMobile ? '800px' : '1100px' }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -194,36 +186,84 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={() => {
-            setDragStartX(null);
-            setDragOffset(0);
+            dragStartXRef.current = null;
+            dragDistanceRef.current = 0;
           }}
         >
-          {/* 3D Rotating Ring */}
-          <div className="relative h-[530px] sm:h-[610px] w-full flex items-center justify-center">
+          {/* Carousel Stage Container */}
+          <div className="relative h-[540px] sm:h-[620px] w-full flex items-center justify-center">
             {hosts.map((host, idx) => {
-              // Calculate angular position on cylinder
+              // Calculate cyclic offset relative to activeIndex
               let offset = (idx - activeIndex) % numHosts;
               if (offset > numHosts / 2) offset -= numHosts;
               if (offset < -numHosts / 2) offset += numHosts;
 
-              const angleStep = 360 / numHosts;
-              const angle = numHosts > 1 ? offset * angleStep : 0;
               const isCenter = offset === 0;
+
+              // Compute transform values so active card sits at exact z=0 for flawless 1:1 hit-testing
+              let x = 0;
+              let z = 0;
+              let rotY = 0;
+              let scale = 1;
+              let opacity = 1;
+              let zIndex = 30;
+
+              if (isCenter) {
+                x = 0;
+                z = 0;
+                rotY = 0;
+                scale = 1;
+                opacity = 1;
+                zIndex = 30;
+              } else if (offset === 1) {
+                // Right card
+                x = isMobile ? 140 : 320;
+                z = isMobile ? -60 : -100;
+                rotY = -22;
+                scale = isMobile ? 0.82 : 0.86;
+                opacity = 0.35;
+                zIndex = 10;
+              } else if (offset === -1) {
+                // Left card
+                x = isMobile ? -140 : -320;
+                z = isMobile ? -60 : -100;
+                rotY = 22;
+                scale = isMobile ? 0.82 : 0.86;
+                opacity = 0.35;
+                zIndex = 10;
+              } else {
+                // Further background cards (for 4+ hosts)
+                const sign = Math.sign(offset);
+                x = sign * (isMobile ? 220 : 500);
+                z = -220;
+                rotY = sign * -35;
+                scale = 0.7;
+                opacity = 0;
+                zIndex = 0;
+              }
 
               return (
                 <div
                   key={host.id}
-                  onClick={() => selectHostIndex(idx)}
-                  className={`absolute w-[285px] sm:w-[360px] transition-all duration-500 ease-out cursor-pointer ${
-                    isCenter ? 'z-30 pointer-events-auto' : 'z-10 opacity-30 hover:opacity-70 pointer-events-auto'
+                  onClick={() => {
+                    if (Math.abs(dragDistanceRef.current) > 10) return;
+                    if (!isCenter) {
+                      selectHostIndex(idx);
+                    }
+                  }}
+                  className={`absolute w-[290px] sm:w-[365px] transition-all duration-500 ease-out ${
+                    isCenter ? 'pointer-events-auto cursor-default' : 'cursor-pointer hover:opacity-60'
                   }`}
                   style={{
-                    transform: `rotateY(${angle}deg) translateZ(${cylinderRadius}px) scale(${isCenter ? 1 : 0.82})`,
-                    transformStyle: 'preserve-3d',
+                    transform: `translate3d(${x}px, 0px, ${z}px) rotateY(${rotY}deg) scale(${scale})`,
+                    zIndex,
+                    opacity,
+                    pointerEvents: Math.abs(offset) >= 2 ? 'none' : 'auto',
                   }}
                 >
                   {/* Linktree Card Container */}
                   <div
+                    style={{ transformStyle: 'flat' }}
                     className={`rounded-3xl border p-5 sm:p-7 backdrop-blur-2xl transition-all duration-300 ${
                       isCenter
                         ? 'bg-zinc-950/95 border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.08)]'
@@ -259,14 +299,14 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                     </div>
 
                     {/* Linktree Stacked Action Buttons */}
-                    <div className="mt-5 sm:mt-6 space-y-2">
+                    <div className={`mt-5 sm:mt-6 space-y-2.5 ${isCenter ? 'pointer-events-auto' : 'pointer-events-none'}`}>
                       {host.socials.github && (
                         <a
                           href={host.socials.github}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
+                          className="relative z-10 flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
                         >
                           <div className="flex items-center gap-2.5">
                             <GithubIcon className="w-4 h-4 text-white" />
@@ -282,7 +322,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
+                          className="relative z-10 flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
                         >
                           <div className="flex items-center gap-2.5">
                             <LinkedinIcon className="w-4 h-4 text-zinc-300 group-hover:text-white" />
@@ -298,7 +338,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
+                          className="relative z-10 flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
                         >
                           <div className="flex items-center gap-2.5">
                             <InstagramIcon className="w-4 h-4 text-zinc-300 group-hover:text-white" />
@@ -314,7 +354,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
+                          className="relative z-10 flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all group"
                         >
                           <div className="flex items-center gap-2.5">
                             <Globe className="w-4 h-4 text-zinc-300 group-hover:text-white" />
@@ -326,11 +366,12 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
 
                       {host.socials.email && (
                         <button
+                          type="button"
                           onClick={(e) => {
                             e.stopPropagation();
                             handleCopy(host.socials.email!);
                           }}
-                          className="flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all cursor-pointer group min-w-0"
+                          className="relative z-10 flex items-center justify-between w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-medium text-zinc-200 transition-all cursor-pointer group min-w-0"
                           title={`Click to copy: ${host.socials.email}`}
                         >
                           <div className="flex items-center gap-2.5 min-w-0 flex-1 mr-2">
@@ -366,6 +407,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
             <>
               <div className="absolute inset-y-0 left-1 sm:left-6 flex items-center z-40 pointer-events-none">
                 <button
+                  type="button"
                   onClick={rotatePrev}
                   className="p-2 sm:p-3 rounded-full bg-zinc-950/85 hover:bg-zinc-900 border border-white/10 hover:border-white/20 text-white shadow-xl pointer-events-auto transition-all active:scale-95 cursor-pointer backdrop-blur-md"
                   title="Previous Host (Rotate Left)"
@@ -376,6 +418,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
 
               <div className="absolute inset-y-0 right-1 sm:right-6 flex items-center z-40 pointer-events-none">
                 <button
+                  type="button"
                   onClick={rotateNext}
                   className="p-2 sm:p-3 rounded-full bg-zinc-950/85 hover:bg-zinc-900 border border-white/10 hover:border-white/20 text-white shadow-xl pointer-events-auto transition-all active:scale-95 cursor-pointer backdrop-blur-md"
                   title="Next Host (Rotate Right)"
@@ -395,6 +438,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
               {hosts.map((host, idx) => (
                 <button
                   key={host.id}
+                  type="button"
                   onClick={() => selectHostIndex(idx)}
                   className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
                     activeIndex === idx
@@ -411,6 +455,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
             {/* Auto-rotate Toggle */}
             <div className="flex items-center gap-3 text-xs font-mono text-zinc-500">
               <button
+                type="button"
                 onClick={() => setIsAutoRotating(!isAutoRotating)}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all cursor-pointer ${
                   isAutoRotating
