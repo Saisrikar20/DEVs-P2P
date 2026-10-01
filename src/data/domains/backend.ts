@@ -5,7 +5,7 @@ export const backendDomain: DomainConfig = {
   slug: 'backend',
   name: 'Backend Engineering & Distributed Systems',
   shortName: 'Backend',
-  badge: 'Active Track',
+  badge: '',
   iconName: 'Server',
   heroHeadline: 'Build scalable APIs, robust databases & production-ready backend systems',
   heroTagline: 'Python, FastAPI, Django & PostgreSQL fundamentals · REST APIs, authentication, caching, asynchronous processing, Docker, and distributed systems',

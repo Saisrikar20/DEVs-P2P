@@ -61,7 +61,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     ? [
         { href: '#tracks', label: 'All 5 Tracks' },
         { href: '#methodology', label: 'Methodology' },
-        { href: '#mentors', label: 'Mentors' },
       ]
     : [
         { href: '#roadmap', label: 'Roadmap' },
@@ -209,16 +208,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                               </div>
                             </div>
                           </div>
-                          {isActive ? (
+                          {isActive && (
                             <Check className="w-3.5 h-3.5 text-black shrink-0" />
-                          ) : (
-                            <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/[0.04] text-zinc-400 border border-white/[0.06]">
-                              {d.badge}
-                            </span>
                           )}
                         </button>
                       );
                     })}
+                    <div className="mt-2 pt-2 border-t border-white/[0.06] px-2.5 py-1 text-[11px] font-mono text-zinc-400 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-500" />
+                      <span>Video editing will be added soon</span>
+                    </div>
                   </div>
                 </div>
               )}
@@ -317,6 +316,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
                 );
               })}
+            </div>
+            <div className="mt-2 text-[11px] font-mono text-zinc-400 flex items-center gap-1.5 px-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-zinc-500" />
+              <span>Video editing will be added soon</span>
             </div>
           </div>
 

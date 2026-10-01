@@ -9,7 +9,7 @@ export const aimlDomain: DomainConfig = {
   slug: 'aiml',
   name: 'AI & Machine Learning',
   shortName: 'AI/ML',
-  badge: 'Core Track',
+  badge: '',
   iconName: 'Cpu',
   heroHeadline: 'When intelligence reaches out to instinct, the future takes shape',
   heroTagline: 'an unlikely alliance · where human intuition and algorithmic precision move as one',

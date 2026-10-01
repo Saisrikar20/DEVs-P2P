@@ -5,7 +5,7 @@ export const cloudDevopsDomain: DomainConfig = {
   slug: 'cloud',
   name: 'Cloud & DevOps Engineering',
   shortName: 'Cloud',
-  badge: 'Active Track',
+  badge: '',
   iconName: 'Cloud',
   heroHeadline: 'Building, automating, and scaling resilient infrastructure across the globe',
   heroTagline: 'infrastructure as code · container orchestration, declarative pipelines, and enterprise system design',

@@ -5,7 +5,7 @@ export const frontendDomain: DomainConfig = {
   slug: 'frontend',
   name: 'Frontend Engineering',
   shortName: 'Frontend',
-  badge: 'Active Track',
+  badge: '',
   iconName: 'Layout',
   heroHeadline: 'Build interfaces. Understand browsers. Engineer better experiences.',
   heroTagline:

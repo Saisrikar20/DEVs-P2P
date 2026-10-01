@@ -5,7 +5,7 @@ export const iotDomain: DomainConfig = {
   slug: 'iot',
   name: 'Internet of Things & Embedded Systems',
   shortName: 'IoT',
-  badge: 'Active Track',
+  badge: '',
   iconName: 'Cpu',
   heroHeadline: 'Connected devices, embedded intelligence, wireless networks & real-world automation',
   heroTagline:
