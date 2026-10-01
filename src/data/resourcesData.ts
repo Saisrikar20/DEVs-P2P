@@ -373,4 +373,17 @@ export const resourcesData: Resource[] = [
     tags: ['MLOps', 'Docker', 'AWS', 'MLflow', 'Cohort'],
     featured: true,
   },
+  {
+    id: 'res-siddhardhan-ml-projects',
+    title: 'Machine Learning Projects Portfolio Series (50+ Hands-on Projects)',
+    description:
+      'Comprehensive end-to-end practical project playlist covering 50+ real-world machine learning implementations in Python: data cleaning, EDA, feature scaling, model building (SVM, Logistic Regression, XGBoost), evaluation metrics, and building predictive web interfaces.',
+    url: 'https://www.youtube.com/playlist?list=PLfFghEzKVmjvuSA67LszN1dZ-Dd_pkus6',
+    type: 'Video',
+    level: 'Beginner',
+    cost: 'Free',
+    authorOrProvider: 'Siddhardhan',
+    tags: ['Machine Learning', 'Python', 'Projects', 'Scikit-Learn', 'Classification', 'Regression'],
+    featured: true,
+  },
 ];

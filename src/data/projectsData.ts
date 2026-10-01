@@ -48,6 +48,23 @@ export const projectsData: ProjectIdea[] = [
     ],
   },
   {
+    id: 'proj-ml-disease-prediction',
+    title: 'End-to-End Predictive Health Diagnostic System (SVM & Logistic Regression)',
+    phase: 'Phase 3: Machine Learning',
+    difficulty: 'Beginner',
+    description:
+      'Build and evaluate a complete supervised binary classification system using Python and Scikit-Learn (e.g. Diabetes or Heart Disease Prediction). Implement data cleaning, exploratory analysis, standard feature scaling, model training, performance evaluation, and deploy an interactive Streamlit diagnostic tool.',
+    techStack: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Matplotlib / Seaborn', 'Streamlit'],
+    datasetUrl: 'https://www.youtube.com/playlist?list=PLfFghEzKVmjvuSA67LszN1dZ-Dd_pkus6',
+    datasetName: 'Siddhardhan ML Projects Playlist & Kaggle Health Datasets',
+    learningOutcomes: [
+      'Load, inspect, and preprocess structured tabular datasets with StandardScaler and train-test splits',
+      'Train, tune, and compare Support Vector Machine (SVM) and Logistic Regression classifiers',
+      'Evaluate model reliability using Confusion Matrices, Accuracy, Precision, Recall, and ROC-AUC curves',
+      'Export the trained model pipeline with joblib and create an interactive real-time Streamlit web app for user predictions',
+    ],
+  },
+  {
     id: 'proj-pytorch-vision',
     title: 'Medical Scan Classifier with PyTorch & Transfer Learning',
     phase: 'Phase 4: Deep Learning',

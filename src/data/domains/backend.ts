@@ -320,6 +320,22 @@ export const backendDomain: DomainConfig = {
         email: 'kamlesh.a2007@gmail.com',
       },
     },
+    {
+      id: 'be-host-3',
+      name: 'Sarvin S',
+      role: 'Backend Developer',
+      headline: 'Backend Development & API Engineering Enthusiast',
+      topicOrFocus: 'Python, FastAPI, PostgreSQL, Docker & Competitive Programming',
+      bio: 'Backend developer focused on building practical applications and APIs using Python, FastAPI, PostgreSQL, Docker, and related technologies. Interested in backend engineering, system design, competitive programming, and building real-world software projects.',
+      avatarUrl: '/sarvin.jpg',
+      initials: 'SS',
+      socials: {
+        github: 'https://github.com/telebot-deploy',
+        linkedin: 'https://www.linkedin.com/in/sarvin-s-854a66399/',
+        instagram: 'https://www.instagram.com/_sarvin.s_/',
+        email: 'sarvin25208@gmail.com',
+      },
+    },
   ],
   resourcesData: [
     {
