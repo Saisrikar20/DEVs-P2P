@@ -2,6 +2,24 @@ import type { ProjectIdea } from '../types';
 
 export const projectsData: ProjectIdea[] = [
   {
+    id: 'proj-sonar-rock-mine',
+    title: 'Sonar Rock vs Mine Prediction (Logistic Regression)',
+    phase: 'Phase 1 - 2: Foundations & Classification',
+    difficulty: 'Beginner',
+    description:
+      'Build your very first supervised machine learning classification pipeline with Python and Scikit-Learn: load submarine sonar sensor bounce signals (60 frequencies), train a Logistic Regression model to predict whether an underwater object is a Rock or a Naval Mine, and test predictions on new sensor readings.',
+    techStack: ['Python', 'Scikit-Learn', 'NumPy', 'Pandas', 'Google Colab / Jupyter'],
+    datasetName: 'Sonar Mines vs Rocks Dataset',
+    videoUrl: 'https://youtu.be/fiz1ORTBGpY',
+    videoTitle: 'Siddhardhan — Sonar Rock vs Mine Prediction Tutorial',
+    learningOutcomes: [
+      'Load and inspect numerical sonar frequency readings using Pandas and NumPy',
+      'Separate features and labels, perform train_test_split with stratified sampling',
+      'Train a Logistic Regression model and evaluate training vs testing accuracy scores',
+      'Build a predictive system that takes new 60-feature sonar signals and classifies Rock or Mine',
+    ],
+  },
+  {
     id: 'proj-colab-iris-quickstart',
     title: 'Iris Flower Classifier in Google Colab (30 Lines of Code)',
     phase: 'Phase 1: Foundations',
@@ -20,23 +38,6 @@ export const projectsData: ProjectIdea[] = [
     ],
   },
   {
-    id: 'proj-micrograd-autograd',
-    title: 'Autograd & Micro-Neural Net Engine',
-    phase: 'Phase 1: Foundations',
-    difficulty: 'Intermediate',
-    description:
-      'Build a reverse-mode automatic differentiation engine from scratch in pure Python with support for scalar operations, backprop graphs, and train a 2-layer MLP on synthetic classification data.',
-    techStack: ['Python', 'Graphviz', 'PyTest', 'Math'],
-    datasetName: 'Synthetic Moons / Circles dataset',
-    videoUrl: 'https://www.youtube.com/watch?v=VMj-3S1tku0',
-    videoTitle: 'Andrej Karpathy — Building Micrograd & Backprop',
-    learningOutcomes: [
-      'Understand the mathematical mechanics of the Chain Rule in computation graphs',
-      'Implement topological sorting for DAG gradient propagation',
-      'Build an intuition for SGD, learning rate, and weight updates without relying on PyTorch magic',
-    ],
-  },
-  {
     id: 'proj-eda-dashboard',
     title: 'Interactive Exploratory Data Analysis & Trends Dashboard',
     phase: 'Phase 2: Data Science',
@@ -51,6 +52,25 @@ export const projectsData: ProjectIdea[] = [
       'Load, inspect, and clean tabular CSV data with Pandas handling missing values and duplicates',
       'Identify distributions, outliers, and feature correlations using Seaborn and Plotly',
       'Deploy an interactive web dashboard with dynamic filters and charts using Streamlit',
+    ],
+  },
+  {
+    id: 'proj-ml-disease-prediction',
+    title: 'Diabetes Prediction Diagnostic System (SVM & Streamlit)',
+    phase: 'Phase 3: Machine Learning',
+    difficulty: 'Beginner',
+    description:
+      'Build an end-to-end medical diagnosis classification system using Python and Scikit-Learn: preprocess health indicator data (Glucose, Blood Pressure, Insulin, BMI), apply StandardScaler normalization, train a Support Vector Machine (SVM) classifier, and deploy a real-time web diagnostic tool with Streamlit.',
+    techStack: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Matplotlib / Seaborn', 'Streamlit'],
+    datasetUrl: 'https://www.kaggle.com/datasets/kandij/diabetes-dataset',
+    datasetName: 'PIMA Indians Diabetes Dataset',
+    videoUrl: 'https://youtu.be/xUE7SjVx9bQ',
+    videoTitle: 'Siddhardhan — Diabetes Prediction using ML Tutorial',
+    learningOutcomes: [
+      'Load, inspect, and analyze health indicator distributions with Pandas and Seaborn',
+      'Apply StandardScaler to normalize numerical patient features for distance-based models',
+      'Train and evaluate a Support Vector Machine (SVM) classifier with train-test evaluation',
+      'Export the model and create an interactive user-facing diagnostic tool with Streamlit',
     ],
   },
   {
@@ -72,22 +92,20 @@ export const projectsData: ProjectIdea[] = [
     ],
   },
   {
-    id: 'proj-ml-disease-prediction',
-    title: 'End-to-End Predictive Health Diagnostic System (SVM & Logistic Regression)',
-    phase: 'Phase 3: Machine Learning',
-    difficulty: 'Beginner',
+    id: 'proj-micrograd-autograd',
+    title: 'Autograd & Micro-Neural Net Engine',
+    phase: 'Phase 1: Foundations',
+    difficulty: 'Intermediate',
     description:
-      'Build and evaluate a complete supervised binary classification system using Python and Scikit-Learn (e.g. Diabetes or Heart Disease Prediction). Implement data cleaning, exploratory analysis, standard feature scaling, model training, performance evaluation, and deploy an interactive Streamlit diagnostic tool.',
-    techStack: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Matplotlib / Seaborn', 'Streamlit'],
-    datasetUrl: 'https://www.kaggle.com/datasets/kandij/diabetes-dataset',
-    datasetName: 'Kaggle Diabetes / Health Dataset',
-    videoUrl: 'https://www.youtube.com/playlist?list=PLfFghEzKVmjvuSA67LszN1dZ-Dd_pkus6',
-    videoTitle: 'Siddhardhan — ML Projects from Scratch Playlist',
+      'Build a reverse-mode automatic differentiation engine from scratch in pure Python with support for scalar operations, backprop graphs, and train a 2-layer MLP on synthetic classification data.',
+    techStack: ['Python', 'Graphviz', 'PyTest', 'Math'],
+    datasetName: 'Synthetic Moons / Circles dataset',
+    videoUrl: 'https://www.youtube.com/watch?v=VMj-3S1tku0',
+    videoTitle: 'Andrej Karpathy — Building Micrograd & Backprop',
     learningOutcomes: [
-      'Load, inspect, and preprocess structured tabular datasets with StandardScaler and train-test splits',
-      'Train, tune, and compare Support Vector Machine (SVM) and Logistic Regression classifiers',
-      'Evaluate model reliability using Confusion Matrices, Accuracy, Precision, Recall, and ROC-AUC curves',
-      'Export the trained model pipeline with joblib and create an interactive real-time Streamlit web app for user predictions',
+      'Understand the mathematical mechanics of the Chain Rule in computation graphs',
+      'Implement topological sorting for DAG gradient propagation',
+      'Build an intuition for SGD, learning rate, and weight updates without relying on PyTorch magic',
     ],
   },
   {
