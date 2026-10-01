@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>An open-source, multi-domain engineering curriculum, mentor directory, and project incubator.</strong><br />
-  A high-contrast monochrome platform designed to take developers from core fundamentals to production-grade engineering across six technical domains.
+  A high-contrast monochrome platform designed to take developers from core fundamentals to production-grade engineering across five technical domains.
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@
 
 ## 🚀 Technical Domains & Tracks
 
-The platform hosts six distinct technical disciplines accessible via direct URL routing:
+The platform hosts five distinct technical disciplines accessible via direct URL routing:
 
 | Track Route | Domain | Lead Mentors | Core Curriculum Focus |
 | :--- | :--- | :--- | :--- |
@@ -42,7 +42,6 @@ The platform hosts six distinct technical disciplines accessible via direct URL 
 | **`/backend`** | **Backend & Distributed Systems** | Sai Kishore S, Kamlesh A, Sarvin S | Python, FastAPI, Django, PostgreSQL, Redis Caching, Celery Tasks, Docker & System Design |
 | **`/cloud`** | **Cloud & DevOps** | Sakthivel R | Linux, Docker, CI/CD, Terraform IaC, Kubernetes GitOps (ArgoCD) & Prometheus Observability |
 | **`/iot`** | **IoT & Embedded Systems** | Vijay Ghanesh G J, Chithralekha B | ESP32, STM32, Sensors, MQTT, LoRa, BLE, FreeRTOS, TinyML Edge Inference & Custom PCBs |
-| **`/video-editing`** | **Video Editing & Post-Production** | Kevin Infant, VS Thamizhselvan, Arunpranesh ES | Storytelling Pacing, Foley Audio, DaVinci Resolve Color Grading, Motion Graphics & Master Delivery |
 
 ---
 
@@ -77,7 +76,6 @@ The platform hosts six distinct technical disciplines accessible via direct URL 
 - **Backend Engineering**: Sai Kishore S, Kamlesh A, Sarvin S
 - **Cloud & DevOps**: Sakthivel R
 - **IoT & Embedded Systems**: Vijay Ghanesh G J, Chithralekha B
-- **Video Editing**: Kevin Infant, VS Thamizhselvan, Arunpranesh ES
 
 ---
 

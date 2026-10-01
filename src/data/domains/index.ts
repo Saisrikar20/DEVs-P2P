@@ -4,19 +4,17 @@ import { frontendDomain } from './frontend';
 import { backendDomain } from './backend';
 import { cloudDevopsDomain } from './cloudDevops';
 import { iotDomain } from './iot';
-import { videoEditingDomain } from './videoEditing';
 
-// The 6 active tracks across the platform
+// The 5 active tracks across the platform
 export const domainsRegistry: DomainConfig[] = [
   aimlDomain,
   frontendDomain,
   backendDomain,
   cloudDevopsDomain,
   iotDomain,
-  videoEditingDomain,
 ];
 
-// Mapping including friendly aliases (e.g. /cloud and /video)
+// Mapping including friendly aliases (e.g. /cloud and /devops)
 export const domainsMap: Record<string, DomainConfig> = {
   aiml: aimlDomain,
   ai: aimlDomain,
@@ -27,11 +25,6 @@ export const domainsMap: Record<string, DomainConfig> = {
   'cloud-devops': cloudDevopsDomain,
   devops: cloudDevopsDomain,
   iot: iotDomain,
-  'video-editing': videoEditingDomain,
-  video: videoEditingDomain,
-  editing: videoEditingDomain,
-  videoediting: videoEditingDomain,
-  media: videoEditingDomain, // Backward-compatibility alias
 };
 
 export const defaultDomainSlug = 'aiml';
@@ -53,5 +46,4 @@ export {
   backendDomain,
   cloudDevopsDomain,
   iotDomain,
-  videoEditingDomain,
 };
