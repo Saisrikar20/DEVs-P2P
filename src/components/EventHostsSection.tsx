@@ -164,10 +164,10 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               <span>Event Mentors & Hosts</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-normal tracking-[-0.03em] text-white">
+            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
               Connect with the Team
             </h2>
-            <p className="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed font-mono px-2">
+            <p className="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed font-mono px-2">
               {numHosts > 1
                 ? 'Rotate through the event hosts to access direct socials, personal sites, and session materials.'
                 : 'Direct socials, personal links, and session materials for your track mentor.'}
@@ -291,11 +291,11 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                       </div>
 
                       <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">{host.name}</h3>
-                      <div className="mt-1 px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/10 text-[11px] sm:text-xs font-mono text-zinc-300">
+                      <div className="mt-1 px-2.5 py-0.5 rounded-full bg-white/[0.08] border border-white/10 text-[11px] sm:text-xs font-mono text-zinc-200 font-medium">
                         {host.role}
                       </div>
 
-                      <p className="text-xs text-zinc-400 mt-2 font-medium line-clamp-1">{host.headline}</p>
+                      <p className="text-xs text-zinc-200 mt-2 font-medium line-clamp-1">{host.headline}</p>
                     </div>
 
                     {/* Linktree Stacked Action Buttons */}
@@ -392,7 +392,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
 
                     {/* Bio / Focus Footnote */}
                     <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-white/[0.06] text-center">
-                      <p className="text-[11px] text-zinc-400 leading-relaxed italic line-clamp-2">
+                      <p className="text-[11px] text-zinc-200 leading-relaxed italic line-clamp-2">
                         "{host.bio}"
                       </p>
                     </div>
@@ -443,7 +443,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
                   className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
                     activeIndex === idx
                       ? 'bg-white text-black font-semibold shadow-md'
-                      : 'text-zinc-400 hover:text-white hover:bg-white/[0.05]'
+                      : 'text-zinc-300 hover:text-white hover:bg-white/[0.05]'
                   }`}
                 >
                   <span>0{idx + 1}</span>
@@ -453,14 +453,14 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
             </div>
 
             {/* Auto-rotate Toggle */}
-            <div className="flex items-center gap-3 text-xs font-mono text-zinc-500">
+            <div className="flex items-center gap-3 text-xs font-mono text-zinc-300">
               <button
                 type="button"
                 onClick={() => setIsAutoRotating(!isAutoRotating)}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all cursor-pointer ${
                   isAutoRotating
                     ? 'border-emerald-500/40 text-emerald-400 bg-emerald-500/10'
-                    : 'border-white/10 text-zinc-400 hover:text-white bg-white/[0.02]'
+                    : 'border-white/10 text-zinc-300 hover:text-white bg-white/[0.04]'
                 }`}
               >
                 <RotateCw className={`w-3 h-3 ${isAutoRotating ? 'animate-spin' : ''}`} />
@@ -468,7 +468,7 @@ export const EventHostsSection: React.FC<EventHostsSectionProps> = ({
               </button>
 
               <span>•</span>
-              <span className="text-[11px] text-zinc-500">Drag or swipe to rotate</span>
+              <span className="text-[11px] text-zinc-300 font-mono">Drag or swipe to rotate</span>
             </div>
           </div>
         )}

@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({
             {/* Brand */}
             <div className="md:col-span-4 space-y-4">
               <img src="/devs-logo.png" alt="DEVS" className="h-7 w-auto object-contain" />
-              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-sm mt-3">
+              <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed max-w-sm mt-3">
                 DEVs P2P open engineering curricula. Multi-domain peer-to-peer roadmaps, production architectures, and community mentorship.
               </p>
               <div className="flex items-center gap-2 pt-2">
@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] flex items-center justify-center text-zinc-400 hover:text-white transition-all cursor-pointer"
+                    className="w-8 h-8 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white transition-all cursor-pointer"
                     title={label}
                   >
                     <Icon className="w-3.5 h-3.5" />
@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Technical Tracks (Dynamic Domain Links) */}
             <div className="md:col-span-3">
-              <h4 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4 font-mono">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 font-mono">
                 Technical Tracks
               </h4>
               <ul className="space-y-2 text-xs font-mono">
@@ -74,10 +74,10 @@ export const Footer: React.FC<FooterProps> = ({
                         className={`text-left transition-colors flex items-center gap-2 cursor-pointer ${
                           isActive
                             ? 'text-white font-bold'
-                            : 'text-zinc-400 hover:text-white'
+                            : 'text-zinc-300 hover:text-white'
                         }`}
                       >
-                        <span className={isActive ? 'text-emerald-400' : 'text-zinc-600'}>
+                        <span className={isActive ? 'text-emerald-400 font-bold' : 'text-zinc-500'}>
                           ›
                         </span>
                         <span>{d.name}</span>
@@ -90,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Navigation */}
             <div className="md:col-span-2">
-              <h4 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4 font-mono">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 font-mono">
                 Navigate
               </h4>
               <ul className="space-y-2.5">
@@ -98,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({
                   <li key={l.href}>
                     <a
                       href={l.href}
-                      className="text-xs text-zinc-400 hover:text-white transition-colors"
+                      className="text-xs text-zinc-300 hover:text-white font-medium transition-colors"
                     >
                       {l.label}
                     </a>
@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Community Links */}
             <div className="md:col-span-3">
-              <h4 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4 font-mono">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 font-mono">
                 Community
               </h4>
               <ul className="space-y-2.5 text-xs">
@@ -118,10 +118,10 @@ export const Footer: React.FC<FooterProps> = ({
                     href="https://www.linkedin.com/company/devsrec/posts/?feedView=all"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
+                    className="text-zinc-300 hover:text-white transition-colors flex items-center gap-2 font-medium"
                   >
                     <span>LinkedIn</span>
-                    <span className="text-[11px] font-mono text-zinc-500">@devsrec</span>
+                    <span className="text-[11px] font-mono text-zinc-400">@devsrec</span>
                   </a>
                 </li>
                 <li>
@@ -129,14 +129,14 @@ export const Footer: React.FC<FooterProps> = ({
                     href="https://www.instagram.com/devsrec/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
+                    className="text-zinc-300 hover:text-white transition-colors flex items-center gap-2 font-medium"
                   >
                     <span>Instagram</span>
-                    <span className="text-[11px] font-mono text-zinc-500">@devsrec</span>
+                    <span className="text-[11px] font-mono text-zinc-400">@devsrec</span>
                   </a>
                 </li>
                 <li>
-                  <span className="text-zinc-500 font-mono text-[11px] block mt-2">
+                  <span className="text-zinc-400 font-mono text-[11px] block mt-2">
                     Peer-to-peer technical engineering community.
                   </span>
                 </li>
@@ -145,14 +145,14 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </AnimateIn>
 
-        <div className="mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div className="mt-12 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-300">
           <span>DEVs P2P · Peer-to-Peer Engineering · {new Date().getFullYear()}</span>
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] text-zinc-400 hover:text-white transition-all cursor-pointer font-mono"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-zinc-200 hover:text-white transition-all cursor-pointer font-mono font-medium"
           >
             <span>Back to top</span>
-            <ArrowUp className="w-3 h-3" />
+            <ArrowUp className="w-3 h-3 text-zinc-300" />
           </button>
         </div>
       </div>

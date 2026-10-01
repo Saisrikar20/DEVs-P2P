@@ -21,14 +21,14 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Dynamic Domain Headline */}
         <AnimateIn delay={40}>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[56px] font-normal tracking-[-0.03em] text-zinc-100 max-w-4xl mx-auto leading-[1.2] sm:leading-[1.15] px-1 sm:px-4">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.03em] text-white max-w-4xl mx-auto leading-[1.2] sm:leading-[1.15] px-1 sm:px-4">
             {currentDomain.heroHeadline}
           </h1>
         </AnimateIn>
 
         {/* Dynamic Domain Subtitle */}
         <AnimateIn delay={120}>
-          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-zinc-300 tracking-normal max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
+          <p className="mt-4 sm:mt-5 text-sm sm:text-base text-zinc-200 tracking-normal max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
             {currentDomain.heroTagline}
           </p>
         </AnimateIn>

@@ -140,13 +140,13 @@ export const AsciiHandsCanvas: React.FC = () => {
         }
       }
 
-      // Configure crisp non-overlapping monospace text rendering
-      ctx.font = 'bold 7px "JetBrains Mono", Consolas, "Courier New", monospace';
+      // Configure crisp non-overlapping monospace text rendering with elevated visibility
+      ctx.font = 'bold 8px "JetBrains Mono", Consolas, "Courier New", monospace';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
       const glyphs = glyphsRef.current;
-      const hoverRadius = 55;
+      const hoverRadius = 60;
 
       for (let i = 0; i < glyphs.length; i++) {
         const g = glyphs[i];
@@ -170,7 +170,7 @@ export const AsciiHandsCanvas: React.FC = () => {
 
           if (dist < hoverRadius && dist > 0) {
             const proximity = 1 - dist / hoverRadius;
-            brightnessBoost = proximity * 65;
+            brightnessBoost = proximity * 75;
 
             // Scramble glyph under close cursor
             if (dist < 26 && Math.random() < 0.25) {
@@ -181,16 +181,21 @@ export const AsciiHandsCanvas: React.FC = () => {
           }
         }
 
-        // Color calculation
-        let r = g.r + brightnessBoost;
-        let green = g.g + brightnessBoost;
-        let b = g.b + brightnessBoost;
+        // Color calculation with higher baseline visibility on dark displays
+        // Elevate darkest glyphs so they are clearly legible text
+        let baseR = g.r < 70 ? 75 + g.r * 0.9 : g.r * 1.15;
+        let baseG = g.g < 70 ? 75 + g.g * 0.9 : g.g * 1.15;
+        let baseB = g.b < 70 ? 80 + g.b * 0.9 : g.b * 1.15;
+
+        let r = baseR + brightnessBoost;
+        let green = baseG + brightnessBoost;
+        let b = baseB + brightnessBoost;
 
         if (g.cat === 1) {
           // Central Symbol: gentle breathing luminescence
-          r = Math.min(255, r * symbolGlow);
-          green = Math.min(255, green * symbolGlow);
-          b = Math.min(255, b * symbolGlow);
+          r = Math.min(255, r * symbolGlow * 1.1);
+          green = Math.min(255, green * symbolGlow * 1.1);
+          b = Math.min(255, b * symbolGlow * 1.1);
         }
 
         ctx.fillStyle = `rgb(${Math.min(255, Math.round(r))}, ${Math.min(

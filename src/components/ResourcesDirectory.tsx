@@ -256,27 +256,27 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
                 <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.08] bg-zinc-950/80 hover:bg-zinc-900/80 hover:border-white/20 p-5 sm:p-6 lift transition-all">
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-1.5 text-xs text-zinc-300 font-medium">
+                      <div className="flex items-center gap-1.5 text-xs text-zinc-200 font-medium">
                         {getTypeIcon(res.type)}
                         <span>{res.type}</span>
                       </div>
                       <button
                         onClick={() => onToggleBookmark(res.id)}
-                        className="text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                        className="text-zinc-300 hover:text-white transition-colors cursor-pointer"
                         aria-label={isSaved ? 'Remove bookmark' : 'Bookmark resource'}
                       >
                         <Bookmark className={`w-4 h-4 ${isSaved ? 'fill-white text-white' : ''}`} />
                       </button>
                     </div>
 
-                    <h4 className="text-base font-semibold text-zinc-100 mb-1.5">{res.title}</h4>
-                    <p className={`text-[13px] text-zinc-300 leading-relaxed transition-all ${isExpanded ? '' : 'line-clamp-2'}`}>
+                    <h4 className="text-base font-bold text-white mb-1.5">{res.title}</h4>
+                    <p className={`text-[13px] text-zinc-200 leading-relaxed transition-all ${isExpanded ? '' : 'line-clamp-2'}`}>
                       {res.description}
                     </p>
                     {isLong && (
                       <button
                         onClick={() => toggleExpandRes(res.id)}
-                        className="inline-flex items-center gap-1 text-xs font-mono text-zinc-400 hover:text-zinc-100 mt-2 transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1 text-xs font-mono text-zinc-300 hover:text-white mt-2 transition-colors cursor-pointer"
                       >
                         <span>{isExpanded ? 'Collapse' : 'Expand'}</span>
                         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
@@ -285,15 +285,15 @@ export const ResourcesDirectory: React.FC<ResourcesDirectoryProps> = ({
                   </div>
 
                   <div className="mt-4 pt-3.5 border-t border-white/[0.06] flex items-center justify-between">
-                    <span className="text-xs text-zinc-400">{res.authorOrProvider}</span>
+                    <span className="text-xs text-zinc-300 font-medium">{res.authorOrProvider}</span>
                     <a
                       href={res.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-zinc-200 hover:text-white font-medium transition-colors"
+                      className="flex items-center gap-1.5 text-xs text-zinc-100 hover:text-white font-medium transition-colors"
                     >
                       <span>Open</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
+                      <ExternalLink className="w-3.5 h-3.5 text-zinc-300" />
                     </a>
                   </div>
                 </div>

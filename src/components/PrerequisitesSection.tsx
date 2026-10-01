@@ -41,7 +41,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
               Before You Start: {domainName}
             </h2>
-            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-2xl mx-auto px-2">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed max-w-2xl mx-auto px-2">
               {prerequisites.overview}
             </p>
           </div>
@@ -54,7 +54,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
               <div className="flex flex-col justify-between h-full rounded-2xl border border-white/[0.08] bg-zinc-950/80 hover:bg-zinc-900/80 hover:border-white/20 p-5 sm:p-6 lift transition-all">
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3.5">
-                    <span className="text-xs font-mono text-zinc-400">Requirement 0{idx + 1}</span>
+                    <span className="text-xs font-mono text-zinc-300 font-semibold">Requirement 0{idx + 1}</span>
                     <span
                       className={`text-[11px] font-mono px-2.5 py-0.5 rounded-md border ${getLevelBadgeClass(
                         item.level
@@ -64,8 +64,8 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-base font-semibold text-zinc-100 mb-2">{item.title}</h3>
-                  <p className="text-[13px] text-zinc-300 leading-relaxed">{item.description}</p>
+                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-[13px] text-zinc-200 leading-relaxed">{item.description}</p>
                 </div>
 
                 {item.skills && item.skills.length > 0 && (
@@ -73,7 +73,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
                     {item.skills.map((skill, sIdx) => (
                       <span
                         key={sIdx}
-                        className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.05] text-zinc-300 border border-white/[0.08]"
+                        className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.08] text-zinc-100 border border-white/[0.1] font-medium"
                       >
                         {skill}
                       </span>
@@ -91,7 +91,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
             <button
               type="button"
               onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-white/20 text-xs font-mono text-zinc-300 hover:text-white transition-all cursor-pointer shadow-lg active:scale-95"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 text-xs font-mono text-zinc-200 hover:text-white transition-all cursor-pointer shadow-lg active:scale-95"
             >
               {showAll ? (
                 <>
@@ -110,7 +110,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
 
         {/* Reassurance & Fast-Forward Bar */}
         <AnimateIn delay={250}>
-          <div className="mt-6 sm:mt-8 p-4 rounded-xl border border-white/[0.08] bg-zinc-950/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-[13px] text-zinc-300">
+          <div className="mt-6 sm:mt-8 p-4 rounded-xl border border-white/[0.08] bg-zinc-950/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-[13px] text-zinc-200">
             <div className="flex items-center gap-2.5 text-center sm:text-left">
               <Sparkles className="w-4 h-4 text-zinc-200 shrink-0 hidden sm:block" />
               <span>
@@ -122,7 +122,7 @@ export const PrerequisitesSection: React.FC<PrerequisitesSectionProps> = ({
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-mono text-xs transition-all cursor-pointer whitespace-nowrap active:scale-95"
             >
               <span>Explore Curriculum</span>
-              <ArrowDown className="w-3 h-3 text-zinc-400" />
+              <ArrowDown className="w-3 h-3 text-zinc-300" />
             </button>
           </div>
         </AnimateIn>

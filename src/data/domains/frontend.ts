@@ -356,7 +356,7 @@ export const frontendDomain: DomainConfig = {
       headline: 'Frontend Engineering, UI Development & Modern Web Applications',
       topicOrFocus: 'Web Fundamentals, JavaScript, Modern Frontend Development & Engineering',
       bio: 'Frontend Engineer focused on building modern, responsive web experiences and turning ideas and designs into functional products. Guides students through web fundamentals, JavaScript, modern frontend development, and practical engineering.',
-      avatarUrl: '/avatar-frontend.jpg',
+      avatarUrl: '/asvand.jpg',
       initials: 'AK',
       socials: {
         github: 'https://github.com/asvandkanakaraj',
