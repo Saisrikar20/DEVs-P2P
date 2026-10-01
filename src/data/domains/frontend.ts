@@ -373,7 +373,7 @@ export const frontendDomain: DomainConfig = {
       headline: 'Operational Execution, Student Workflows & Community Infrastructure',
       topicOrFocus: 'Operations, Workflow Scaling & Community Mentorship Execution',
       bio: 'Leading operations, student workflows, and community infrastructure to scale peer-to-peer technical engineering across all domains.',
-      avatarUrl: '/host-anime-4.jpg',
+      avatarUrl: '/chandhru-l.jpg',
       initials: 'CL',
       socials: {
         github: 'https://github.com/Chandhru-27',
