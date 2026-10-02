@@ -295,7 +295,7 @@ export const backendDomain: DomainConfig = {
       headline: 'Backend Engineering & API Development Specialist',
       topicOrFocus: 'FastAPI, Django, PostgreSQL, Redis & Scalable Systems',
       bio: 'Backend developer focused on building practical and scalable applications using Python, FastAPI, Django, PostgreSQL, Redis, and Docker. Guides students from backend fundamentals to designing and deploying production-ready systems.',
-      avatarUrl: '/avatar-backend.jpg',
+      avatarUrl: '/sai-kishore.jpg',
       initials: 'SK',
       socials: {
         github: 'https://github.com/Saikishore67',
